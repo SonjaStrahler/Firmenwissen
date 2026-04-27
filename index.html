@@ -7,6 +7,7 @@
 <meta name="description" content="Wir sichern das Erfahrungswissen Ihrer langjährigen Mitarbeiter — digital, durchsuchbar, dauerhaft verfügbar. DSGVO-konform, lokal, bis zu 80 % staatlich gefördert. Für KMU im Mittelstand.">
 <meta name="keywords" content="Firmenwissen retten, Wissenstransfer, Wissensmanagement, KMU, Mittelstand, Nachfolge, Rente, INQA Coaching, BAFA, Oldenburg, systemische Beratung, lokale KI">
 <meta name="author" content="Ein offener Blick GmbH">
+<meta name="publisher" content="Ein offener Blick GmbH">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://einoffenerblick.de/firmenwissen-retten">
 <meta name="geo.region" content="DE-NI">
@@ -24,6 +25,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Ein offener Blick GmbH",
+  "legalName": "Ein offener Blick GmbH",
   "description": "Wissenstransfer für den Mittelstand. Wir sichern Erfahrungswissen durch systemische Interviews und lokale KI-Technologie.",
   "url": "https://einoffenerblick.de",
   "email": "info@einoffenerblick.de",
@@ -38,7 +40,8 @@
   "sameAs": ["https://www.linkedin.com/in/sonja-strahler/"]
 }
 </script>
-<link rel="icon" href="uploads/favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="Favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -312,7 +315,7 @@ p  { color: var(--muted); line-height: 1.7; }
 .team-section { background: var(--bg); }
 .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
 .person-card { background: var(--white); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
-.person-card img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; object-position: center 15%; }
+.person-card img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; object-position: 82% center; }
 .person-info { padding: 24px 24px 26px; }
 .person-info h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 3px; }
 .person-role { font-size: 0.8rem; font-weight: 600; color: var(--blue); margin-bottom: 12px; display: block; }
@@ -325,7 +328,7 @@ p  { color: var(--muted); line-height: 1.7; }
 }
 .team-right { display: flex; flex-direction: column; gap: 20px; }
 .team-img { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
-.team-img img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; object-position: center 20%; }
+.team-img img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; object-position: center 38%; }
 .mini-stats-row { display: flex; gap: 12px; }
 .mini-stat {
   flex: 1; background: var(--white); border: 1px solid var(--border);
@@ -410,6 +413,9 @@ footer { background: var(--navy); padding: 36px 32px; }
 }
 .footer-logo { display: flex; align-items: center; text-decoration: none; }
 .footer-logo img { height: 40px; width: 40px; object-fit: contain; border-radius: 50%; }
+.footer-legal { display: flex; flex-direction: column; gap: 3px; min-width: 220px; }
+.footer-legal strong { color: rgba(255,255,255,.82); font-size: 0.84rem; font-weight: 600; }
+.footer-legal span { color: rgba(255,255,255,.45); font-size: 0.78rem; line-height: 1.4; }
 .footer-links { display: flex; gap: 6px; flex-wrap: wrap; }
 .footer-links a {
   color: rgba(255,255,255,.5); text-decoration: none; font-size: 0.82rem;
@@ -452,7 +458,7 @@ footer { background: var(--navy); padding: 36px 32px; }
 <nav class="navbar">
   <div class="nav-inner" style="position:relative;">
     <a href="https://einoffenerblick.de" class="nav-logo">
-      <img src="assets/logo.png" alt="Ein offener Blick">
+      <img src="Favicon.png" alt="Ein offener Blick">
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menü">
       <span></span><span></span><span></span>
@@ -486,7 +492,7 @@ footer { background: var(--navy); padding: 36px 32px; }
       </div>
     </div>
     <div class="hero-card">
-      <div class="hero-card-num">87%</div>
+      <div class="hero-card-num">79%</div>
       <p class="hero-card-desc">der befragten Geschäftsführer geben an: Sie haben kein System zur Wissenssicherung — obwohl der Renteneintritt von Schlüsselpersonen konkret bevorsteht.</p>
       <div class="hero-card-divider"></div>
       <p class="hero-card-sub">Erfahrungswissen ist das wertvollste und am wenigsten gesicherte Kapital im Mittelstand.</p>
@@ -498,7 +504,7 @@ footer { background: var(--navy); padding: 36px 32px; }
 <div class="stats-bar">
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-num">87%</div>
+      <div class="stat-num">79%</div>
       <div class="stat-desc">der GF ohne System<br>zur Wissenssicherung</div>
     </div>
     <div class="stat-item">
@@ -670,7 +676,7 @@ footer { background: var(--navy); padding: 36px 32px; }
     <p class="section-lead">Ein offener Blick GmbH vereint systemische Beratungskompetenz mit moderner KI-Technologie — für den deutschen Mittelstand.</p>
     <div class="team-grid">
       <div class="person-card">
-        <img src="assets/sonja.jpg" alt="Sonja Strahler">
+        <img src="Images/ICH1.jpg" alt="Sonja Strahler">
         <div class="person-info">
           <h3>Sonja Strahler</h3>
           <span class="person-role">Gründerin &amp; Systemische Beraterin</span>
@@ -688,7 +694,7 @@ footer { background: var(--navy); padding: 36px 32px; }
       </div>
       <div class="team-right">
         <div class="team-img">
-          <img src="assets/team-sonja-harald.jpg" alt="Sonja und Harald Strahler">
+          <img src="Images/WIR1.jpg" alt="Sonja und Harald Strahler">
         </div>
         <div class="mini-stats-row">
           <div class="mini-stat"><div class="mini-stat-num">15+</div><div class="mini-stat-lbl">Jahre Erfahrung</div></div>
@@ -793,7 +799,7 @@ footer { background: var(--navy); padding: 36px 32px; }
           </div>
           <div class="form-footer">
             <button type="submit" class="btn-primary">Anfrage senden</button>
-            <span class="form-note">Antwort innerhalb von 24 Stunden.</span>
+            <span class="form-note">Antwort innerhalb von 24 Stunden. Hinweise zum Datenschutz finden Sie bei der <a href="https://einoffenerblick.de/das-kleingedruckte.html" target="_blank" rel="noopener" style="color:var(--blue);">Ein offener Blick GmbH</a>.</span>
           </div>
         </form>
       </div>
@@ -805,13 +811,17 @@ footer { background: var(--navy); padding: 36px 32px; }
 <footer>
   <div class="footer-inner">
     <a href="https://einoffenerblick.de" class="footer-logo">
-      <img src="assets/logo.png" alt="Ein offener Blick">
+      <img src="Favicon.png" alt="Ein offener Blick">
     </a>
+    <div class="footer-legal">
+      <strong>Firmenwissen retten ist ein Angebot der Ein offener Blick GmbH.</strong>
+      <span>Impressum, Datenschutz und rechtliche Angaben werden zentral auf einoffenerblick.de bereitgestellt.</span>
+    </div>
     <div class="footer-links">
-      <a href="https://einoffenerblick.de/das-kleingedruckte.html" target="_blank" rel="noopener">Impressum</a>
-      <a href="https://einoffenerblick.de/das-kleingedruckte.html" target="_blank" rel="noopener">Datenschutz</a>
-      <a href="https://einoffenerblick.de/das-kleingedruckte.html" target="_blank" rel="noopener">AGB</a>
-      <a href="/cdn-cgi/l/email-protection#c0a9aea6af80a5a9aeafa6a6a5aea5b2a2aca9a3abeea4a5" style="color:rgba(255,255,255,.5);"><span class="__cf_email__" data-cfemail="630a0d050c23060a0d0c0505060d0611010f0a00084d0706">[email&#160;protected]</span></a>
+      <a href="https://einoffenerblick.de/das-kleingedruckte.html#impressum" target="_blank" rel="noopener">Impressum</a>
+      <a href="https://einoffenerblick.de/das-kleingedruckte.html#datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+      <a href="https://einoffenerblick.de/das-kleingedruckte.html" target="_blank" rel="noopener">Das Kleingedruckte</a>
+      <a href="mailto:info@einoffenerblick.de" style="color:rgba(255,255,255,.5);">info@einoffenerblick.de</a>
       <a href="https://www.linkedin.com/in/sonja-strahler/" target="_blank" rel="noopener" style="color:#0A66C2;display:inline-flex;align-items:center;gap:5px;">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="#0A66C2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
