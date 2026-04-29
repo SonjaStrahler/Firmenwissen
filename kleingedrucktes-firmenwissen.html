@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Das Kleingedruckte – Firmenwissen retten | Impressum & Datenschutz</title>
+<meta name="description" content="Impressum, Datenschutzerklärung und Kontakt der Ein offener Blick GmbH — Betreiberin von firmenwissen-retten.de.">
+<link rel="canonical" href="https://firmenwissen-retten.de/kleingedrucktes-firmenwissen.html">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="Favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f5f4f7;
+  color: #1a1a2e;
+  line-height: 1.65;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+:root {
+  --navy:     #1A2240;
+  --blue:     #61b6e2;
+  --orange:   #feb365;
+  --lila:     #ca72da;
+  --bg:       #f5f4f7;
+  --border:   #e2e1ea;
+  --muted:    #5a5a72;
+  --white:    #ffffff;
+  --grad-btn: linear-gradient(45deg, #61b6e2, #feb365, #ca72da);
+}
+
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; color: var(--navy); }
+h1 { font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.02em; }
+h2 { font-size: clamp(20px, 2.5vw, 28px); letter-spacing: -0.01em; }
+h3 { font-size: 1rem; font-weight: 700; }
+h4 { font-size: 0.95rem; font-weight: 600; }
+p  { color: var(--muted); line-height: 1.75; }
+a  { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+/* ── NAV ─────────────────────────────────────────────────────────── */
+.navbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  position: sticky; top: 0; z-index: 200;
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  height: 64px; display: flex; align-items: center;
+  justify-content: space-between; gap: 24px; position: relative;
+}
+.nav-logo { display: flex; align-items: center; text-decoration: none; transition: opacity .2s; }
+.nav-logo:hover { opacity: .85; }
+.nav-logo img { height: 44px; width: 44px; object-fit: contain; border-radius: 50%; }
+.nav-links { display: flex; list-style: none; gap: 2px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none; font-size: 0.875rem;
+  padding: 6px 13px; border-radius: 6px; transition: color .15s, background .15s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--navy); background: var(--bg); }
+.nav-cta {
+  background: var(--grad-btn);
+  color: #000; font-weight: 600; font-size: 0.875rem;
+  padding: 9px 20px; border-radius: 30px; border: none;
+  text-decoration: none; white-space: nowrap; cursor: pointer;
+  box-shadow: 0 3px 10px rgba(97,182,226,.3);
+  transition: box-shadow .2s, transform .2s;
+}
+.nav-cta:hover { box-shadow: 0 5px 16px rgba(97,182,226,.45); transform: translateY(-1px); }
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+/* ── PAGE HEADER ─────────────────────────────────────────────────── */
+.page-header {
+  background: var(--navy);
+  padding: 56px 32px 52px;
+}
+.page-header-inner { max-width: 1100px; margin: 0 auto; }
+.page-eyebrow {
+  display: block; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 14px;
+}
+.page-header h1 { color: var(--white); margin-bottom: 10px; }
+.page-header p { color: rgba(255,255,255,.55); font-size: 1rem; max-width: 560px; }
+
+/* ── CONTENT NAV ─────────────────────────────────────────────────── */
+.content-nav-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  position: sticky; top: 64px; z-index: 100;
+}
+.content-nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; gap: 2px; overflow-x: auto;
+  height: 52px; align-items: center;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.content-nav-inner::-webkit-scrollbar { display: none; }
+.content-nav-inner a {
+  flex-shrink: 0; color: var(--muted); text-decoration: none;
+  font-size: 0.875rem; font-weight: 500;
+  padding: 6px 14px; border-radius: 6px;
+  transition: color .15s, background .15s; white-space: nowrap;
+}
+.content-nav-inner a:hover { color: var(--navy); background: var(--bg); text-decoration: none; }
+.content-nav-inner a.active { color: var(--navy); font-weight: 600; background: var(--bg); }
+
+/* ── MAIN LAYOUT ─────────────────────────────────────────────────── */
+.page-body { padding: 48px 32px 80px; }
+.page-body-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+
+/* ── CARD ────────────────────────────────────────────────────────── */
+.legal-card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(26,34,64,.06);
+  overflow: hidden;
+  scroll-margin-top: 130px;
+}
+.legal-card-header {
+  padding: 28px 36px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.card-icon {
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.card-icon--lila { background: rgba(202,114,218,.12); }
+.card-icon--blue  { background: rgba(97,182,226,.12); }
+.card-icon--orange { background: rgba(254,179,101,.12); }
+.legal-card-header h2 { margin-bottom: 4px; }
+.card-subtitle { font-size: 0.85rem; color: var(--muted); }
+.legal-card-body { padding: 36px; }
+
+/* ── PROSE ───────────────────────────────────────────────────────── */
+.prose { display: flex; flex-direction: column; gap: 0; }
+.prose h3 {
+  color: var(--navy); font-size: 0.95rem; font-weight: 700;
+  margin-top: 28px; margin-bottom: 10px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--border);
+}
+.prose h3:first-child { margin-top: 0; }
+.prose h4 {
+  color: var(--blue); font-size: 0.9rem; font-weight: 600;
+  margin-top: 22px; margin-bottom: 8px;
+}
+.prose p { margin-bottom: 12px; font-size: 0.93rem; }
+.prose p:last-child { margin-bottom: 0; }
+.prose ul, .prose ol { padding-left: 22px; margin-bottom: 12px; }
+.prose li { font-size: 0.93rem; color: var(--muted); line-height: 1.7; margin-bottom: 5px; }
+.prose strong { color: var(--navy); font-weight: 600; }
+.prose a { color: var(--blue); }
+
+.highlight-box {
+  background: rgba(97,182,226,.06);
+  border: 1px solid rgba(97,182,226,.2);
+  border-left: 3px solid var(--blue);
+  border-radius: 8px; padding: 18px 20px;
+  margin: 16px 0;
+}
+.highlight-box p, .highlight-box li { font-size: 0.9rem; }
+
+.storno-box {
+  background: rgba(254,179,101,.07);
+  border: 1px solid rgba(254,179,101,.25);
+  border-left: 3px solid var(--orange);
+  border-radius: 8px; padding: 18px 20px;
+  margin: 16px 0;
+}
+.storno-box li { font-size: 0.9rem; color: var(--muted); }
+
+.separator { height: 1px; background: var(--border); margin: 28px 0; }
+
+/* ── CONTACT BLOCK ───────────────────────────────────────────────── */
+.contact-block {
+  background: var(--navy); border-radius: 12px;
+  padding: 30px 28px; margin-top: 4px;
+}
+.contact-block h3 { color: var(--white); border: none; margin-top: 0; padding-bottom: 0; font-size: 1.05rem; }
+.contact-block p { color: rgba(255,255,255,.6); font-size: 0.92rem; margin-top: 6px; margin-bottom: 0; }
+.contact-block a { color: var(--blue); font-weight: 500; }
+.contact-block .contact-row { display: flex; flex-direction: column; gap: 7px; margin-top: 16px; }
+.contact-block .contact-item {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 0.9rem; color: rgba(255,255,255,.7);
+}
+.contact-block .contact-item a { color: var(--blue); text-decoration: none; }
+.contact-block .contact-item a:hover { text-decoration: underline; }
+
+.agb-link-box {
+  background: rgba(202,114,218,.07);
+  border: 1px solid rgba(202,114,218,.2);
+  border-radius: 10px; padding: 18px 20px;
+  margin-top: 20px;
+  font-size: 0.9rem; color: var(--muted);
+}
+.agb-link-box a { color: var(--lila); font-weight: 500; }
+
+/* ── FOOTER ──────────────────────────────────────────────────────── */
+footer { background: var(--navy); padding: 36px 32px; }
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { display: flex; align-items: center; text-decoration: none; }
+.footer-logo img { height: 40px; width: 40px; object-fit: contain; border-radius: 50%; }
+.footer-copy-text { font-size: 0.82rem; color: rgba(255,255,255,.45); text-align: center; }
+.footer-links { display: flex; gap: 6px; flex-wrap: wrap; }
+.footer-links a {
+  color: rgba(255,255,255,.5); text-decoration: none; font-size: 0.82rem;
+  padding: 5px 9px; border-radius: 6px; transition: color .15s; white-space: nowrap;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,.3); }
+
+/* ── BACK TO TOP ─────────────────────────────────────────────────── */
+#back-to-top {
+  position: fixed; bottom: 28px; right: 28px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--navy); border: 1px solid rgba(255,255,255,.12);
+  color: var(--white); font-size: 18px; line-height: 1;
+  cursor: pointer; display: none;
+  align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(26,34,64,.25);
+  transition: background .2s, transform .2s;
+  z-index: 500;
+}
+#back-to-top:hover { background: var(--blue); transform: translateY(-2px); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: -32px; right: -32px; background: var(--white);
+    padding: 12px 20px 16px; box-shadow: 0 12px 32px rgba(0,0,0,.1);
+    border-radius: 0 0 12px 12px; z-index: 999; gap: 0;
+  }
+}
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  .page-header { padding: 44px 20px 40px; }
+  .content-nav-bar { padding: 0 20px; }
+  .page-body { padding: 32px 20px 64px; }
+  .legal-card-header { padding: 22px 22px 18px; flex-direction: column; gap: 10px; }
+  .legal-card-body { padding: 22px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  #back-to-top { bottom: 20px; right: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">
+      <img src="Favicon.png" alt="Ein offener Blick">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/index.html#problem">Das Problem</a></li>
+      <li><a href="/index.html#loesung">Unsere Lösung</a></li>
+      <li><a href="/index.html#unternehmen">Für Unternehmen</a></li>
+      <li><a href="/index.html#berater">Für Berater</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="/index.html#kontakt" class="nav-cta">Erstgespräch vereinbaren</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <span class="page-eyebrow">Rechtliches</span>
+    <h1>Das Kleingedruckte</h1>
+    <p>Impressum, Datenschutzerklärung und Kontakt — vollständige Pflichtangaben der Ein offener Blick GmbH.</p>
+  </div>
+</div>
+
+<!-- CONTENT NAV -->
+<div class="content-nav-bar" role="navigation" aria-label="Seitennavigation">
+  <div class="content-nav-inner">
+    <a href="#impressum">Impressum</a>
+    <a href="#datenschutz">Datenschutz</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="page-body">
+  <div class="page-body-inner">
+
+    <!-- ── IMPRESSUM ──────────────────────────────────────────── -->
+    <article class="legal-card" id="impressum">
+      <div class="legal-card-header">
+        <div class="card-icon card-icon--lila">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca72da" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><path d="M8 3v6M16 3v6"/></svg>
+        </div>
+        <div>
+          <h2>Impressum</h2>
+          <span class="card-subtitle">Angaben gemäß § 5 DDG</span>
+        </div>
+      </div>
+      <div class="legal-card-body">
+        <div class="prose">
+
+          <div class="highlight-box">
+            <p><strong>Ein offener Blick GmbH</strong><br>
+            Eichenallee 30<br>
+            26203 Hundsmühlen</p>
+          </div>
+
+          <h3>Kontakt</h3>
+          <p>
+            <strong>Telefon:</strong> 0441-36170456<br>
+            <strong>E-Mail:</strong> <a href="mailto:info@einoffenerblick.de">info@einoffenerblick.de</a><br>
+            <strong>Internet:</strong> <a href="https://einoffenerblick.de" target="_blank" rel="noopener noreferrer">https://einoffenerblick.de</a>
+          </p>
+
+          <h3>Vertretungsberechtigter Geschäftsführer</h3>
+          <p>Harald Strahler</p>
+
+          <h3>Handelsregister</h3>
+          <p>
+            Registergericht: Amtsgericht Oldenburg<br>
+            Registernummer: HRB 215039
+          </p>
+
+          <h3>Umsatzsteuer-Identifikationsnummer</h3>
+          <p>USt-IdNr. gemäß § 27a UStG: DE328690953</p>
+
+          <h3>Inhaltlich Verantwortlicher gemäß § 18 Abs. 2 MStV</h3>
+          <p>Harald Strahler, Anschrift wie oben</p>
+
+          <h3>Umsetzung der Website</h3>
+          <p>Sonja Strahler</p>
+
+          <h3>Bildnachweise</h3>
+          <p>KI-generiert sowie eigene Fotos.</p>
+
+          <h3>Hinweis zum Angebot „Firmenwissen retten"</h3>
+          <p>„Firmenwissen retten" ist ein Angebot der Ein offener Blick GmbH. Die Website <a href="https://firmenwissen-retten.de" target="_blank" rel="noopener noreferrer">https://firmenwissen-retten.de</a> wird ebenfalls von der Ein offener Blick GmbH betrieben.</p>
+
+          <h3>Online-Streitbeilegung</h3>
+          <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a>.</p>
+          <p>Unsere E-Mail-Adresse findest du oben. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.</p>
+
+          <h3>Haftung für Inhalte</h3>
+          <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
+          <h3>Haftung für Links</h3>
+          <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- ── DATENSCHUTZ ────────────────────────────────────────── -->
+    <article class="legal-card" id="datenschutz">
+      <div class="legal-card-header">
+        <div class="card-icon card-icon--blue">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h2>Datenschutzerklärung</h2>
+          <span class="card-subtitle">Der Schutz Ihrer Privatsphäre ist uns wichtig</span>
+        </div>
+      </div>
+      <div class="legal-card-body">
+        <div class="prose">
+
+          <p>Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Nachfolgend informieren wir Sie über den Umgang mit Ihren Daten gemäß DSGVO und BDSG.</p>
+
+          <div class="highlight-box">
+            <h4 style="margin-top:0;">Verantwortliche Stelle:</h4>
+            <p><strong>Ein offener Blick GmbH</strong><br>
+            Eichenallee 30, 26203 Hundsmühlen<br>
+            Vertreten durch den Geschäftsführer Harald Strahler<br>
+            E-Mail: <a href="mailto:info@einoffenerblick.de">info@einoffenerblick.de</a><br>
+            Telefon: 0441-36170456</p>
+          </div>
+
+          <h3>1) Hosting und Server-Logfiles</h3>
+          <p>Diese Website wird auf einem eigenen Server der Ein offener Blick GmbH betrieben (Self-Hosting). Die E-Mail-Kommunikation läuft über die Webgo GmbH &amp; Co. KG, Heidenkampsweg 81, 20097 Hamburg, als Auftragsverarbeiter im Sinne von Art. 28 DSGVO.</p>
+          <p>Beim Aufruf der Website werden automatisch sogenannte Server-Logfiles gespeichert:</p>
+          <ul>
+            <li>IP-Adresse (gekürzt/anonymisiert verarbeitet)</li>
+            <li>Datum und Uhrzeit des Zugriffs</li>
+            <li>Aufgerufene Seite / Datei</li>
+            <li>Referrer-URL</li>
+            <li>Übertragene Datenmenge</li>
+            <li>HTTP-Statuscode</li>
+            <li>Browsertyp, -version, Betriebssystem</li>
+          </ul>
+          <p><strong>Zweck:</strong> Sicherstellung eines stabilen Betriebs, Fehleranalyse, Schutz vor Angriffen.<br>
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).<br>
+          <strong>Speicherdauer:</strong> Die Logfiles werden regelmäßig nach spätestens 30 Tagen automatisch gelöscht.</p>
+
+          <h3>2) Cookies</h3>
+          <p>Wir setzen ausschließlich technisch notwendige Cookies ein, soweit dies für den Betrieb der Website erforderlich ist. Es findet <strong>kein Tracking</strong>, <strong>keine Analyse</strong> und <strong>keine Werbeauswertung</strong> statt.</p>
+          <p><strong>Rechtsgrundlage:</strong> § 25 Abs. 2 Nr. 2 TDDDG i. V. m. Art. 6 Abs. 1 lit. f DSGVO.</p>
+          <p>In den Einstellungen Ihres Browsers können Sie Cookies generell verweigern oder einzeln verwalten. Bei vollständiger Deaktivierung kann die Website ggf. nicht in vollem Umfang funktionieren.</p>
+
+          <h3>3) Google Fonts</h3>
+          <p>Zur einheitlichen Darstellung von Schriftarten werden auf dieser Website Google Fonts verwendet, die beim Aufruf von Servern der Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland) geladen werden. Dabei wird Ihre IP-Adresse an Google übertragen. Eine Datenübertragung in die USA kann nicht ausgeschlossen werden; für die USA besteht aktuell ein Angemessenheitsbeschluss der EU-Kommission (EU-US Data Privacy Framework).</p>
+          <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einheitlicher Darstellung).<br>
+          <strong>Datenschutzhinweise von Google:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></p>
+
+          <h3>4) Tally (Kontakt- und Buchungsformulare)</h3>
+          <p>Für Kontakt-, Anmelde- und Buchungsformulare nutzen wir den Dienst <strong>Tally</strong> (Tally Forms BV, Belgien). Wenn Sie ein Formular ausfüllen und absenden, werden die eingegebenen Daten an Tally übertragen und dort gespeichert.</p>
+          <p><strong>Verarbeitete Daten:</strong> alle von Ihnen freiwillig eingegebenen Daten sowie technische Daten wie IP-Adresse, Zeitpunkt der Übermittlung, Browser-Informationen.<br>
+          <strong>Zweck:</strong> Kontaktaufnahme, Bearbeitung Ihrer Anfrage, Vertragsanbahnung.<br>
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. lit. a (Einwilligung).<br>
+          <strong>Datenschutzhinweise von Tally:</strong> <a href="https://tally.so/help/privacy-policy" target="_blank" rel="noopener noreferrer">https://tally.so/help/privacy-policy</a></p>
+
+          <h3>5) Stripe (Zahlungsabwicklung)</h3>
+          <p>Für die Abwicklung von Zahlungen nutzen wir den Zahlungsdienstleister <strong>Stripe</strong> (Stripe Payments Europe Ltd., 1 Grand Canal Street Lower, Dublin, Irland; ggf. Stripe Inc., USA).</p>
+          <p><strong>Verarbeitete Daten:</strong> Zahlungsdaten, Kontaktdaten, Transaktionsdaten, technische Daten zur Betrugsprävention.<br>
+          <strong>Zweck:</strong> Abwicklung des Bezahlvorgangs.<br>
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).<br>
+          <strong>Datenschutzhinweise von Stripe:</strong> <a href="https://stripe.com/de/privacy" target="_blank" rel="noopener noreferrer">https://stripe.com/de/privacy</a></p>
+
+          <h3>6) E-Mail-Kommunikation</h3>
+          <p>Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben (Name, E-Mail-Adresse, Inhalt Ihrer Nachricht) zur Bearbeitung Ihrer Anfrage gespeichert. Die Verarbeitung erfolgt über unseren E-Mail-Dienstleister Webgo GmbH &amp; Co. KG, Heidenkampsweg 81, 20097 Hamburg.</p>
+          <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. lit. f DSGVO (berechtigtes Interesse an effizienter Bearbeitung).<br>
+          <strong>Speicherdauer:</strong> Solange dies zur Bearbeitung erforderlich ist; gesetzliche Aufbewahrungsfristen (insbesondere handels- und steuerrechtlich) bleiben unberührt.</p>
+
+          <h3>7) Ihre Rechte</h3>
+          <p>Sie haben jederzeit folgende Rechte gegenüber uns:</p>
+          <ul>
+            <li><strong>Auskunft</strong> über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+            <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
+            <li><strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)</li>
+            <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+            <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+            <li><strong>Widerspruch</strong> gegen die Verarbeitung auf Grundlage berechtigter Interessen (Art. 21 DSGVO)</li>
+            <li><strong>Widerruf</strong> einer einmal erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+          </ul>
+          <p>Zur Ausübung wenden Sie sich an <a href="mailto:info@einoffenerblick.de">info@einoffenerblick.de</a>.</p>
+
+          <h3>8) Beschwerderecht bei der Aufsichtsbehörde</h3>
+          <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Für uns zuständig ist:</p>
+          <div class="highlight-box">
+            <p><strong>Die Landesbeauftragte für den Datenschutz Niedersachsen</strong><br>
+            Prinzenstraße 5, 30159 Hannover<br>
+            <a href="https://lfd.niedersachsen.de" target="_blank" rel="noopener noreferrer">https://lfd.niedersachsen.de</a></p>
+          </div>
+
+          <h3>9) Aktualität dieser Datenschutzerklärung</h3>
+          <p>Stand: April 2026. Wir behalten uns vor, diese Erklärung anzupassen, wenn sich rechtliche Anforderungen oder unsere Verarbeitungstätigkeiten ändern.</p>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- ── KONTAKT ─────────────────────────────────────────────── -->
+    <article class="legal-card" id="kontakt">
+      <div class="legal-card-header">
+        <div class="card-icon card-icon--orange">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#feb365" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <h2>Kontakt</h2>
+          <span class="card-subtitle">Haben Sie Fragen? Wir sind für Sie da.</span>
+        </div>
+      </div>
+      <div class="legal-card-body">
+        <div class="prose">
+
+          <div class="contact-block">
+            <h3>Ein offener Blick GmbH</h3>
+            <p>Vertreten durch Geschäftsführer Harald Strahler</p>
+            <div class="contact-row">
+              <div class="contact-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Eichenallee 30, 26203 Hundsmühlen</span>
+              </div>
+              <div class="contact-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 17z"/></svg>
+                <a href="tel:+494413617045">0441-36170456</a>
+              </div>
+              <div class="contact-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:info@einoffenerblick.de">info@einoffenerblick.de</a>
+              </div>
+              <div class="contact-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <a href="https://einoffenerblick.de" target="_blank" rel="noopener noreferrer">einoffenerblick.de</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="agb-link-box">
+            <strong>Allgemeine Geschäftsbedingungen für Beratungsleistungen</strong> findest du auf unserer Hauptseite:
+            <a href="https://einoffenerblick.de/das-kleingedruckte.html#agb" target="_blank" rel="noopener noreferrer">einoffenerblick.de/das-kleingedruckte.html#agb →</a>
+          </div>
+
+          <div class="separator"></div>
+          <p style="font-size:0.82rem;color:var(--muted);">Stand: April 2026 · © 2026 Ein offener Blick GmbH</p>
+
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="https://einoffenerblick.de" class="footer-logo">
+      <img src="Favicon.png" alt="Ein offener Blick">
+    </a>
+    <span class="footer-copy-text">Firmenwissen retten ist ein Angebot der Ein offener Blick GmbH</span>
+    <div class="footer-links">
+      <a href="/kleingedrucktes-firmenwissen.html#impressum">Impressum</a>
+      <a href="/kleingedrucktes-firmenwissen.html#datenschutz">Datenschutz</a>
+      <a href="https://einoffenerblick.de/das-kleingedruckte.html#agb" target="_blank" rel="noopener noreferrer">AGB</a>
+      <a href="mailto:info@einoffenerblick.de">info@einoffenerblick.de</a>
+      <a href="https://www.linkedin.com/in/sonja-strahler/" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.5);display:inline-flex;align-items:center;gap:5px;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="rgba(255,255,255,.5)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    <span class="footer-copy">© 2026 Ein offener Blick GmbH</span>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="Nach oben scrollen" title="Nach oben">↑</button>
+
+<script>
+// Nav toggle
+var navToggle = document.getElementById('navToggle');
+var navLinks  = document.getElementById('navLinks');
+navToggle.addEventListener('click', function() {
+  navLinks.classList.toggle('open');
+});
+
+// Smooth scroll for content nav
+document.querySelectorAll('.content-nav-inner a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.getElementById(this.getAttribute('href').slice(1));
+    if (target) {
+      var offset = 130;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  });
+});
+
+// Active nav highlight on scroll
+var sections = ['impressum', 'datenschutz', 'kontakt'];
+var navAnchors = document.querySelectorAll('.content-nav-inner a');
+
+function updateActiveNav() {
+  var scrollY = window.pageYOffset + 150;
+  var current = sections[0];
+  sections.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && el.offsetTop <= scrollY) current = id;
+  });
+  navAnchors.forEach(function(a) {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}
+
+// Back to top
+var btn = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+  if (window.pageYOffset > 400) {
+    btn.style.display = 'flex';
+  } else {
+    btn.style.display = 'none';
+  }
+  updateActiveNav();
+});
+
+btn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+updateActiveNav();
+</script>
+</body>
+</html>
