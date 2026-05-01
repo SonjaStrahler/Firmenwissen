@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Firmenwissen retten — Ein offener Blick GmbH | Oldenburg</title>
-<meta name="description" content="Wir sichern das Erfahrungswissen Ihrer langjährigen Mitarbeiter — digital, durchsuchbar, dauerhaft verfügbar. DSGVO-konform, lokal, bis zu 80 % staatlich gefördert. Für KMU im Mittelstand.">
-<meta name="keywords" content="Firmenwissen retten, Wissenstransfer, Wissensmanagement, KMU, Mittelstand, Nachfolge, Rente, INQA Coaching, BAFA, Oldenburg, systemische Beratung, lokale KI">
+<meta name="description" content="Wir sichern das Erfahrungswissen Ihrer langjährigen Mitarbeiter — digital, durchsuchbar, dauerhaft verfügbar. DSGVO-konform und lokal. Für KMU im Mittelstand.">
+<meta name="keywords" content="Firmenwissen retten, Wissenstransfer, Wissensmanagement, KMU, Mittelstand, Nachfolge, Rente, BAFA, Oldenburg, systemische Beratung, lokale KI">
 <meta name="author" content="Ein offener Blick GmbH">
 <meta name="publisher" content="Ein offener Blick GmbH">
 <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
 <meta name="ICBM" content="53.1434501, 8.2145521">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Firmenwissen retten — Ein offener Blick GmbH">
-<meta property="og:description" content="Wir sichern das Erfahrungswissen Ihrer Mitarbeiter — digital, durchsuchbar, dauerhaft. Bis zu 80 % staatlich gefördert.">
+<meta property="og:description" content="Wir sichern das Erfahrungswissen Ihrer Mitarbeiter — digital, durchsuchbar, dauerhaft. DSGVO-konform und lokal.">
 <meta property="og:url" content="https://einoffenerblick.de/firmenwissen-retten">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Ein offener Blick GmbH">
@@ -426,6 +426,15 @@ footer { background: var(--navy); padding: 36px 32px; }
 .footer-kleingedrucktes-links a:hover { color: var(--white); text-decoration: underline; }
 .footer-kleingedrucktes-sep { color: rgba(255,255,255,.32); }
 
+/* Temporär: INQA-/Förderhinweise optisch ausblenden, aber im HTML belassen.
+   Rückbau: Klasse "funding-temporarily-hidden" an den markierten Elementen entfernen
+   und die Meta-Texte oben wieder auf Förderhinweise prüfen/anpassen. */
+.funding-temporarily-hidden {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ── RESPONSIVE ──────────────────────────────────────────────────── */
 @media (max-width: 1023px) {
   .nav-links, .nav-cta { display: none; }
@@ -491,7 +500,7 @@ footer { background: var(--navy); padding: 36px 32px; }
         <a href="#loesung" class="btn-secondary">So funktioniert es</a>
       </div>
       <div class="trust-list">
-        <div class="trust-item">Bis zu 80 % staatlich gefördert (INQA-Coaching)</div>
+        <div class="trust-item funding-temporarily-hidden">Bis zu 80 % staatlich gefördert (INQA-Coaching)</div>
         <div class="trust-item">100 % lokal — keine Cloud, DSGVO-konform</div>
         <div class="trust-item">Echte Gespräche, keine Fragebögen</div>
       </div>
@@ -516,7 +525,7 @@ footer { background: var(--navy); padding: 36px 32px; }
       <div class="stat-num">4–8</div>
       <div class="stat-desc">Wochen bis zur fertigen<br>Wissensdatenbank</div>
     </div>
-    <div class="stat-item">
+    <div class="stat-item funding-temporarily-hidden">
       <div class="stat-num">80%</div>
       <div class="stat-desc">staatliche Förderung<br>über INQA-Coaching möglich</div>
     </div>
@@ -590,12 +599,12 @@ footer { background: var(--navy); padding: 36px 32px; }
         <span class="section-eyebrow">Für Unternehmen</span>
         <h2 style="margin-bottom:10px;">Erfahrungswissen sichern — bevor es zu spät ist.</h2>
         <p style="color:rgba(255,255,255,.6);margin-bottom:0;">Für KMU mit langjährigen Mitarbeitern, die vor dem Renteneintritt oder einem Wechsel stehen.</p>
-        <div class="foerder-badge" style="margin-top:24px;">
+        <div class="foerder-badge funding-temporarily-hidden" style="margin-top:24px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#feb365" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           Bis zu 80 % über INQA-Coaching förderbar
         </div>
         <ul class="feat-list">
-          <li class="feat">
+          <li class="feat funding-temporarily-hidden">
             <div class="feat-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div><strong>Staatlich gefördert</strong><span>Bis zu 80 % Förderanteil — wir begleiten Sie durch den gesamten Prozess.</span></div>
           </li>
@@ -688,7 +697,7 @@ footer { background: var(--navy); padding: 36px 32px; }
           <p>Die menschliche Brücke zwischen Ihren Mitarbeitern und der Technologie. 15 Jahre Erfahrung in systemischer Organisationsberatung.</p>
           <div class="certs">
             <span class="cert">BAFA-zertifiziert</span>
-            <span class="cert">INQA-Coach</span>
+            <span class="cert funding-temporarily-hidden">INQA-Coach</span>
             <span class="cert">ESF Plus</span>
           </div>
           <a href="https://www.linkedin.com/in/sonja-strahler/" target="_blank" rel="noopener" class="li-btn">
@@ -704,7 +713,7 @@ footer { background: var(--navy); padding: 36px 32px; }
         <div class="mini-stats-row">
           <div class="mini-stat"><div class="mini-stat-num">15+</div><div class="mini-stat-lbl">Jahre Erfahrung</div></div>
           <div class="mini-stat"><div class="mini-stat-num">KMU</div><div class="mini-stat-lbl">Fokus Mittelstand</div></div>
-          <div class="mini-stat"><div class="mini-stat-num">80%</div><div class="mini-stat-lbl">Förderung möglich</div></div>
+          <div class="mini-stat funding-temporarily-hidden"><div class="mini-stat-num">80%</div><div class="mini-stat-lbl">Förderung möglich</div></div>
         </div>
       </div>
     </div>
@@ -721,7 +730,7 @@ footer { background: var(--navy); padding: 36px 32px; }
         <button class="faq-btn">Was kostet das?
           <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A2240" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
-        <div class="faq-body">Das Erstgespräch ist kostenlos und unverbindlich. Die Projektkosten hängen vom Umfang ab. In vielen Fällen sind bis zu 80 % über INQA-Coaching-Förderung abgedeckt. Sie erhalten nach dem ersten Gespräch ein transparentes Angebot.</div>
+        <div class="faq-body">Das Erstgespräch ist kostenlos und unverbindlich. Die Projektkosten hängen vom Umfang ab. <span class="funding-temporarily-hidden">In vielen Fällen sind bis zu 80 % über INQA-Coaching-Förderung abgedeckt.</span> Sie erhalten nach dem ersten Gespräch ein transparentes Angebot.</div>
       </div>
       <div class="faq-item">
         <button class="faq-btn">Ist das DSGVO-konform?
