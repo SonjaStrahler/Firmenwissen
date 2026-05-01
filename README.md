@@ -7,6 +7,15 @@
 - **Server:** Proxmox Container 102 (192.168.178.102)
 - **Server-Pfad:** /var/www/firmenwissen
 
+### Temporärer Hinweis: INQA-/Fördertexte ausgeblendet
+
+Die INQA-/80%-Förderhinweise sind in `index.html` nicht gelöscht, sondern vorübergehend mit der CSS-Klasse `funding-temporarily-hidden` optisch unsichtbar gemacht. Zusätzlich wurden die Meta-Description und Open-Graph-Description neutral formuliert, damit Suchmaschinen keine ungeprüften Förderaussagen als Vorschau anzeigen.
+
+Zum Wieder-Einblenden nach Genehmigung:
+1. In `index.html` nach `funding-temporarily-hidden` suchen.
+2. Die Klasse an den gewünschten Elementen entfernen.
+3. Die Meta-Texte im `<head>` bei Bedarf wieder um die genehmigte Förderaussage ergänzen.
+
 ---
 
 ## 📂 Wo liegt das Projekt?
