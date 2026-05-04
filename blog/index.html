@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog – Firmenwissen retten | Aus der Praxis für KMU</title>
+<meta name="description" content="Praxisartikel zum Thema Wissenstransfer im Mittelstand: Methodik, Förderung, KI-Einsatz und konkrete Fallbeispiele aus deutschen KMU.">
+<link rel="canonical" href="https://firmenwissen-retten.de/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog – Firmenwissen retten">
+<meta property="og:description" content="Praxisartikel zum Thema Wissenstransfer im Mittelstand.">
+<meta property="og:url" content="https://firmenwissen-retten.de/blog/">
+<meta property="og:locale" content="de_DE">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Firmenwissen retten — Blog",
+  "description": "Praxisartikel zum Wissenstransfer in deutschen KMU.",
+  "url": "https://firmenwissen-retten.de/blog/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ein offener Blick GmbH",
+    "url": "https://einoffenerblick.de"
+  }
+}
+</script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../Images/LogoWebsite.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #ffffff;
+  color: #1a1a2e;
+  line-height: 1.65;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+:root {
+  --navy:   #1A2240;
+  --blue:   #61b6e2;
+  --orange: #feb365;
+  --lila:   #ca72da;
+  --bg:     #f5f4f7;
+  --border: #e2e1ea;
+  --muted:  #5a5a72;
+  --white:  #ffffff;
+  --grad-btn: linear-gradient(45deg, #61b6e2, #feb365, #ca72da);
+}
+
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; color: var(--navy); }
+h1 { font-size: clamp(30px, 4vw, 50px); letter-spacing: -0.02em; }
+h2 { font-size: clamp(24px, 3vw, 36px); letter-spacing: -0.01em; }
+h3 { font-size: 1.1rem; }
+p  { color: var(--muted); line-height: 1.7; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+/* ── NAV ─────────────────────────────────────────────────────────── */
+.navbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  height: 64px; display: flex; align-items: center;
+  justify-content: space-between; gap: 24px; position: relative;
+}
+.nav-logo { display: flex; align-items: center; text-decoration: none; transition: opacity .2s; }
+.nav-logo:hover { opacity: .85; }
+.nav-logo img { height: 44px; width: 44px; object-fit: contain; border-radius: 50%; }
+.nav-links { display: flex; list-style: none; gap: 2px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none; font-size: 0.875rem;
+  padding: 6px 13px; border-radius: 6px; transition: color .15s, background .15s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--navy); background: var(--bg); }
+.nav-links a.active { color: var(--navy); font-weight: 600; }
+.nav-cta {
+  background: var(--grad-btn);
+  color: #000; font-weight: 600; font-size: 0.875rem;
+  padding: 9px 20px; border-radius: 30px; border: none;
+  text-decoration: none; white-space: nowrap; cursor: pointer;
+  box-shadow: 0 3px 10px rgba(97,182,226,.3);
+  transition: box-shadow .2s, transform .2s;
+}
+.nav-cta:hover { box-shadow: 0 5px 16px rgba(97,182,226,.45); transform: translateY(-1px); }
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+/* ── HERO ────────────────────────────────────────────────────────── */
+.blog-hero {
+  background: var(--bg);
+  padding: 64px 32px 56px;
+  border-bottom: 1px solid var(--border);
+}
+.blog-hero-inner { max-width: 1100px; margin: 0 auto; }
+.hero-eyebrow {
+  display: block; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 16px;
+}
+.blog-hero h1 { margin-bottom: 14px; }
+.blog-hero-sub {
+  font-size: 1.05rem; color: var(--muted);
+  max-width: 560px; line-height: 1.75; margin-bottom: 20px;
+}
+.hero-trust {
+  font-size: 0.82rem; color: var(--muted);
+  display: flex; gap: 20px; flex-wrap: wrap;
+}
+.hero-trust span { display: flex; align-items: center; gap: 6px; }
+.hero-trust span::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--lila); flex-shrink: 0;
+}
+
+/* ── FILTER ──────────────────────────────────────────────────────── */
+.filter-bar {
+  padding: 28px 32px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  position: sticky; top: 64px; z-index: 90;
+}
+.filter-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; gap: 8px; overflow-x: auto;
+  padding-bottom: 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.filter-inner::-webkit-scrollbar { display: none; }
+.filter-pill {
+  flex-shrink: 0;
+  padding: 7px 16px; border-radius: 30px;
+  font-size: 0.82rem; font-weight: 500;
+  border: 1.5px solid var(--border);
+  background: var(--white); color: var(--navy);
+  cursor: pointer; transition: all .15s;
+  white-space: nowrap;
+}
+.filter-pill:hover { border-color: var(--lila); box-shadow: 0 2px 8px rgba(202,114,218,.15); }
+.filter-pill.active {
+  background: var(--lila); border-color: var(--lila);
+  color: var(--white); box-shadow: 0 2px 10px rgba(202,114,218,.35);
+}
+
+/* ── GRID ────────────────────────────────────────────────────────── */
+.blog-section { padding: 52px 32px 72px; }
+.blog-grid-inner { max-width: 1100px; margin: 0 auto; }
+
+#blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* ── CARD ────────────────────────────────────────────────────────── */
+.blog-post-card {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  overflow: hidden;
+  transition: box-shadow .25s, transform .25s;
+}
+.blog-post-card:hover {
+  box-shadow: 0 8px 28px rgba(26,34,64,.10);
+  transform: translateY(-2px);
+}
+.blog-post-link {
+  display: block; text-decoration: none; color: inherit; height: 100%;
+}
+.blog-post-image-wrapper {
+  position: relative; overflow: hidden;
+  background: var(--white);
+}
+.blog-post-image {
+  width: 100%; display: block;
+  height: auto;
+  transition: transform .35s;
+}
+.blog-post-card:hover .blog-post-image { transform: scale(1.02); }
+
+/* Placeholder for missing images */
+.blog-post-image-placeholder {
+  width: 100%; aspect-ratio: 16/9;
+  background: repeating-linear-gradient(
+    45deg,
+    #f0eff5 0px, #f0eff5 10px,
+    #e8e7f0 10px, #e8e7f0 20px
+  );
+  display: flex; align-items: center; justify-content: center;
+  font-family: monospace; font-size: 0.72rem; color: var(--muted);
+  letter-spacing: .04em; text-align: center; padding: 20px;
+}
+
+.new-post-indicator {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--orange); color: #000;
+  font-size: 0.72rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 30px;
+  letter-spacing: .04em;
+}
+.blog-post-content {
+  padding: 20px 22px 22px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.blog-post-category {
+  display: inline-block;
+  background: var(--lila); color: var(--white);
+  font-size: 0.72rem; font-weight: 600;
+  padding: 3px 10px; border-radius: 30px;
+  letter-spacing: .04em;
+  align-self: flex-start;
+}
+.blog-post-title {
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--navy); line-height: 1.35;
+  margin: 0;
+}
+.post-meta {
+  display: flex; gap: 0; flex-wrap: wrap;
+  font-size: 0.78rem; color: var(--muted);
+}
+.post-meta span + span::before {
+  content: ' · '; padding: 0 4px;
+}
+.post-excerpt {
+  font-size: 0.9rem; color: var(--muted);
+  line-height: 1.6; margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.read-more {
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--blue); margin-top: 4px;
+  display: block;
+}
+
+/* ── HIDDEN CARDS ────────────────────────────────────────────────── */
+.blog-post-card.hidden { display: none; }
+
+/* ── LOAD MORE ───────────────────────────────────────────────────── */
+#load-more-btn {
+  display: none;
+  background: transparent; color: var(--blue);
+  font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 0.92rem;
+  padding: 11px 28px; border-radius: 30px;
+  border: 1.5px solid var(--blue);
+  cursor: pointer; margin: 0 auto;
+  transition: background .2s, color .2s;
+}
+#load-more-btn:hover { background: var(--blue); color: var(--white); }
+.load-more-wrap { text-align: center; }
+
+/* ── EMPTY STATE ─────────────────────────────────────────────────── */
+.empty-state {
+  display: none;
+  text-align: center; padding: 72px 24px;
+  grid-column: 1 / -1;
+}
+.empty-state svg { margin-bottom: 20px; opacity: .35; }
+.empty-state h3 { color: var(--navy); margin-bottom: 10px; font-size: 1.1rem; }
+.empty-state p { font-size: 0.95rem; max-width: 420px; margin: 0 auto 24px; }
+.btn-primary {
+  display: inline-block;
+  background: var(--grad-btn); color: #000;
+  font-weight: 600; font-size: 0.95rem;
+  padding: 13px 26px; border-radius: 30px; border: none;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(97,182,226,.3);
+  transition: box-shadow .2s, transform .2s;
+}
+.btn-primary:hover { box-shadow: 0 5px 18px rgba(97,182,226,.45); transform: translateY(-1px); }
+
+/* ── FOOTER ──────────────────────────────────────────────────────── */
+footer { background: var(--navy); padding: 36px 32px; }
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { display: flex; align-items: center; text-decoration: none; }
+.footer-logo img { height: 40px; width: 40px; object-fit: contain; border-radius: 50%; }
+.footer-copy-text {
+  font-size: 0.82rem; color: rgba(255,255,255,.45); text-align: center;
+}
+.footer-links { display: flex; gap: 6px; flex-wrap: wrap; }
+.footer-links a {
+  color: rgba(255,255,255,.5); text-decoration: none; font-size: 0.82rem;
+  padding: 5px 9px; border-radius: 6px; transition: color .15s; white-space: nowrap;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,.3); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: -32px; right: -32px; background: var(--white);
+    padding: 12px 20px 16px; box-shadow: 0 12px 32px rgba(0,0,0,.1);
+    border-radius: 0 0 12px 12px; z-index: 999; gap: 0;
+  }
+}
+@media (max-width: 900px) {
+  #blog-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  .container { padding: 0 20px; }
+  .blog-hero { padding: 48px 20px 40px; }
+  .blog-section { padding: 40px 20px 56px; }
+  .filter-bar { padding: 20px 20px 0; }
+  #blog-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="https://einoffenerblick.de" class="nav-logo">
+      <img src="../Images/LogoWebsite.png" alt="Ein offener Blick">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/index.html">Das Problem</a></li>
+      <li><a href="/index.html#loesung">Unsere Lösung</a></li>
+      <li><a href="/index.html#unternehmen">Für Unternehmen</a></li>
+      <li><a href="/index.html#berater">Für Berater</a></li>
+      <li><a href="/blog/" class="active">Blog</a></li>
+      <li><a href="/index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="/index.html#kontakt" class="nav-cta">Erstgespräch vereinbaren</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="blog-hero-inner">
+    <span class="hero-eyebrow">Aus der Praxis</span>
+    <h1>Aus der Praxis: Wissensverlust verhindern</h1>
+    <p class="blog-hero-sub">Was wir bei der Arbeit mit deutschen KMU lernen — und was Sie davon mitnehmen können.</p>
+    <div class="hero-trust">
+      <span>Aktualisiert wöchentlich</span>
+      <span>Praxisbeispiele</span>
+      <span>Förder-Updates</span>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER -->
+<div class="filter-bar" role="navigation" aria-label="Artikel filtern">
+  <div class="filter-inner">
+    <button class="filter-pill active" data-filter="all">Alle anzeigen</button>
+    <button class="filter-pill" data-filter="Wissenstransfer">Wissenstransfer</button>
+    <button class="filter-pill" data-filter="Unternehmensnachfolge">Unternehmensnachfolge</button>
+    <button class="filter-pill" data-filter="Fachkräftemangel">Fachkräftemangel</button>
+    <button class="filter-pill" data-filter="KI im Mittelstand">KI im Mittelstand</button>
+    <button class="filter-pill" data-filter="Methodik &amp; Praxis">Methodik &amp; Praxis</button>
+    <button class="filter-pill" data-filter="Förderung &amp; Finanzierung">Förderung &amp; Finanzierung</button>
+    <button class="filter-pill" data-filter="Datenschutz &amp; Recht">Datenschutz &amp; Recht</button>
+    <button class="filter-pill" data-filter="Build in Public">Build in Public</button>
+  </div>
+</div>
+
+<!-- BLOG GRID -->
+<section class="blog-section">
+  <div class="blog-grid-inner">
+    <div id="blog-grid">
+
+      <!-- Card 1 - Neu -->
+      <article class="blog-post-card" data-category="Unternehmensnachfolge">
+        <a href="/blog/unternehmensnachfolge-stagnation-2030/" class="blog-post-link">
+          <div class="blog-post-image-wrapper">
+            <img src="images/blog-2026-05-04-nachfolge-stagnation.jpg" alt="Mann Anfang 60 in Arbeitsjacke steht allein in leerer Werkstatt und blickt aus dem Fenster" class="blog-post-image" loading="lazy" width="1200" height="630">
+            <div class="new-post-indicator">Neu</div>
+          </div>
+          <div class="blog-post-content">
+            <span class="blog-post-category">Unternehmensnachfolge</span>
+            <h2 class="blog-post-title">Unternehmensnachfolge: Die Zahl, die niemand hören will</h2>
+            <div class="post-meta">
+              <span>04. Mai 2026</span>
+              <span>Sonja Strahler</span>
+              <span>8 Min. Lesezeit</span>
+            </div>
+            <p class="post-excerpt">
+              Woran liegt es, dass Unternehmen keinen Nachfolger finden - und was können sie tun?
+            </p>
+            <span class="read-more">Weiterlesen →</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="blog-post-card" data-category="Wissenstransfer">
+        <a href="/blog/wissensverlust-rente-kmu-kosten/" class="blog-post-link">
+          <div class="blog-post-image-wrapper">
+            <div class="blog-post-image-placeholder">1200 × 630 px · blog-2026-04-28-wissensverlust.jpg</div>
+            <div class="new-post-indicator">Neu</div>
+          </div>
+          <div class="blog-post-content">
+            <span class="blog-post-category">Wissenstransfer</span>
+            <h2 class="blog-post-title">Was Wissensverlust durch Renteneintritt deutsche KMU 2026 wirklich kostet</h2>
+            <div class="post-meta">
+              <span>28. April 2026</span>
+              <span>Sonja Strahler</span>
+              <span>6 Min. Lesezeit</span>
+            </div>
+            <p class="post-excerpt">
+              Drei strukturierte Gespräche mit dem Mitarbeiter, der nächsten Sommer in Rente geht — das genügt, um den Großteil seines Erfahrungswissens zu sichern. Wir zeigen, wie das in der Praxis aussieht.
+            </p>
+            <span class="read-more">Weiterlesen →</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="blog-post-card" data-category="Methodik &amp; Praxis">
+        <a href="/blog/drei-gespraeche-lebenswerk-strukturierte-interviews/" class="blog-post-link">
+          <div class="blog-post-image-wrapper">
+            <div class="blog-post-image-placeholder">1200 × 630 px · blog-2026-04-22-interviews.jpg</div>
+          </div>
+          <div class="blog-post-content">
+            <span class="blog-post-category">Methodik &amp; Praxis</span>
+            <h2 class="blog-post-title">Drei Gespräche, ein Lebenswerk: Wie strukturierte Interviews funktionieren</h2>
+            <div class="post-meta">
+              <span>22. April 2026</span>
+              <span>Sonja Strahler</span>
+              <span>8 Min. Lesezeit</span>
+            </div>
+            <p class="post-excerpt">
+              Ein Handwerksmeister mit 34 Jahren Berufserfahrung. Drei Gespräche à 90 Minuten. Das Ergebnis: eine durchsuchbare Wissensdatenbank, die seinem Nachfolger Monate an Einarbeitung erspart.
+            </p>
+            <span class="read-more">Weiterlesen →</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="blog-post-card" data-category="KI im Mittelstand">
+        <a href="/blog/lokale-ki-kmu-besser-als-chatgpt-api/" class="blog-post-link">
+          <div class="blog-post-image-wrapper">
+            <div class="blog-post-image-placeholder">1200 × 630 px · blog-2026-04-15-lokale-ki.jpg</div>
+          </div>
+          <div class="blog-post-content">
+            <span class="blog-post-category">KI im Mittelstand</span>
+            <h2 class="blog-post-title">Warum lokale KI für KMU der bessere Weg ist als ChatGPT-API</h2>
+            <div class="post-meta">
+              <span>15. April 2026</span>
+              <span>Sonja Strahler</span>
+              <span>5 Min. Lesezeit</span>
+            </div>
+            <p class="post-excerpt">
+              Viele Mittelständler denken, KI bedeutet automatisch Cloud und Datenweitergabe. Das stimmt nicht. Wir erklären, warum lokale Modelle für sensibles Firmenwissen die klügere Wahl sind — technisch und rechtlich.
+            </p>
+            <span class="read-more">Weiterlesen →</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Empty state (shown when filter matches nothing) -->
+      <div class="empty-state" id="empty-state" role="status" aria-live="polite">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5a5a72" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+        <h3>Keine Artikel in dieser Kategorie</h3>
+        <p>Zu diesem Thema entstehen gerade die ersten Artikel. Schauen Sie bald wieder vorbei.</p>
+        <a href="/index.html#kontakt" class="btn-primary">Erstgespräch vereinbaren</a>
+      </div>
+
+    </div>
+
+    <!-- Load more -->
+    <div class="load-more-wrap">
+      <button id="load-more-btn" aria-label="Weitere Artikel laden">Weitere Artikel laden</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="https://einoffenerblick.de" class="footer-logo">
+      <img src="../Images/LogoWebsite.png" alt="Ein offener Blick">
+    </a>
+    <span class="footer-copy-text">Firmenwissen retten ist ein Angebot der Ein offener Blick GmbH</span>
+    <div class="footer-links">
+      <a href="/kleingedrucktes-firmenwissen.html#impressum">Impressum</a>
+      <a href="/kleingedrucktes-firmenwissen.html#datenschutz">Datenschutz</a>
+      <a href="/kleingedrucktes-firmenwissen.html">Das Kleingedruckte</a>
+      <a href="https://www.linkedin.com/in/sonja-strahler/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);display:inline-flex;align-items:center;gap:5px;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="rgba(255,255,255,.5)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    <span class="footer-copy">© 2026 Ein offener Blick GmbH</span>
+  </div>
+</footer>
+
+<script>
+// ── Nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+navToggle.addEventListener('click', function() {
+  navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+});
+
+// ── Filter logic
+const BATCH_SIZE = 6;
+var currentFilter = 'all';
+var visibleCount  = BATCH_SIZE;
+
+function allCards() {
+  return Array.from(document.querySelectorAll('#blog-grid .blog-post-card'));
+}
+
+function applyFilter() {
+  var cards = allCards();
+  var matching = cards.filter(function(c) {
+    if (currentFilter === 'all') return true;
+    return c.dataset.category === currentFilter;
+  });
+
+  // Reset visibility
+  cards.forEach(function(c) { c.classList.add('hidden'); });
+
+  // Show matching up to visibleCount
+  matching.forEach(function(c, i) {
+    if (i < visibleCount) c.classList.remove('hidden');
+  });
+
+  // Empty state
+  var emptyState = document.getElementById('empty-state');
+  emptyState.style.display = matching.length === 0 ? 'block' : 'none';
+
+  // Load more button — show only if 12+ total and there are more to show
+  var btn = document.getElementById('load-more-btn');
+  var totalCards = cards.length;
+  if (totalCards >= 12 && matching.length > visibleCount) {
+    btn.style.display = 'inline-block';
+  } else {
+    btn.style.display = 'none';
+  }
+}
+
+document.querySelectorAll('.filter-pill').forEach(function(pill) {
+  pill.addEventListener('click', function() {
+    document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+    pill.classList.add('active');
+    currentFilter  = pill.dataset.filter;
+    visibleCount   = BATCH_SIZE;
+    applyFilter();
+  });
+});
+
+document.getElementById('load-more-btn').addEventListener('click', function() {
+  visibleCount += BATCH_SIZE;
+  applyFilter();
+});
+
+// Init
+applyFilter();
+</script>
+</body>
+</html>
