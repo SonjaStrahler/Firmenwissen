@@ -309,3 +309,56 @@ Dunkel:      #000000
 4. **assume-unchanged checken** — Bei Problemen mit `git ls-files -v | grep "^h"`
 5. **Firmenwissen = Live** — Was in Firmenwissen ist, ist online!
 6. **Retten-Firmenwissen als Backup** — Abends mergen!
+
+---
+
+## 📚 Blog-Workflow (aktualisiert 04.05.2026)
+
+**URL-Struktur:**
+- Übersicht: `firmenwissen-retten.de/blog/` → Datei `blog/index.html`
+- Einzelartikel: `firmenwissen-retten.de/blog/<slug>/` → Datei `blog/<slug>/index.html`
+- Veröffentlichte Bilder: `blog/images/`
+- Lokale Eingangsdaten: `blog/_eingang/` (nicht live veröffentlichen)
+
+**Wichtig:**
+- `blog:index.html` ist nur eine lokale Weiterleitung/Stolperfalle aus dem Editor. Die echte Blog-Übersicht ist `blog/index.html`.
+- Neue Cards kommen in `blog/index.html` immer oben in das Grid.
+- Der neueste Artikel bekommt das Label `Neu`; beim nächsten Artikel das alte `Neu`-Label entfernen.
+- Card-Bilder sollen in der Übersicht nicht künstlich zugeschnitten werden. Aktuell gilt: echtes Bild, natürliche Höhe, keine Blur-/Platzhalterflächen.
+
+**So liefert Sonja neue Artikel an Codex:**
+```text
+blog/_eingang/YYYY-MM-DD-kurzer-artikel-slug/
+  artikel.txt
+  meta-tags.txt
+  card.txt
+  teaser.jpg
+```
+
+Wenn bereits eine komplette HTML-Seite vorhanden ist:
+```text
+blog/_eingang/YYYY-MM-DD-kurzer-artikel-slug/
+  komplette-seite.txt
+  meta-tags.txt
+  card.txt
+  teaser.jpg
+```
+
+**Bildregel:**
+- Ein großes `teaser.jpg` reicht.
+- Codex optimiert es webtauglich, aktuell Zielgröße ungefähr 1200 px Breite.
+- Wenn Social Preview wichtig ist: OpenGraph/Twitter-Bildpfade mit `.jpg` prüfen.
+
+**Einbau-Schritte für Codex:**
+1. Rohdaten in `blog/_eingang/...` lesen.
+2. Artikelordner mit Slug anlegen: `blog/<slug>/index.html`.
+3. Teaserbild nach `blog/images/` kopieren/optimieren.
+4. Artikel-Card in `blog/index.html` oben ergänzen.
+5. Navigation prüfen: Blog-Link auf Startseite, Blogseite, Artikel, Kleingedrucktes.
+6. `Das Problem` soll auf `/index.html` zeigen, nicht auf `#problem`.
+7. Dateibasiert prüfen: Artikeldatei, Bild, Card-Link, Metadaten und `rg` nach kaputten Bildpfaden.
+
+**Themen-Kategorien für Filter:**
+Wissenstransfer | Unternehmensnachfolge | Fachkräftemangel | KI im Mittelstand | Methodik & Praxis | Förderung & Finanzierung | Datenschutz & Recht | Build in Public
+
+Eine Kurzfassung liegt zusätzlich in `blog/README.md`.
