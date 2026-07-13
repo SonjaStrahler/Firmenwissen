@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firmenwissen retten — Ein offener Blick GmbH | Oldenburg</title>
+<meta name="description" content="Wir sichern das Erfahrungswissen Ihrer langjährigen Mitarbeiter — digital, durchsuchbar, dauerhaft verfügbar. DSGVO-konform und lokal. Für KMU im Mittelstand.">
+<meta name="keywords" content="Firmenwissen retten, Wissenstransfer, Wissensmanagement, KMU, Mittelstand, Nachfolge, Rente, BAFA, Oldenburg, systemische Beratung, lokale KI">
+<meta name="author" content="Ein offener Blick GmbH">
+<meta name="publisher" content="Ein offener Blick GmbH">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://einoffenerblick.de/firmenwissen-retten">
+<meta name="geo.region" content="DE-NI">
+<meta name="geo.placename" content="Oldenburg">
+<meta name="geo.position" content="53.1434501;8.2145521">
+<meta name="ICBM" content="53.1434501, 8.2145521">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Firmenwissen retten — Ein offener Blick GmbH">
+<meta property="og:description" content="Wir sichern das Erfahrungswissen Ihrer Mitarbeiter — digital, durchsuchbar, dauerhaft. DSGVO-konform und lokal.">
+<meta property="og:url" content="https://einoffenerblick.de/firmenwissen-retten">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Ein offener Blick GmbH">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Ein offener Blick GmbH",
+  "legalName": "Ein offener Blick GmbH",
+  "description": "Wissenstransfer für den Mittelstand. Wir sichern Erfahrungswissen durch systemische Interviews und lokale KI-Technologie.",
+  "url": "https://einoffenerblick.de",
+  "email": "info@einoffenerblick.de",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Oldenburg",
+    "addressRegion": "Niedersachsen",
+    "addressCountry": "DE"
+  },
+  "areaServed": "DE",
+  "serviceType": ["Wissenstransfer", "Wissensmanagement", "KMU Beratung", "Nachfolgeberatung"],
+  "sameAs": ["https://www.linkedin.com/in/sonja-strahler/"]
+}
+</script>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="Images/LogoWebsite.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #ffffff;
+  color: #1a1a2e;
+  line-height: 1.65;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+:root {
+  --navy:   #1A2240;
+  --blue:   #61b6e2;
+  --orange: #feb365;
+  --bg:     #f5f4f7;
+  --border: #e2e1ea;
+  --muted:  #5a5a72;
+  --white:  #ffffff;
+  --grad-btn: linear-gradient(45deg, #61b6e2, #feb365, #ca72da);
+}
+
+/* ── Typography ─────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; color: var(--navy); }
+h1 { font-size: clamp(30px, 4vw, 50px); letter-spacing: -0.02em; }
+h2 { font-size: clamp(24px, 3vw, 36px); letter-spacing: -0.01em; }
+h3 { font-size: 1.1rem; }
+p  { color: var(--muted); line-height: 1.7; }
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+.section    { padding: 80px 0; }
+.section--sm { padding: 56px 0; }
+
+/* ── NAV ─────────────────────────────────────────────────────────── */
+.navbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  height: 64px; display: flex; align-items: center;
+  justify-content: space-between; gap: 24px;
+}
+.nav-logo { display: flex; align-items: center; text-decoration: none; transition: opacity .2s; }
+.nav-logo:hover { opacity: .85; }
+.nav-logo img { height: 44px; width: 44px; object-fit: contain; border-radius: 50%; }
+.nav-links { display: flex; list-style: none; gap: 2px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none; font-size: 0.875rem;
+  padding: 6px 13px; border-radius: 6px; transition: color .15s, background .15s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--navy); background: var(--bg); }
+.nav-cta {
+  background: var(--grad-btn);
+  color: #000; font-weight: 600; font-size: 0.875rem;
+  padding: 9px 20px; border-radius: 30px; border: none;
+  text-decoration: none; white-space: nowrap; cursor: pointer;
+  box-shadow: 0 3px 10px rgba(97,182,226,.3);
+  transition: box-shadow .2s, transform .2s;
+}
+.nav-cta:hover { box-shadow: 0 5px 16px rgba(97,182,226,.45); transform: translateY(-1px); }
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+/* ── HERO ────────────────────────────────────────────────────────── */
+.hero { background: var(--bg); padding: 72px 32px 64px; }
+.hero-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center;
+}
+.hero-label {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 20px; display: block;
+}
+.hero h1 { margin-bottom: 20px; }
+.hero h1 span { color: var(--blue); }
+.hero-sub {
+  font-size: 1.05rem; color: var(--muted);
+  margin-bottom: 36px; max-width: 460px; line-height: 1.75;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+.btn-primary {
+  background: var(--grad-btn); color: #000;
+  font-weight: 600; font-size: 0.95rem;
+  padding: 13px 26px; border-radius: 30px; border: none;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(97,182,226,.3);
+  transition: box-shadow .2s, transform .2s;
+}
+.btn-primary:hover { box-shadow: 0 5px 18px rgba(97,182,226,.45); transform: translateY(-1px); }
+.btn-secondary {
+  background: transparent; color: var(--navy);
+  font-weight: 500; font-size: 0.95rem;
+  padding: 12px 24px; border-radius: 30px;
+  border: 1.5px solid var(--border);
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: border-color .2s, background .2s;
+}
+.btn-secondary:hover { border-color: var(--navy); background: rgba(26,34,64,.04); }
+.trust-list { display: flex; flex-direction: column; gap: 8px; }
+.trust-item {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 0.88rem; color: var(--muted);
+}
+.trust-item::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--blue); flex-shrink: 0;
+}
+
+/* Hero card */
+.hero-card {
+  background: var(--white); border-radius: 16px;
+  padding: 36px; box-shadow: 0 4px 24px rgba(26,34,64,.09);
+  border: 1px solid var(--border);
+}
+.hero-card-num {
+  font-size: 56px; font-weight: 700; color: var(--orange);
+  line-height: 1; margin-bottom: 10px;
+}
+.hero-card-desc {
+  font-size: 0.92rem; color: var(--muted); line-height: 1.65; margin-bottom: 24px;
+}
+.hero-card-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+.hero-card-sub { font-size: 0.88rem; color: var(--muted); line-height: 1.65; font-style: italic; }
+
+/* ── STATS BAR ───────────────────────────────────────────────────── */
+.stats-bar { background: var(--navy); padding: 48px 32px; }
+.stats-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 0; text-align: center;
+}
+.stat-item { padding: 0 24px; }
+.stat-item + .stat-item { border-left: 1px solid rgba(255,255,255,.1); }
+.stat-num {
+  font-size: 42px; font-weight: 700; color: var(--orange);
+  line-height: 1; margin-bottom: 8px;
+}
+.stat-desc { font-size: 0.88rem; color: rgba(255,255,255,.6); line-height: 1.55; }
+
+/* ── SECTION HEADER ──────────────────────────────────────────────── */
+.section-eyebrow {
+  display: block; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 12px;
+}
+.section-lead {
+  font-size: 1.05rem; color: var(--muted); max-width: 580px; line-height: 1.7;
+  margin-top: 12px; margin-bottom: 48px;
+}
+
+/* ── PAIN CARDS ─────────────────────────────────────────────────── */
+.pain-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+}
+.pain-card {
+  background: var(--white); border-radius: 12px;
+  border: 1px solid var(--border); padding: 28px 24px;
+  transition: box-shadow .25s, transform .25s;
+}
+.pain-card:hover { box-shadow: 0 8px 28px rgba(26,34,64,.08); transform: translateY(-2px); }
+.pain-card-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.pain-card h3 { color: var(--navy); margin-bottom: 10px; font-size: 1rem; }
+.pain-card p  { font-size: 0.9rem; }
+
+/* ── STEPS ───────────────────────────────────────────────────────── */
+.steps-section { background: var(--bg); }
+.steps-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 32px;
+  position: relative;
+}
+.steps-connector {
+  position: absolute; top: 22px;
+  left: calc(33.33% - 12px); right: calc(33.33% - 12px);
+  height: 1px; background: var(--border); z-index: 0;
+}
+.step { position: relative; z-index: 1; }
+.step-num {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--navy); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1rem; margin-bottom: 18px;
+}
+.step h3 { color: var(--navy); margin-bottom: 10px; font-size: 1rem; }
+.step p  { font-size: 0.9rem; }
+
+/* ── DARK SECTION ────────────────────────────────────────────────── */
+.dark-section { background: var(--navy); }
+.dark-section h2 { color: var(--white); }
+.dark-section .section-eyebrow { color: var(--blue); }
+.dark-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+}
+.feat-list { list-style: none; margin: 28px 0 32px; display: flex; flex-direction: column; gap: 18px; }
+.feat { display: flex; gap: 13px; align-items: flex-start; }
+.feat-check {
+  width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
+  background: rgba(97,182,226,.2); border: 1px solid rgba(97,182,226,.4);
+  display: flex; align-items: center; justify-content: center;
+}
+.feat strong { display: block; color: var(--white); font-size: 0.95rem; margin-bottom: 2px; }
+.feat span { font-size: 0.86rem; color: rgba(255,255,255,.58); line-height: 1.55; }
+.foerder-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(254,179,101,.35); background: rgba(254,179,101,.1);
+  border-radius: 8px; padding: 9px 16px;
+  font-size: 0.85rem; font-weight: 500; color: var(--orange); margin-bottom: 28px;
+}
+.info-box {
+  background: rgba(97,182,226,.09); border: 1px solid rgba(97,182,226,.2);
+  border-radius: 14px; padding: 28px 28px;
+}
+.info-box-num { font-size: 40px; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 10px; }
+.info-box p   { font-size: 0.9rem; color: rgba(255,255,255,.6); line-height: 1.65; }
+
+/* ── BERATER SECTION ─────────────────────────────────────────────── */
+.berater-section { background: var(--white); }
+.modelle-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-bottom: 52px;
+}
+.modell-card {
+  background: var(--bg); border-radius: 12px;
+  border: 1px solid var(--border); padding: 28px 22px;
+  transition: box-shadow .2s;
+}
+.modell-card:hover { box-shadow: 0 6px 22px rgba(26,34,64,.08); }
+.modell-num { font-size: 28px; font-weight: 700; color: var(--navy); opacity: .12; line-height: 1; margin-bottom: 14px; }
+.modell-line { height: 2px; background: var(--blue); border-radius: 2px; margin-bottom: 16px; }
+.modell-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 600;
+  background: rgba(97,182,226,.12); color: #1a6090;
+  border-radius: 30px; padding: 3px 10px; margin-bottom: 12px;
+}
+.modell-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: 10px; }
+.modell-card p  { font-size: 0.88rem; }
+.berater-lower {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+}
+.berater-points { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.berater-point {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 0.95rem; color: var(--muted);
+}
+.berater-point::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--blue); margin-top: 8px; flex-shrink: 0;
+}
+.contact-teaser {
+  background: var(--navy); border-radius: 14px; padding: 30px 28px;
+}
+.contact-teaser h4 { color: var(--white); font-size: 1rem; margin-bottom: 10px; }
+.contact-teaser p  { font-size: 0.88rem; color: rgba(255,255,255,.58); margin-bottom: 18px; }
+.contact-teaser a.mail-link { color: var(--blue); font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.contact-teaser a.mail-link:hover { text-decoration: underline; }
+
+/* ── TEAM ────────────────────────────────────────────────────────── */
+.team-section { background: var(--bg); }
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.person-card { background: var(--white); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
+.person-card img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; object-position: 82% center; }
+.person-info { padding: 24px 24px 26px; }
+.person-info h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 3px; }
+.person-role { font-size: 0.8rem; font-weight: 600; color: var(--blue); margin-bottom: 12px; display: block; }
+.person-info p { font-size: 0.88rem; margin-bottom: 16px; }
+.certs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.cert {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 4px 12px;
+  font-size: 0.75rem; font-weight: 600; color: var(--navy);
+}
+.team-right { display: flex; flex-direction: column; gap: 20px; }
+.team-img { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
+.team-img img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; object-position: center 38%; }
+.mini-stats-row { display: flex; gap: 12px; }
+.mini-stat {
+  flex: 1; background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 16px; text-align: center;
+}
+.mini-stat-num { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.mini-stat-lbl { font-size: 0.75rem; color: var(--muted); }
+.li-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #0A66C2; color: var(--white);
+  font-size: 0.88rem; font-weight: 600; padding: 10px 18px;
+  border-radius: 8px; text-decoration: none; transition: background .2s;
+}
+.li-btn:hover { background: #085296; }
+
+/* ── FAQ ─────────────────────────────────────────────────────────── */
+.faq-section { background: var(--white); }
+.faq-list { display: flex; flex-direction: column; gap: 6px; max-width: 740px; margin-top: 40px; }
+.faq-item { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.faq-btn {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 22px; background: none; border: none; cursor: pointer;
+  font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 0.97rem;
+  text-align: left; color: var(--navy); gap: 14px;
+}
+.faq-btn:hover { background: var(--bg); }
+.faq-icon {
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  transition: transform .25s, background .2s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--navy); }
+.faq-item.open .faq-icon svg { stroke: var(--white); }
+.faq-body {
+  max-height: 0; overflow: hidden; padding: 0 22px;
+  font-size: 0.92rem; color: var(--muted); line-height: 1.7;
+  transition: max-height .3s ease, padding .25s ease;
+}
+.faq-item.open .faq-body { max-height: 200px; padding: 0 22px 18px; }
+
+/* ── CONTACT ─────────────────────────────────────────────────────── */
+.contact-section { background: var(--bg); }
+.contact-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+.contact-intro h2 { margin-bottom: 14px; }
+.contact-intro p  { margin-bottom: 28px; }
+.contact-detail { display: flex; flex-direction: column; gap: 12px; }
+.contact-detail a {
+  color: var(--blue); text-decoration: none; font-weight: 500; font-size: 0.95rem;
+  display: flex; align-items: center; gap: 8px;
+}
+.contact-detail a:hover { text-decoration: underline; }
+
+/* Form */
+.form-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.fg { display: flex; flex-direction: column; gap: 5px; }
+.fg label { font-size: 0.75rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--navy); }
+.fg input, .fg textarea, .fg select {
+  font-family: 'Roboto', sans-serif; font-size: 0.95rem;
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 10px 13px; color: var(--navy); background: var(--white);
+  outline: none; transition: border-color .2s, box-shadow .2s; width: 100%;
+}
+.fg input:focus, .fg textarea:focus, .fg select:focus {
+  border-color: var(--blue); box-shadow: 0 0 0 3px rgba(97,182,226,.12);
+}
+.fg textarea { resize: vertical; min-height: 100px; }
+.form-footer { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+.form-note { font-size: 0.82rem; color: var(--muted); }
+.form-success {
+  display: none; background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 40px 28px; text-align: center;
+}
+.form-success h3 { color: var(--navy); margin-bottom: 8px; }
+.form-success p { font-size: 0.95rem; }
+
+/* ── FOOTER ──────────────────────────────────────────────────────── */
+footer { background: var(--navy); padding: 36px 32px; }
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: flex-start; gap: 18px;
+}
+.footer-logo { display: flex; align-items: center; text-decoration: none; }
+.footer-logo img { height: 40px; width: 40px; object-fit: contain; border-radius: 50%; }
+.footer-kleingedrucktes {
+  flex: 1;
+  font-size: 0.85rem; color: rgba(255,255,255,.62); line-height: 1.6;
+}
+.footer-kleingedrucktes p { color: rgba(255,255,255,.62); font-size: 0.85rem; margin: 0; }
+.footer-kleingedrucktes-links {
+  display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0;
+}
+.footer-kleingedrucktes-links a {
+  color: rgba(255,255,255,.78); text-decoration: none; transition: color .15s;
+}
+.footer-kleingedrucktes-links a:hover { color: var(--white); text-decoration: underline; }
+.footer-kleingedrucktes-sep { color: rgba(255,255,255,.32); }
+
+/* Temporär: INQA-/Förderhinweise optisch ausblenden, aber im HTML belassen.
+   Rückbau: Klasse "funding-temporarily-hidden" an den markierten Elementen entfernen
+   und die Meta-Texte oben wieder auf Förderhinweise prüfen/anpassen. */
+.funding-temporarily-hidden {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: 0; right: 0; background: var(--white);
+    padding: 12px 20px 16px; box-shadow: 0 12px 32px rgba(0,0,0,.1);
+    border-radius: 0 0 12px 12px; z-index: 999; gap: 0;
+  }
+  .hero-inner, .dark-inner, .team-grid, .berater-lower, .contact-inner { grid-template-columns: 1fr; gap: 36px; }
+  .hero-card, .hero-inner > div:last-child { display: none; }
+  .pain-grid, .steps-grid, .modelle-grid { grid-template-columns: 1fr; }
+  .steps-connector { display: none; }
+  .stats-grid { grid-template-columns: 1fr; gap: 28px; text-align: left; }
+  .stat-item + .stat-item { border-left: none; border-top: 1px solid rgba(255,255,255,.1); padding-top: 28px; }
+  .form-grid2 { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  .container { padding: 0 20px; }
+  .section { padding: 56px 0; }
+  .hero { padding: 52px 20px 48px; }
+  .mini-stats-row { flex-direction: column; }
+  .footer-kleingedrucktes-links { flex-direction: column; gap: 4px; }
+  .footer-kleingedrucktes-sep { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-inner" style="position:relative;">
+    <a href="https://einoffenerblick.de" class="nav-logo">
+      <img src="Images/LogoWebsite.png" alt="Ein offener Blick">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/index.html">Das Problem</a></li>
+      <li><a href="#loesung">Unsere Lösung</a></li>
+      <li><a href="#unternehmen">Für Unternehmen</a></li>
+      <li><a href="#berater">Für Berater</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="kleingedrucktes-firmenwissen.html">Kleingedrucktes</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="#kontakt" class="nav-cta">Erstgespräch vereinbaren</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-label">Wissenstransfer für den Mittelstand</span>
+      <h1>Firmenwissen retten.<br><span>Bevor es verschwindet.</span></h1>
+      <p class="hero-sub">Wenn langjährige Mitarbeiter gehen, nehmen sie ihr Erfahrungswissen mit — oft unwiederbringlich. Wir sichern dieses Wissen: strukturiert, vertraulich und dauerhaft verfügbar.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn-primary">Jetzt Erstgespräch vereinbaren</a>
+        <a href="#loesung" class="btn-secondary">So funktioniert es</a>
+      </div>
+      <div class="trust-list">
+        <div class="trust-item funding-temporarily-hidden">Bis zu 80 % staatlich gefördert (INQA-Coaching)</div>
+        <div class="trust-item">100 % lokal — keine Cloud, DSGVO-konform</div>
+        <div class="trust-item">Echte Gespräche, keine Fragebögen</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-num">79%</div>
+      <p class="hero-card-desc">der befragten Geschäftsführer geben an: Sie haben kein System zur Wissenssicherung — obwohl der Renteneintritt von Schlüsselpersonen konkret bevorsteht.</p>
+      <div class="hero-card-divider"></div>
+      <p class="hero-card-sub">Erfahrungswissen ist das wertvollste und am wenigsten gesicherte Kapital im Mittelstand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">79%</div>
+      <div class="stat-desc">der GF ohne System<br>zur Wissenssicherung</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4–8</div>
+      <div class="stat-desc">Wochen bis zur fertigen<br>Wissensdatenbank</div>
+    </div>
+    <div class="stat-item funding-temporarily-hidden">
+      <div class="stat-num">80%</div>
+      <div class="stat-desc">staatliche Förderung<br>über INQA-Coaching möglich</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section" id="problem">
+  <div class="container">
+    <span class="section-eyebrow">Das Problem</span>
+    <h2>Jeder kennt das Risiko.<br>Kaum jemand handelt rechtzeitig.</h2>
+    <p class="section-lead">Erfahrungswissen ist nicht in Handbüchern — es steckt in Menschen. Wenn diese gehen, ist das Wissen weg.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Ihr bester Vertriebsleiter geht in zwei Jahren in Rente.</h3>
+        <p>Jahrzehntelange Kundenbeziehungen, ungeschriebene Regeln, bewährte Strategien — in einem Kopf, nirgends dokumentiert.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Neue Mitarbeiter brauchen Monate für das, was 20 Jahre aufgebaut haben.</h3>
+        <p>Einarbeitung dauert länger als nötig, weil das Wissen nie explizit gemacht wurde. Fehler wiederholen sich.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h3>Dokumentation existiert nur in den Köpfen der Erfahrenen.</h3>
+        <p>Handbücher sind veraltet, Wikis leer, Übergaben improvisiert. Das System lebt von stillschweigenden Abmachungen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section steps-section" id="loesung">
+  <div class="container">
+    <span class="section-eyebrow">So funktioniert es</span>
+    <h2>Drei Schritte zum gesicherten Wissen.</h2>
+    <p class="section-lead">Kein IT-Projekt, keine Reorganisation. Strukturierte Gespräche — und eine Datenbank, die Ihr Wissen dauerhaft verfügbar macht.</p>
+    <div class="steps-grid">
+      <div class="steps-connector"></div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Wir hören zu.</h3>
+        <p>In professionell geführten Gesprächen holen wir das Wissen heraus, das in keinem Handbuch steht. Einfühlsam, strukturiert, wertschätzend. Keine Fragebögen — echte Gespräche mit echten Menschen.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Wir machen es verfügbar.</h3>
+        <p>Aus Gesprächen wird ein System. Unser Verfahren verwandelt implizites Wissen in eine Ressource, die Ihr Unternehmen jederzeit nutzen kann — sicher, lokal, DSGVO-konform.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Ihr Wissen arbeitet für Sie.</h3>
+        <p>Wie ein Kollege, der immer da ist. Neue Mitarbeiter finden Antworten in Sekunden. Bewährte Strategien gehen nicht mehr verloren — egal wer geht, wechselt oder ausfällt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FÜR UNTERNEHMEN -->
+<section class="section dark-section" id="unternehmen">
+  <div class="container">
+    <div class="dark-inner">
+      <div>
+        <span class="section-eyebrow">Für Unternehmen</span>
+        <h2 style="margin-bottom:10px;">Erfahrungswissen sichern — bevor es zu spät ist.</h2>
+        <p style="color:rgba(255,255,255,.6);margin-bottom:0;">Für KMU mit langjährigen Mitarbeitern, die vor dem Renteneintritt oder einem Wechsel stehen.</p>
+        <div class="foerder-badge funding-temporarily-hidden" style="margin-top:24px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#feb365" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Bis zu 80 % über INQA-Coaching förderbar
+        </div>
+        <ul class="feat-list">
+          <li class="feat funding-temporarily-hidden">
+            <div class="feat-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Staatlich gefördert</strong><span>Bis zu 80 % Förderanteil — wir begleiten Sie durch den gesamten Prozess.</span></div>
+          </li>
+          <li class="feat">
+            <div class="feat-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>100 % lokal — keine Cloud</strong><span>Ihre Daten verlassen das Unternehmen nicht. Alles läuft auf Ihrer eigenen Hardware.</span></div>
+          </li>
+          <li class="feat">
+            <div class="feat-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Sofort durchsuchbar</strong><span>Neue Mitarbeiter finden Antworten in Sekunden statt in Monaten der Einarbeitung.</span></div>
+          </li>
+          <li class="feat">
+            <div class="feat-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Mensch zu Mensch</strong><span>Echte Interviews — keine Fragebögen. Ihre Mitarbeiter werden gehört, nicht abgearbeitet.</span></div>
+          </li>
+        </ul>
+        <a href="#kontakt" class="btn-primary">Unverbindliches Erstgespräch vereinbaren</a>
+      </div>
+      <div>
+        <div class="info-box">
+          <div class="info-box-num">4–8 Wochen</div>
+          <p>Typische Projektlaufzeit: vom ersten Gespräch bis zur fertigen, sofort durchsuchbaren Wissensdatenbank — inklusive Schulung Ihrer Mitarbeiter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FÜR BERATER -->
+<section class="section berater-section" id="berater">
+  <div class="container">
+    <span class="section-eyebrow">Für Berater</span>
+    <h2>Firmenwissen retten als Ihr Produkt.</h2>
+    <p class="section-lead">White-Label-Lösung für Unternehmensberatungen und Coaches — ohne eigene Technologie-Entwicklung.</p>
+    <div class="modelle-grid">
+      <div class="modell-card">
+        <div class="modell-num">01</div>
+        <div class="modell-line"></div>
+        <span class="modell-tag">Technologie</span>
+        <h3>Lizenzpartner</h3>
+        <p>Sie nutzen unsere Technologie und Methodik unter Ihrem eigenen Branding. Laufende Lizenzeinnahmen, keine Entwicklungskosten.</p>
+      </div>
+      <div class="modell-card">
+        <div class="modell-num">02</div>
+        <div class="modell-line"></div>
+        <span class="modell-tag">Kooperation</span>
+        <h3>Co-Delivery</h3>
+        <p>Wir liefern die Technologie, Sie führen die Interviews. Ideal für Berater mit bestehendem Kundenzugang.</p>
+      </div>
+      <div class="modell-card">
+        <div class="modell-num">03</div>
+        <div class="modell-line"></div>
+        <span class="modell-tag">Vollpaket</span>
+        <h3>Franchise</h3>
+        <p>Komplettpaket mit Ausbildung, Marke, Technologie und Kundenzugang. Eigenes „Firmenwissen retten"-Angebot.</p>
+      </div>
+    </div>
+    <div class="berater-lower">
+      <div>
+        <h3 style="margin-bottom:18px;color:var(--navy);">Warum als Berater einsteigen?</h3>
+        <ul class="berater-points">
+          <li class="berater-point">Neues Umsatzfeld ohne eigene Technologie-Entwicklung</li>
+          <li class="berater-point">Bewährte Methodik — sofort einsetzbar</li>
+          <li class="berater-point">Laufende Einnahmen durch Abo-Modell möglich</li>
+          <li class="berater-point">Demographiewandel trifft jeden KMU — die Nachfrage wächst</li>
+        </ul>
+        <a href="#kontakt" class="btn-primary">Partnermodell besprechen</a>
+      </div>
+      <div class="contact-teaser">
+        <h4>Interesse geweckt?</h4>
+        <p>Schreiben Sie uns, welches Modell Sie interessiert — wir melden uns innerhalb von 24 Stunden.</p>
+        <a href="mailto:info@einoffenerblick.de" class="mail-link">info@einoffenerblick.de →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section team-section" id="team">
+  <div class="container">
+    <span class="section-eyebrow">Wer steht dahinter?</span>
+    <h2 style="margin-bottom:10px;">Erfahrung, Methodik und Vertrauen.</h2>
+    <p class="section-lead">Ein offener Blick GmbH vereint systemische Beratungskompetenz mit moderner KI-Technologie — für den deutschen Mittelstand.</p>
+    <div class="team-grid">
+      <div class="person-card">
+        <img src="Images/ICH1.jpg" alt="Sonja Strahler">
+        <div class="person-info">
+          <h3>Sonja Strahler</h3>
+          <span class="person-role">Gründerin &amp; Systemische Beraterin</span>
+          <p>Die menschliche Brücke zwischen Ihren Mitarbeitern und der Technologie. 15 Jahre Erfahrung in systemischer Organisationsberatung.</p>
+          <div class="certs">
+            <span class="cert">BAFA-zertifiziert</span>
+            <span class="cert funding-temporarily-hidden">INQA-Coach</span>
+            <span class="cert">ESF Plus</span>
+          </div>
+          <a href="https://www.linkedin.com/in/sonja-strahler/" target="_blank" rel="noopener" class="li-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="team-right">
+        <div class="team-img">
+          <img src="Images/WIR1.jpg" alt="Sonja und Harald Strahler">
+        </div>
+        <div class="mini-stats-row">
+          <div class="mini-stat"><div class="mini-stat-num">15+</div><div class="mini-stat-lbl">Jahre Erfahrung</div></div>
+          <div class="mini-stat"><div class="mini-stat-num">KMU</div><div class="mini-stat-lbl">Fokus Mittelstand</div></div>
+          <div class="mini-stat funding-temporarily-hidden"><div class="mini-stat-num">80%</div><div class="mini-stat-lbl">Förderung möglich</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <span class="section-eyebrow">Häufige Fragen</span>
+    <h2>Ihre Fragen — unsere Antworten.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn">Was kostet das?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A2240" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-body">Das Erstgespräch ist kostenlos und unverbindlich. Die Projektkosten hängen vom Umfang ab. <span class="funding-temporarily-hidden">In vielen Fällen sind bis zu 80 % über INQA-Coaching-Förderung abgedeckt.</span> Sie erhalten nach dem ersten Gespräch ein transparentes Angebot.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Ist das DSGVO-konform?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A2240" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-body">Ja. Unsere KI-Lösung läuft ausschließlich lokal auf Ihrer eigenen Hardware. Es werden keine Daten in die Cloud übertragen, es gibt keine Abhängigkeit von externen Anbietern. 100 % DSGVO-konform.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Wie lange dauert ein Projekt?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A2240" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-body">Typisch 4 bis 8 Wochen — abhängig von der Anzahl der Wissensträger. Auch zeitkritische Projekte vor einem bevorstehenden Renteneintritt sind umsetzbar. Wir beginnen mit einem Projektplan, der zu Ihrem Zeitrahmen passt.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Wie viel Zeit müssen unsere Mitarbeiter investieren?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A2240" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-body">Pro Wissensträger 3–5 Gespräche à 60–90 Minuten — remote oder vor Ort. Die Vorbereitung übernehmen wir vollständig. Ihre Mitarbeiter müssen nur sprechen.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Was passiert nach dem Projekt?
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A2240" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-body">Sie erhalten Ihre vollständige Wissensdatenbank inklusive einer Schulung für Ihre Mitarbeiter. Optional: laufendes Abo zur regelmäßigen Erweiterung — Ihr Firmenwissen wächst kontinuierlich weiter.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="kontakt">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-intro">
+        <span class="section-eyebrow">Jetzt starten</span>
+        <h2>Sprechen wir über Ihr Firmenwissen.</h2>
+        <p>Erstes Gespräch kostenlos und unverbindlich. Wir melden uns innerhalb von 24 Stunden — persönlich, nicht automatisiert.</p>
+        <div class="contact-detail">
+          <a href="mailto:info@einoffenerblick.de">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@einoffenerblick.de
+          </a>
+          <a href="https://einoffenerblick.de" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#61b6e2" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            einoffenerblick.de
+          </a>
+          <a href="https://www.linkedin.com/in/sonja-strahler/" target="_blank" rel="noopener" style="color:#0A66C2;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#0A66C2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn — Sonja Strahler
+          </a>
+        </div>
+      </div>
+      <div>
+        <div id="formSuccess" class="form-success">
+          <div style="font-size:2.5rem;margin-bottom:14px;color:var(--blue);">✓</div>
+          <h3>Vielen Dank!</h3>
+          <p>Ihre Anfrage wurde in Ihr E-Mail-Programm übertragen.<br>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+        </div>
+        <form id="contactForm">
+          <div class="form-grid2">
+            <div class="fg"><label>Ihr Name *</label><input type="text" id="f-name" placeholder="Max Mustermann" required></div>
+            <div class="fg"><label>Unternehmen *</label><input type="text" id="f-company" placeholder="Mustermann GmbH" required></div>
+          </div>
+          <div class="form-grid2">
+            <div class="fg"><label>E-Mail *</label><input type="email" id="f-email" placeholder="max@mustermann.de" required></div>
+            <div class="fg"><label>Telefon</label><input type="tel" id="f-phone" placeholder="+49 441 …"></div>
+          </div>
+          <div class="fg" style="margin-bottom:14px;">
+            <label>Ich interessiere mich für *</label>
+            <select id="f-interest" required>
+              <option value="" disabled selected>Bitte wählen …</option>
+              <option>Erstgespräch für mein Unternehmen (kostenlos)</option>
+              <option>Partnermodell für Berater</option>
+              <option>Allgemeine Information</option>
+            </select>
+          </div>
+          <div class="fg" style="margin-bottom:0;">
+            <label>Ihre Situation (optional)</label>
+            <textarea id="f-msg" placeholder="Was beschäftigt Sie gerade? Wer geht wann in Rente? Wie viele Mitarbeiter sind betroffen?"></textarea>
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="btn-primary">Anfrage senden</button>
+            <span class="form-note">Antwort innerhalb von 24 Stunden. Hinweise zum Datenschutz finden Sie im <a href="kleingedrucktes-firmenwissen.html#datenschutz" style="color:var(--blue);">Kleingedruckten</a>.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="https://einoffenerblick.de" class="footer-logo">
+      <img src="Images/LogoWebsite.png" alt="Ein offener Blick">
+    </a>
+    <div class="footer-kleingedrucktes">
+      <p>Firmenwissen retten ist ein Angebot der Ein offener Blick GmbH.</p>
+      <div class="footer-kleingedrucktes-links">
+        <a href="kleingedrucktes-firmenwissen.html#impressum">Impressum</a>
+        <span class="footer-kleingedrucktes-sep">|</span>
+        <a href="kleingedrucktes-firmenwissen.html#datenschutz">Datenschutz</a>
+        <span class="footer-kleingedrucktes-sep">|</span>
+        <a href="kleingedrucktes-firmenwissen.html">Kleingedrucktes</a>
+        <span class="footer-kleingedrucktes-sep">|</span>
+        <a href="/blog/">Blog</a>
+      </div>
+      <p>© 2026 Ein offener Blick GmbH · Eichenallee 30, 26203 Hundsmühlen · HRB 215039 (AG Oldenburg)</p>
+    </div>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail" data-bg-color="#1A2240">
+  <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#1A2240"/>
+    <circle cx="200" cy="110" r="48" fill="none" stroke="#61b6e2" stroke-width="3"/>
+    <circle cx="200" cy="110" r="18" fill="#61b6e2"/>
+    <circle cx="208" cy="104" r="6" fill="#1A2240"/>
+    <rect x="130" y="175" width="140" height="4" rx="2" fill="white" opacity="0.9"/>
+    <rect x="150" y="188" width="100" height="3" rx="1.5" fill="#61b6e2" opacity="0.7"/>
+  </svg>
+</template>
+
+<script>
+// Nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// FAQ — plus/minus toggle
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Contact form → mailto
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name     = document.getElementById('f-name').value.trim();
+  const company  = document.getElementById('f-company').value.trim();
+  const email    = document.getElementById('f-email').value.trim();
+  const phone    = document.getElementById('f-phone').value.trim();
+  const interest = document.getElementById('f-interest').value;
+  const msg      = document.getElementById('f-msg').value.trim();
+  if (!name || !company || !email || !interest) {
+    alert('Bitte füllen Sie alle Pflichtfelder (*) aus.');
+    return;
+  }
+  const subject = encodeURIComponent('Anfrage: ' + interest + ' — ' + company);
+  const body = encodeURIComponent(
+    'Guten Tag,\n\n' +
+    'ich interessiere mich für: ' + interest + '\n\n' +
+    'Name:        ' + name + '\n' +
+    'Unternehmen: ' + company + '\n' +
+    'E-Mail:      ' + email + '\n' +
+    (phone ? 'Telefon:     ' + phone + '\n' : '') +
+    (msg ? '\nMeine Situation:\n' + msg + '\n' : '') +
+    '\nMit freundlichen Grüßen\n' + name
+  );
+  window.location.href = 'mailto:info@einoffenerblick.de?subject=' + subject + '&body=' + body;
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+});
+</script>
+</body>
+</html>

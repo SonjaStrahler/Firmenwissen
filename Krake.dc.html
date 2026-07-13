@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Figtree',system-ui,sans-serif;background:#fbf9f5;-webkit-font-smoothing:antialiased}
+  a{color:#1c7cd2}
+  ::selection{background:#1c7cd2;color:#fff}
+  input::placeholder{color:rgba(26,34,64,.40)}
+</style>
+</helmet>
+<div style="background:#fbf9f5; color:#1A2240; min-height:100vh; font-weight:400; line-height:1.5;">
+
+  <header style="position:sticky; top:0; z-index:20; background:rgba(251,249,245,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(26,34,64,.10);">
+    <div style="max-width:1120px; margin:0 auto; padding:17px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px;">
+      <a href="Firmenwissen%20retten.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none; color:#1A2240;">
+        <div style="width:11px; height:11px; border-radius:50%; background:#1c7cd2;"></div>
+        <span style="font-weight:500; font-size:17px; letter-spacing:-.01em;">Firmenwissen&nbsp;retten</span>
+      </a>
+      <a href="Firmenwissen%20retten.dc.html" style="color:#1c7cd2; font-weight:500; font-size:15px; text-decoration:none;" style-hover="color:#1769b4;">← Zur Startseite</a>
+    </div>
+  </header>
+
+  <!-- 1 · KRAKE ALS BLICKFANG -->
+  <section style="padding:90px 32px 0; text-align:center;">
+    <div style="max-width:680px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
+      <img src="krake.png" alt="Die Hilfe-Krake" style="width:230px; height:auto; filter:drop-shadow(0 14px 24px rgba(26,34,64,.12));">
+      <h1 style="margin-top:30px; font-size:clamp(30px,4.6vw,44px); font-weight:300; line-height:1.15; letter-spacing:-.02em; color:#1A2240; text-wrap:balance;">Fragen Sie einfach — <strong style="font-weight:500;">die Krake antwortet.</strong></h1>
+      <p style="margin-top:18px; font-size:19px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.60); max-width:52ch;">Sie beantwortet Fragen rund um die App und das Retten von Firmenwissen — aus geprüftem Wissen, ehrlich, ohne Verkaufssprech.</p>
+    </div>
+  </section>
+
+  <!-- 2 · FRAGEFELD -->
+  <section style="padding:44px 32px 0;">
+    <div style="max-width:560px; margin:0 auto;">
+      <div style="position:relative;">
+        <input type="text" value="{{frage}}" onChange="{{onFrage}}" onKeyDown="{{onTaste}}" placeholder="Ihre Frage an die Krake …" style="width:100%; padding:17px 122px 17px 20px; font-size:16px; font-family:'Figtree',system-ui,sans-serif; font-weight:300; color:#1A2240; background:#fff; border:1px solid rgba(26,34,64,.12); border-radius:14px; outline:none; box-shadow:0 10px 30px -18px rgba(26,34,64,.18);" style-focus="border-color:#1c7cd2; box-shadow:0 0 0 3px rgba(28,124,210,.10);">
+        <button onClick="{{absenden}}" style="position:absolute; right:7px; top:7px; bottom:7px; padding:0 24px; border:0; border-radius:10px; background:#1c7cd2; color:#fff; font-family:'Figtree',system-ui,sans-serif; font-weight:500; font-size:15px; cursor:pointer; transition:background .15s ease;" style-hover="background:#1769b4;">Absenden</button>
+      </div>
+      <div style="margin-top:14px; text-align:center; font-size:13.5px; font-weight:300; color:rgba(26,34,64,.44);">Fragen Sie wie einen Kollegen, nicht wie eine Suchmaschine.</div>
+
+      <!-- 3 · BEISPIELFRAGEN -->
+      <div style="margin-top:30px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <button onClick="{{beispiel1}}" style="border:1px solid rgba(26,34,64,.14); background:#fff; color:rgba(26,34,64,.72); font-family:'Figtree',system-ui,sans-serif; font-weight:300; font-size:14.5px; padding:9px 18px; border-radius:999px; cursor:pointer; transition:all .15s ease;" style-hover="border-color:#1c7cd2; color:#1c7cd2;">„Was macht diese App eigentlich?"</button>
+        <button onClick="{{beispiel2}}" style="border:1px solid rgba(26,34,64,.14); background:#fff; color:rgba(26,34,64,.72); font-family:'Figtree',system-ui,sans-serif; font-weight:300; font-size:14.5px; padding:9px 18px; border-radius:999px; cursor:pointer; transition:all .15s ease;" style-hover="border-color:#1c7cd2; color:#1c7cd2;">„Wer sieht meine Daten?"</button>
+        <button onClick="{{beispiel3}}" style="border:1px solid rgba(26,34,64,.14); background:#fff; color:rgba(26,34,64,.72); font-family:'Figtree',system-ui,sans-serif; font-weight:300; font-size:14.5px; padding:9px 18px; border-radius:999px; cursor:pointer; transition:all .15s ease;" style-hover="border-color:#1c7cd2; color:#1c7cd2;">„Was kostet das?"</button>
+      </div>
+
+      <!-- 4 · ANTWORTKARTE -->
+      <sc-if value="{{zeigeKarte}}" hint-placeholder-val="{{false}}">
+        <div style="margin-top:26px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:14px; padding:26px 28px; text-align:left; box-shadow:0 10px 30px -22px rgba(26,34,64,.20);">
+          <div style="font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#c46a2c;">{{kartenLabel}}</div>
+          <p style="margin-top:12px; font-size:16.5px; font-weight:300; line-height:1.65; color:#1A2240; white-space:pre-line;">{{antwortText}}</p>
+        </div>
+      </sc-if>
+
+      <!-- 6 · KLEINGEDRUCKTES -->
+      <div style="margin-top:28px; text-align:center; font-size:13px; font-weight:300; line-height:1.7; color:rgba(26,34,64,.44); max-width:52ch; margin-left:auto; margin-right:auto;">
+        Bitte keine persönlichen oder vertraulichen Daten in die Frage schreiben. Es gilt unsere <a href="datenschutz.html" style="color:#1c7cd2; text-decoration:none;">Datenschutzerklärung</a>. Die Krake beantwortet Fragen zur App — keine Rechts- oder Steuerberatung.
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · VIDEO-SLOTS -->
+  <section style="padding:90px 32px 110px;">
+    <div style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px;">
+      <div>
+        <div style="position:relative; aspect-ratio:16/9; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:14px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+          <div style="position:absolute; inset:0; background:repeating-linear-gradient(45deg,#f8f6f1,#f8f6f1 13px,#f2f0ea 13px,#f2f0ea 26px);"></div>
+          <div style="position:relative; z-index:1; width:64px; height:64px; border-radius:50%; background:#1c7cd2; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(28,124,210,.32);">
+            <div style="width:0; height:0; border-style:solid; border-width:11px 0 11px 19px; border-color:transparent transparent transparent #fff; margin-left:5px;"></div>
+          </div>
+        </div>
+        <div style="margin-top:14px; font-size:17px; font-weight:500; color:#1A2240;">Ein persönlicher Gruß</div>
+        <div style="margin-top:3px; font-size:14.5px; font-weight:300; color:rgba(26,34,64,.55);">Sonja stellt sich vor. <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12px; color:rgba(26,34,64,.40);">Video folgt</span></div>
+      </div>
+      <div>
+        <div style="position:relative; aspect-ratio:16/9; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:14px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+          <div style="position:absolute; inset:0; background:repeating-linear-gradient(45deg,#f8f6f1,#f8f6f1 13px,#f2f0ea 13px,#f2f0ea 26px);"></div>
+          <div style="position:relative; z-index:1; width:64px; height:64px; border-radius:50%; background:#1c7cd2; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(28,124,210,.32);">
+            <div style="width:0; height:0; border-style:solid; border-width:11px 0 11px 19px; border-color:transparent transparent transparent #fff; margin-left:5px;"></div>
+          </div>
+        </div>
+        <div style="margin-top:14px; font-size:17px; font-weight:500; color:#1A2240;">Hinter den Kulissen</div>
+        <div style="margin-top:3px; font-size:14.5px; font-weight:300; color:rgba(26,34,64,.55);">Wo das Wissen wirklich liegt. <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12px; color:rgba(26,34,64,.40);">Video folgt</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#1A2240; color:#fff; padding:44px 32px;">
+    <div style="max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px;">
+      <div style="display:flex; align-items:center; gap:11px;">
+        <div style="width:11px; height:11px; border-radius:50%; background:#1c7cd2;"></div>
+        <span style="font-weight:500; font-size:16px;">Firmenwissen&nbsp;retten</span>
+      </div>
+      <nav style="display:flex; flex-wrap:wrap; gap:10px 24px; font-size:14.5px; font-weight:300;">
+        <a href="agb.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">AGB</a>
+        <a href="avv.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">AVV</a>
+        <a href="widerruf.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">Widerruf</a>
+        <a href="datenschutz.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">Datenschutz</a>
+        <a href="Impressum.dc.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">Impressum</a>
+      </nav>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:null,&quot;endpoint&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://krake.firmenwissen-retten.de/frage&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Krake&quot;,&quot;description&quot;:&quot;KRAKE_ENDPOINT — leer = Bald-Modus; URL eintragen = live&quot;}}">
+class Component extends DCLogic {
+  state = { frage: '', antwort: null, label: null, laden: false };
+
+  // Statische Antworten für den Bald-Modus (Texte: Entwürfe — Sonja liefert final)
+  static ANTWORTEN = {
+    'Was macht diese App eigentlich?':
+      'Die App sichert das Erfahrungswissen Ihrer langjährigen Mitarbeitenden. Wir führen ein Gespräch, die App macht daraus ein durchsuchbares Firmengedächtnis — und Sie können jederzeit fragen, als säße der Kollege noch nebenan. Auch dann, wenn er längst in Rente ist.',
+    'Wer sieht meine Daten?':
+      'Nur Sie. Ihr Wissen liegt getrennt von allen anderen Kunden auf einem Server in der Europäischen Union und verlässt Ihr Firmengedächtnis nicht. Wer darauf zugreifen darf, bestimmen allein Sie. Details beschreibt die Datenschutzerklärung.',
+    'Was kostet das?':
+      'Zwei Dinge: eine einmalige Einrichtung und ein monatliches Abo, jederzeit zum Monatsende kündbar. Die genauen Zahlen stehen gerade fest — am einfachsten: ein kurzes Erstgespräch, dann rechnen wir es für Ihren Fall durch.'
+  };
+
+  senden(frage) {
+    const f = (frage ?? this.state.frage).trim();
+    if (!f) return;
+    const endpoint = this.props.endpoint ?? '';
+    if (!endpoint) {
+      // Bald-Modus
+      const statisch = Component.ANTWORTEN[f];
+      if (statisch) {
+        this.setState({ frage: f, antwort: statisch, label: 'Antwort der Krake', laden: false });
+      } else {
+        this.setState({
+          frage: f,
+          antwort: 'Die Krake zieht gerade hier ein — schauen Sie in wenigen Tagen wieder vorbei.',
+          label: 'Bald verfügbar',
+          laden: false
+        });
+      }
+      return;
+    }
+    this.setState({ frage: f, laden: true, antwort: null, label: 'Einen Moment …' });
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ frage: f })
+    })
+      .then((r) => r.json())
+      .then((d) => this.setState({ laden: false, antwort: d.antwort, label: 'Antwort der Krake' }))
+      .catch(() => this.setState({
+        laden: false,
+        antwort: 'Das hat gerade nicht geklappt — bitte versuchen Sie es gleich noch einmal.',
+        label: 'Kleine Pause'
+      }));
+  }
+
+  renderVals() {
+    const { frage, antwort, label, laden } = this.state;
+    return {
+      frage,
+      onFrage: (e) => this.setState({ frage: e.target.value }),
+      onTaste: (e) => { if (e.key === 'Enter') this.senden(); },
+      absenden: () => this.senden(),
+      beispiel1: () => this.senden('Was macht diese App eigentlich?'),
+      beispiel2: () => this.senden('Wer sieht meine Daten?'),
+      beispiel3: () => this.senden('Was kostet das?'),
+      zeigeKarte: laden || !!antwort,
+      kartenLabel: label ?? '',
+      antwortText: laden ? 'Einen Moment …' : (antwort ?? '')
+    };
+  }
+}
+</script>
+</body>
+</html>
