@@ -7,6 +7,29 @@
 - **Server:** Proxmox Container 102 (192.168.178.102)
 - **Server-Pfad:** /var/www/firmenwissen
 
+### ⚠️ WICHTIG: Umbau-Test Branch — NUR für Test-Instanz!
+
+**Diese Branch ist ausschließlich für die Test-Instanz!** 
+
+- ✅ Alle Änderungen gehen in die **Test-Instanz** (Staging)
+- ❌ NICHT in die Live-Website!
+- 📍 Aktuelle Live-Website bleibt auf der `Firmenwissen` Branch
+- 🛡️ **Vereinbarung:** Diese Website wird erst live geschoben, wenn **explizit** beschlossen wurde
+
+**Dein Workflow für Umbau-Test:**
+```bash
+# Arbeiten und speichern
+git add .
+git commit -m "Deine Beschreibung"
+
+# NUR in Test-Instanz pushen (sicher!)
+git push origin Umbau-Test
+```
+
+**Das ist 100% sicher** — es beeinflusst die aktive Website nicht! Erst wenn wir bewusst mergen in `Firmenwissen`, geht es live.
+
+---
+
 ### Temporärer Hinweis: INQA-/Fördertexte ausgeblendet
 
 Die INQA-/80%-Förderhinweise sind in `index.html` nicht gelöscht, sondern vorübergehend mit der CSS-Klasse `funding-temporarily-hidden` optisch unsichtbar gemacht. Zusätzlich wurden die Meta-Description und Open-Graph-Description neutral formuliert, damit Suchmaschinen keine ungeprüften Förderaussagen als Vorschau anzeigen.
