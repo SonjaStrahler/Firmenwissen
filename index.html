@@ -20,13 +20,10 @@
   ::selection{background:#1c7cd2;color:#fff}
   .fr-wort{display:inline-block;opacity:0;transform:translateY(18px);animation:fr-wort-einblenden .6s ease both;animation-delay:calc(.4s + var(--fr-index)*.08s)}
   @keyframes fr-wort-einblenden{to{opacity:1;transform:translateY(0)}}
-  .fr-scrollstrich{width:1px;height:34px;background:rgba(255,255,255,.40);animation:fr-scroll-pulsieren 1.8s ease-in-out infinite}
-  @keyframes fr-scroll-pulsieren{0%,100%{transform:translateY(0);opacity:.65}50%{transform:translateY(6px);opacity:1}}
   .fr-laufband__fenster{overflow:hidden;padding:22px 0;background:#fd8c4a;color:#1A2240}
   .fr-laufband__spur{display:flex;width:max-content;animation:fr-laufband 40s linear infinite}
   .fr-laufband__gruppe{display:flex;flex:0 0 auto;align-items:center;gap:28px;padding-right:28px;white-space:nowrap;font-size:clamp(22px,2.8vw,34px);font-weight:500}
   @keyframes fr-laufband{to{transform:translateX(-50%)}}
-  @keyframes fr-auftauchen{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
   .fr-hoverkarte{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
   .fr-hoverkarte:hover{transform:translateY(-6px)!important;box-shadow:0 20px 40px -24px rgba(26,34,64,.3)}
   .fr-szene{view-timeline-name:--fr-szene;view-timeline-axis:block}
@@ -38,15 +35,31 @@
   @keyframes fr-szene-quelle-1{0%,79.167%{opacity:0;transform:translateY(8px) scale(.96)}85.417%,100%{opacity:1;transform:translateY(0) scale(1)}}
   @keyframes fr-szene-quelle-2{0%,85.417%{opacity:0;transform:translateY(8px) scale(.96)}91.667%,100%{opacity:1;transform:translateY(0) scale(1)}}
   @supports (animation-timeline:view()){.fr-szene__fragefeld{position:relative;overflow:hidden}.fr-szene__frage{display:block;clip-path:inset(0 100% 0 0);animation:fr-szene-tippt 4.8s steps(43,end) both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}.fr-szene__cursor{position:absolute;right:14px;bottom:14px;display:block;width:1px;height:1.1em;background:#1c7cd2;animation:fr-szene-cursor 4.8s steps(1,end) both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}.fr-szene__antwort{opacity:0;animation:fr-szene-antwort 4.8s linear both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}.fr-szene__quelle--1{opacity:0;animation:fr-szene-quelle-1 4.8s linear both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}.fr-szene__quelle--2{opacity:0;animation:fr-szene-quelle-2 4.8s linear both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}}
-  @supports (animation-timeline:view()){.fr-auftauchen{animation:fr-auftauchen linear both;animation-timeline:view();animation-range:entry 0% cover 30%}}
-  @supports not (animation-timeline:view()){.fr-auftauchen{opacity:1;transform:none;animation:none}}
   @media (max-width:480px){.fr-hero{padding-left:8px!important;padding-right:8px!important}.fr-hero>div{width:100%;min-width:0}}
   @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.fr-wort,.fr-auftauchen{opacity:1!important;transform:none!important}.fr-hoverkarte:hover{transform:none!important;box-shadow:none!important}.fr-szene__frage{clip-path:none!important}.fr-szene__cursor{display:none!important}.fr-szene__antwort,.fr-szene__quelle{opacity:1!important;transform:none!important}.fr-laufband__spur{transform:none!important}}
+  .fr-kopf{position:fixed!important;left:0;right:0;transition:background .3s ease,border-color .3s ease;color:#1A2240}
+  .fr-kopf span,.fr-kopf a{transition:color .3s ease,background .3s ease!important}
+  .fr-kopf--dunkel{background:transparent!important;border-color:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;color:#fff}
+  .fr-kopf--dunkel>div>div:first-child>span:first-of-type,.fr-kopf--dunkel a[href="#krake"]{color:#fff!important}
+  .fr-kopf--dunkel>div>div:first-child>span:last-child{color:rgba(255,255,255,.5)!important}
+  .fr-hero__marke{transform-origin:left center}
+  .fr-moment{overflow:clip;padding-left:clamp(32px,6vw,80px)!important;padding-right:clamp(32px,6vw,80px)!important}
+  .fr-moment .fr-szene{width:120%;margin-left:-10%;zoom:1.2}
+  .fr-moment__wort{display:inline-block}
+  .fr-karten>div{max-width:calc(100vw - 64px)}
+  .fr-funktionen.fr-pin{padding-top:clamp(24px,5vh,64px)!important;padding-bottom:clamp(24px,5vh,64px)!important}
+  .fr-pin .fr-karten{overflow-x:hidden!important;scroll-snap-type:none!important}
+  html.lenis,html.lenis body{height:auto}
+  .lenis.lenis-smooth{scroll-behavior:auto!important}
+  .lenis.lenis-stopped{overflow:hidden}
+  #krake,#kontakt{scroll-margin-top:90px}
+  @media (max-width:699px){.fr-kopf>div{flex-wrap:nowrap!important;gap:12px!important;padding:12px 16px!important}.fr-kopf>div>div{flex-shrink:0}.fr-kopf>div>div:first-child>span:last-child,.fr-kopf a[href="#krake"]{display:none!important}.fr-kopf a[href="#kontakt"]{white-space:nowrap}.fr-moment .fr-szene{width:100%;margin-left:0}}
+  @media (prefers-reduced-motion:reduce){.fr-kopf,.fr-kopf span,.fr-kopf a{transition:none!important}}
 </style>
 </helmet>
 <div style="--accent: {{accentColor}}; --radius: {{radius}}px; --sp: {{sectionPad}}px; background:#fbf9f5; color:#1A2240; min-height:100vh; font-weight:400; line-height:1.5;">
 
-  <header style="position:sticky; top:0; z-index:20; background:rgba(251,249,245,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(26,34,64,.10);">
+  <header class="fr-kopf fr-kopf--dunkel" style="position:sticky; top:0; z-index:20; background:rgba(251,249,245,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(26,34,64,.10);">
     <div style="max-width:1120px; margin:0 auto; padding:17px 32px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
       <div style="display:flex; align-items:center; gap:11px;">
         <div style="width:11px; height:11px; border-radius:50%; background:#1c7cd2;"></div>
@@ -64,7 +77,7 @@
   <section id="second-hero" class="fr-hero" style="position:relative; min-height:100vh; padding:90px 32px 110px; display:flex; align-items:center; overflow:hidden; background:#1A2240; color:#fff;">
     <div style="max-width:1120px; margin:0 auto;">
       <div style="min-width:0; position:relative; z-index:1;">
-      <div style="font-size:clamp(88px,17vw,240px); font-weight:500; letter-spacing:-.045em; line-height:.9; color:#fff;">Second<span style="color:#fd8c4a;">.</span></div>
+      <div class="fr-hero__marke" style="font-size:clamp(88px,17vw,240px); font-weight:500; letter-spacing:-.045em; line-height:.9; color:#fff;">Second<span style="color:#fd8c4a;">.</span></div>
       <div style="margin-top:12px; font-size:clamp(22px,2.6vw,32px); font-weight:300; color:rgba(255,255,255,.72);">Der zweite Kopf Ihrer Firma.</div>
       <h1 style="margin-top:56px; font-size:clamp(32px,4.4vw,56px); font-weight:500; line-height:1.1; letter-spacing:-.025em; color:#fff; max-width:20ch; text-wrap:balance;"><span class="fr-wort" style="--fr-index:0;">Alles,</span> <span class="fr-wort" style="--fr-index:1;">was</span> <span class="fr-wort" style="--fr-index:2;">Ihre</span> <span class="fr-wort" style="--fr-index:3;">Firma</span> <span class="fr-wort" style="--fr-index:4;">je</span> <span class="fr-wort" style="--fr-index:5;">gewusst</span> <span class="fr-wort" style="--fr-index:6;">hat.</span> <span class="fr-wort" style="--fr-index:7;">Eine</span> <span class="fr-wort" style="--fr-index:8;">Frage</span> <span class="fr-wort" style="--fr-index:9;">entfernt.</span></h1>
       <p style="margin-top:30px; font-size:clamp(19px,2.2vw,23px); font-weight:300; line-height:1.55; color:rgba(255,255,255,.62); max-width:60ch;">Second hört zu, behält und erinnert Sie. Mit Quelle, in Deutschland, ohne dass Sie ein System füttern müssen.</p>
@@ -77,10 +90,6 @@
       </div>
       </div>
     </div>
-    <div style="position:absolute; bottom:24px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:10px; color:rgba(255,255,255,.40); font-size:12px; font-weight:300;">
-      <span>Scrollen</span>
-      <span class="fr-scrollstrich"></span>
-    </div>
   </section>
 
   <div class="fr-laufband__fenster" aria-label="Hört zu, behält, erinnert, denkt mit, wacht, schreibt, zeigt">
@@ -90,12 +99,12 @@
     </div>
   </div>
 
-  <!-- 4 · GÄNSEHAUT + VIDEO -->
-  <section style="padding:var(--sp,110px) 32px;">
+  <!-- 4 · DER MOMENT -->
+  <section class="fr-moment" style="padding:var(--sp,110px) 32px;">
     <div style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:56px; align-items:center;">
       <div>
         <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Der Moment</div>
-        <h2 class="fr-auftauchen" style="margin-top:26px; font-size:clamp(26px,3.4vw,38px); font-weight:500; line-height:1.24; letter-spacing:-.02em; color:#1A2240; text-wrap:balance;">Sie dürfen vergessen. Second nicht.</h2>
+        <h2 class="fr-moment__titel" style="margin-top:26px; font-size:clamp(26px,3.4vw,38px); font-weight:500; line-height:1.24; letter-spacing:-.02em; color:#1A2240; text-wrap:balance;"><span class="fr-moment__wort">Sie</span> <span class="fr-moment__wort">dürfen</span> <span class="fr-moment__wort">vergessen.</span> <span class="fr-moment__wort">Second</span> <span class="fr-moment__wort">nicht.</span></h2>
         <p class="fr-auftauchen" style="margin-top:22px; font-size:18px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.62); max-width:52ch;">Das Angebot vom letzten Jahr. Die Zusage an Müller. Warum die Presse bei Charge 4 immer länger braucht. Irgendwo steht es. Nur wo? Sie fragen. Second antwortet und sagt dazu, woher es das weiß: aus dem Gespräch vom 12. März, aus der Preisliste vom Januar. Ihr Gedächtnis, mit Fußnoten.</p>
       </div>
       <div>
@@ -117,15 +126,6 @@
         </div>
         <div class="fr-auftauchen" style="margin-top:14px; font-size:13px; font-weight:300; line-height:1.5; color:rgba(26,34,64,.44);">Beispielszene. So sieht jede Antwort in Second aus: mit Quelle.</div>
       </div>
-    </div>
-    <div style="max-width:880px; margin:64px auto 0;">
-      <div class="fr-auftauchen" style="position:relative; aspect-ratio:16/9; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); overflow:hidden; box-shadow:0 1px 2px rgba(26,34,64,.06); display:flex; align-items:center; justify-content:center;">
-        <div style="position:absolute; inset:0; background:repeating-linear-gradient(45deg,#f8f6f1,#f8f6f1 13px,#f2f0ea 13px,#f2f0ea 26px);"></div>
-        <div style="position:relative; z-index:1; width:76px; height:76px; border-radius:50%; background:#1c7cd2; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(28,124,210,.32);">
-          <div style="width:0; height:0; border-style:solid; border-width:13px 0 13px 22px; border-color:transparent transparent transparent #fff; margin-left:6px;"></div>
-        </div>
-      </div>
-      <div class="fr-auftauchen" style="margin-top:16px; text-align:center; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13px; letter-spacing:.02em; color:rgba(26,34,64,.52);">Video folgt.</div>
     </div>
   </section>
 
@@ -163,38 +163,38 @@
   </section>
 
   <!-- 6 · WAS SECOND TUT -->
-  <section style="padding:var(--sp,110px) 32px; background:#f4f5f0; border-top:1px solid rgba(26,34,64,.08); border-bottom:1px solid rgba(26,34,64,.08);">
+  <section class="fr-funktionen" style="padding:var(--sp,110px) 32px; background:#f4f5f0; border-top:1px solid rgba(26,34,64,.08); border-bottom:1px solid rgba(26,34,64,.08);">
     <div style="max-width:1120px; margin:0 auto;">
       <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Was Second tut</div>
       <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:26ch; text-wrap:balance;">Ein Gedächtnis, das mitdenkt.</h2>
       <p class="fr-auftauchen" style="margin-top:18px; font-size:19px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.60); max-width:56ch;">Second ist das Firmengedächtnis für den deutschen Mittelstand.</p>
-      <div style="margin-top:48px; display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; -webkit-overflow-scrolling:touch;">
-        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:14px; font-weight:400; color:#c46a2c;">01</span>Hört zu.</h3>
+      <div class="fr-karten" style="margin-top:48px; display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; -webkit-overflow-scrolling:touch;">
+        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 360px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:30px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:48px; font-weight:400; color:#fd8c4a;">01</span>Hört zu.</h3>
           <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ein Gespräch genügt. Aufschreiben war gestern.</p>
         </div>
-        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:14px; font-weight:400; color:#c46a2c;">02</span>Behält.</h3>
+        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 360px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:30px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:48px; font-weight:400; color:#fd8c4a;">02</span>Behält.</h3>
           <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Jedes Dokument, jedes Foto, jedes Wort. An einem Ort.</p>
         </div>
-        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:14px; font-weight:400; color:#c46a2c;">03</span>Erinnert.</h3>
+        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 360px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:30px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:48px; font-weight:400; color:#fd8c4a;">03</span>Erinnert.</h3>
           <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Jede Antwort zeigt, woher sie kommt.</p>
         </div>
-        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:14px; font-weight:400; color:#c46a2c;">04</span>Denkt mit.</h3>
+        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 360px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:30px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:48px; font-weight:400; color:#fd8c4a;">04</span>Denkt mit.</h3>
           <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ein Gegenüber, das Ihre Firma kennt und sagt, was es nicht weiß.</p>
         </div>
-        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:14px; font-weight:400; color:#c46a2c;">05</span>Wacht.</h3>
+        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 360px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:30px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:48px; font-weight:400; color:#fd8c4a;">05</span>Wacht.</h3>
           <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Richtlinien, Ausschreibungen, Wettbewerb. Jeden Morgen im Blick.</p>
         </div>
-        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:14px; font-weight:400; color:#c46a2c;">06</span>Schreibt.</h3>
+        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 360px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:30px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:48px; font-weight:400; color:#fd8c4a;">06</span>Schreibt.</h3>
           <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Der Bericht für Bank, Beirat oder Team. Aus Ihrem Wissen, nicht aus dem Netz.</p>
         </div>
-        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:14px; font-weight:400; color:#c46a2c;">07</span>Zeigt.</h3>
+        <div class="fr-auftauchen fr-hoverkarte" style="flex:0 0 360px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:30px; font-weight:500; color:#1A2240;"><span style="display:block; margin-bottom:8px; font-size:48px; font-weight:400; color:#fd8c4a;">07</span>Zeigt.</h3>
           <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ihr eigenes Schaufenster nach draußen. Mit eigenem Schlüssel für jeden Gast.</p>
         </div>
       </div>
@@ -207,7 +207,7 @@
     <div style="max-width:1120px; margin:0 auto;">
       <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#fd8c4a;">Ihre Daten</div>
       <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; color:#fff;">Ihr Wissen bleibt Ihres.</h2>
-      <div style="margin-top:52px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:40px;">
+      <div class="fr-vertrauen" style="margin-top:52px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:40px;">
         <div>
           <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#fff;">In Deutschland.</h3>
           <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Auf eigener Hardware, nicht in fremder Cloud.</p>
@@ -438,6 +438,118 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script>
+(() => {
+  function mount(hero) {
+    const header = document.querySelector('.fr-kopf');
+    const updateHeader = () => header.classList.toggle('fr-kopf--dunkel', hero.getBoundingClientRect().bottom > 0);
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    // Header contrast also works without animation libraries or with reduced motion.
+    if (!window.gsap || !window.ScrollTrigger || !window.Lenis) {
+      return () => window.removeEventListener('scroll', updateHeader);
+    }
+    gsap.registerPlugin(ScrollTrigger);
+    const media = gsap.matchMedia();
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      const lenis = new Lenis({ smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      const tick = time => lenis.raf(time * 1000);
+      gsap.ticker.add(tick);
+      const anchors = event => {
+        const link = event.target.closest('a[href="#krake"],a[href="#kontakt"]');
+        if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const hash = link.getAttribute('href');
+        const target = document.querySelector(hash);
+        if (!target) return;
+        event.preventDefault();
+        ScrollTrigger.refresh();
+        lenis.scrollTo(target, { offset: -header.offsetHeight - 12, onComplete: () => {
+          if (location.hash !== hash) history.pushState(null, '', hash);
+          const focusTarget = target.querySelector('input, a, button') || target;
+          focusTarget.focus({ preventScroll: true });
+        } });
+      };
+      document.addEventListener('click', anchors);
+      gsap.to('.fr-hero__marke', { scale: .6, opacity: .2, ease: 'none', scrollTrigger: {
+        trigger: hero, start: 'top top', end: 'bottom top', scrub: true
+      } });
+      gsap.fromTo('.fr-moment__wort', { opacity: .15 }, { opacity: 1, stagger: 1, duration: 1, ease: 'none', scrollTrigger: {
+        trigger: '.fr-moment__titel', start: 'top 80%', end: 'top 35%', scrub: true
+      } });
+      gsap.fromTo('.fr-szene', { y: -25 }, { y: 25, ease: 'none', scrollTrigger: {
+        trigger: '.fr-moment', start: 'top bottom', end: 'bottom top', scrub: true
+      } });
+      const desktop = gsap.matchMedia();
+      desktop.add('(min-width: 700px)', () => {
+        const section = document.querySelector('.fr-funktionen');
+        const cards = section.querySelector('.fr-karten');
+        section.classList.add('fr-pin');
+        cards.scrollLeft = 0;
+        const distance = () => Math.max(0, cards.scrollWidth - cards.clientWidth);
+        gsap.to(cards, { scrollLeft: distance, ease: 'none', scrollTrigger: {
+          trigger: section,
+          start: () => `top ${Math.min(header.offsetHeight, innerHeight - section.offsetHeight)}`,
+          end: () => `+=${distance()}`, pin: true, scrub: true, invalidateOnRefresh: true
+        } });
+        return () => { section.classList.remove('fr-pin'); cards.scrollLeft = 0; };
+      });
+      gsap.from('.fr-vertrauen > div', { opacity: 0, y: 40, duration: .7, stagger: .15, scrollTrigger: {
+        trigger: '.fr-vertrauen', start: 'top 85%', once: true
+      } });
+      // Animate only the outer reveal element, avoiding compounded nested fades.
+      // Conditional Krake answers stay immediately visible after React inserts them.
+      document.querySelectorAll('.fr-auftauchen').forEach(element => {
+        if (element.parentElement.closest('.fr-auftauchen') || element.closest('.fr-karten, .fr-vertrauen, #krake sc-if')) return;
+        gsap.from(element, { opacity: 0, y: 40, duration: .7, clearProps: 'opacity,transform', scrollTrigger: {
+          trigger: element, start: 'top 90%', once: true
+        } });
+      });
+      let frame;
+      const refresh = () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => { lenis.resize(); ScrollTrigger.refresh(); updateHeader(); });
+      };
+      const resize = new ResizeObserver(refresh);
+      document.querySelectorAll('section').forEach(section => resize.observe(section));
+      document.fonts.ready.then(refresh);
+      refresh();
+      return () => {
+        resize.disconnect();
+        cancelAnimationFrame(frame);
+        desktop.revert();
+        document.removeEventListener('click', anchors);
+        gsap.ticker.remove(tick);
+        lenis.destroy();
+      };
+    });
+    return () => { media.revert(); window.removeEventListener('scroll', updateHeader); };
+  }
+  function ready() {
+    let currentHero, cleanup;
+    const check = () => {
+      const hero = document.querySelector('#dc-root #second-hero');
+      if (!hero) { requestAnimationFrame(check); return; }
+      if (hero !== currentHero) {
+        if (cleanup) cleanup();
+        currentHero = hero;
+        cleanup = mount(hero);
+      }
+    };
+    // support.js renders asynchronously and may replace its initial React tree.
+    const observer = new MutationObserver(() => {
+      if (!currentHero || !currentHero.isConnected) check();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    requestAnimationFrame(check);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready, { once: true });
+  else ready();
+})();
 </script>
 </body>
 </html>
