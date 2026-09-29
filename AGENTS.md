@@ -6,7 +6,9 @@
   - Struktur `<x-dc>` … `<helmet>` … unverändert lassen.
   - `support.js` nie anfassen (generiert).
   - Platzhalter wie `{{accentColor}}` stehen lassen.
-  - Stile stehen inline im `style`-Attribut. Neue Elemente genauso bauen, keine neuen CSS-Dateien, keine Frameworks.
+  - Stile dürfen inline im `style`-Attribut oder in einem `<style>`-Block im `<helmet>` stehen. Effektklassen erhalten das Präfix `fr-`.
+  - GSAP mit ScrollTrigger und Lenis dürfen per CDN eingebunden werden. Eigenes JavaScript darf in einem `<script>` am Ende von `<body>` stehen.
+  - Die Krake-Logik im `<script type="text/x-dc">` nicht anfassen.
 - Farben nur diese: Hintergrund #fbf9f5, Text #1A2240, Aktion #1c7cd2 (Hover #1769b4), Akzent #fd8c4a/#c46a2c, Flächen #f4f5f0, Karten weiß. Schrift Figtree.
 - Anrede „Sie“. Keine Emojis. Keine Zahl erfinden.
 - `krake.html`, `krake_web.py`, `krake_web.env`, `blog/`, `agb.html`, `avv.html`, `widerruf.html`, `datenschutz.html` nicht ändern, außer der Auftrag nennt die Datei.
