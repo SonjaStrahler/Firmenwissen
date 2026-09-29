@@ -146,11 +146,29 @@
     </div>
   </section>
 
-  <!-- 6 · BURGGRABEN (navy strip) -->
-  <section style="padding:clamp(70px,9vw,100px) 32px; background:#1A2240; color:#fff;">
+  <!-- 7 · VERTRAUEN -->
+  <section style="padding:var(--sp,110px) 32px; background:#1A2240; color:#fff;">
     <div style="max-width:1120px; margin:0 auto;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#fd8c4a;">Ihre Kontrolle</div>
-      <p style="margin-top:24px; font-size:clamp(26px,3.4vw,38px); font-weight:500; line-height:1.25; letter-spacing:-.02em; max-width:24ch; text-wrap:balance;">Ihre Daten verlassen Ihr Haus nicht. Kein US-Cloud-Anbieter. Sie behalten die Kontrolle.</p>
+      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#fd8c4a;">Ihre Daten</div>
+      <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; color:#fff;">Ihr Wissen bleibt Ihres.</h2>
+      <div style="margin-top:52px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:40px;">
+        <div>
+          <h3 style="font-size:22px; font-weight:500; color:#fff;">In Deutschland.</h3>
+          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Auf eigener Hardware, nicht in fremder Cloud.</p>
+        </div>
+        <div>
+          <h3 style="font-size:22px; font-weight:500; color:#fff;">Ehrlich, was hinausgeht.</h3>
+          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Nur die passenden Ausschnitte gehen an das Sprachmodell. Das sagen wir, statt „100 % lokal“ zu versprechen.</p>
+        </div>
+        <div>
+          <h3 style="font-size:22px; font-weight:500; color:#fff;">Es rät nicht.</h3>
+          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Zahlen kommen aus Ihren Dokumenten.</p>
+        </div>
+      </div>
+      <div style="margin-top:48px; font-size:17px; font-weight:400;">
+        <div><a href="datenschutz.html" style="color:#fff; text-decoration:none; transition:color .18s ease;" style-hover="color:#fd8c4a;">Mehr zum Datenschutz →</a></div>
+        <div style="margin-top:12px; color:rgba(255,255,255,.70);">Noch Fragen dazu? Fragen Sie die Krake: <a href="#krake" onClick="{{fragDaten}}" style="color:#fff; text-decoration:underline; transition:color .18s ease;" style-hover="color:#fd8c4a;">Wer sieht meine Daten?</a></div>
+      </div>
     </div>
   </section>
 
@@ -355,6 +373,7 @@ class Component extends DCLogic {
       beispiel1: () => this.senden('Wer sieht meine Daten?'),
       beispiel2: () => this.senden('Was unterscheidet Second von ChatGPT?'),
       beispiel3: () => this.senden('Was kostet das wirklich?'),
+      fragDaten: () => this.senden('Wer sieht meine Daten?'),
       zeigeKarte: laden || !!antwort,
       kartenLabel: label ?? '',
       antwortText: laden ? 'Einen Moment …' : (antwort ?? ''),
