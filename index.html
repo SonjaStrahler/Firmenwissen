@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Second – Das Firmengedächtnis für Ihr Unternehmen</title>
+<meta name="description" content="Second ist das Firmengedächtnis für den Mittelstand. Es hört zu, behält Ihr Wissen und zeigt bei jeder Antwort, woher sie kommt. Daten in Deutschland.">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Figtree',system-ui,sans-serif;background:#fbf9f5;-webkit-font-smoothing:antialiased}
@@ -24,10 +26,10 @@
     <div style="max-width:1120px; margin:0 auto; padding:17px 32px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
       <div style="display:flex; align-items:center; gap:11px;">
         <div style="width:11px; height:11px; border-radius:50%; background:#1c7cd2;"></div>
-        <span style="font-weight:500; font-size:17px; letter-spacing:-.01em; color:#1A2240;">Firmenwissen&nbsp;retten</span>
+        <span style="font-weight:500; font-size:17px; letter-spacing:-.01em; color:#1A2240;">Second</span>
       </div>
       <div style="display:flex; align-items:center; gap:20px;">
-        <a href="krake.html" style="color:#1c7cd2; font-weight:500; font-size:15px; text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Fragen Sie die Krake</a>
+        <a href="krake.html" style="color:#1c7cd2; font-weight:500; font-size:15px; text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Die Krake fragen</a>
         <a href="#kontakt" style="display:inline-flex; align-items:center; gap:8px; background:#1c7cd2; color:#fff; font-weight:500; font-size:15px; padding:11px 20px; border-radius:var(--radius,14px); text-decoration:none; transition:background .18s ease;" style-hover="background:#1769b4;">Erstgespräch</a>
       </div>
     </div>
@@ -43,8 +45,12 @@
         from { opacity:.08; transform:translate3d(calc(var(--hero-image-shift,5%) + 14%),12%,0) scale(.42) rotate(-7deg); }
         to { opacity:.85; transform:translate3d(var(--hero-image-shift,5%),0,0) scale(1) rotate(-2deg); }
       }
+      @keyframes second-hero-smile {
+        from { opacity:0; }
+        to { opacity:1; }
+      }
       @media (prefers-reduced-motion:reduce) {
-        #second-hero { --hero-animation:none; }
+        #second-hero { --hero-animation:none; --hero-smile-animation:none; }
       }
     </style>
     <div style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:var(--hero-columns,minmax(0,1.1fr) minmax(0,1fr)); align-items:center; gap:32px;">
@@ -60,16 +66,12 @@
         <a href="#kontakt" style="display:inline-flex; align-items:center; gap:10px; color:#1c7cd2; font-weight:500; font-size:17px; padding:17px 28px; border:1px solid #1c7cd2; border-radius:var(--radius,14px); text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Erstgespräch vereinbaren</a>
       </div>
       </div>
-      <img src="Images/krake-hero.webp" width="1200" height="1067" alt="Die Krake, das Maskottchen von Second" fetchpriority="high" style="display:block; width:var(--hero-image-width,120%); max-width:none; height:auto; justify-self:center; order:var(--hero-image-order,0); transform:translate3d(var(--hero-image-shift,5%),0,0) scale(1) rotate(-2deg); will-change:transform,opacity; filter:brightness(1.06); mix-blend-mode:multiply; opacity:.85; animation:var(--hero-animation,second-hero-approach 5.6s cubic-bezier(.22,.61,.36,1) both);">
-    </div>
-  </section>
-
-  <!-- 2 · DER SCHMERZ -->
-  <section style="padding:var(--sp,110px) 32px;">
-    <div style="max-width:1120px; margin:0 auto;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Der Verlust</div>
-      <p style="margin-top:28px; font-size:clamp(28px,3.8vw,42px); font-weight:500; line-height:1.22; letter-spacing:-.02em; color:#1A2240; max-width:24ch; text-wrap:balance;">Ein Stück Ihrer Firma verschwindet — endgültig, mit einem Datum, das Sie nicht zurückholen.</p>
-      <p style="margin-top:24px; font-size:19px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.62); max-width:56ch;">Nicht die Maschinen, nicht die Akten. Das, was in keinem Ordner steht: warum man es damals so gemacht hat, wen man anruft, wenn es klemmt, der Handgriff, der ein Problem in Minuten löst. Es geht mit dem Menschen — leise, an einem ganz normalen letzten Arbeitstag.</p>
+      <div id="second-hero-visual" style="position:relative; display:block; width:var(--hero-image-width,120%); max-width:none; height:auto; justify-self:center; order:var(--hero-image-order,0); transform:translate3d(var(--hero-image-shift,5%),0,0) scale(1) rotate(-2deg); will-change:transform,opacity; filter:brightness(1.06); mix-blend-mode:multiply; opacity:.85; animation:var(--hero-animation,second-hero-approach 5.6s cubic-bezier(.22,.61,.36,1) both);">
+        <img src="Images/krake-hero.webp" width="1200" height="1067" alt="Die Krake, das Maskottchen von Second" fetchpriority="high" style="display:block; width:100%; height:auto;">
+        <svg id="second-hero-smile" viewBox="0 0 1200 1067" aria-hidden="true" focusable="false" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:1; animation:var(--hero-smile-animation,second-hero-smile 1.2s ease-in-out 5.7s both);">
+          <path d="M 558 423 Q 591 450 624 423" style="fill:none; stroke:#c46a2c; stroke-width:6.5; stroke-linecap:round;" />
+        </svg>
+      </div>
     </div>
   </section>
 
