@@ -222,29 +222,27 @@
     </div>
   </section>
 
-  <!-- 9 · ANGEBOT -->
+  <!-- 11 · PREIS -->
   <section style="padding:var(--sp,110px) 32px;">
     <div style="max-width:1120px; margin:0 auto;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Das Angebot</div>
-      <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:22ch; text-wrap:balance;">Zwei Dinge. Mehr braucht es nicht.</h2>
-      <div style="margin-top:52px; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px;">
-        <div style="background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:40px 36px; display:flex; flex-direction:column;">
-          <h3 style="font-size:24px; font-weight:500; letter-spacing:-.015em; color:#1A2240;">Einrichtung</h3>
-          <p style="margin-top:14px; font-size:18px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.64); flex:1;">Wir machen das — kein IT-Projekt für Sie. Gespräch, Aufbereitung, fertig eingerichtet. Sie müssen nichts können.</p>
-          <div style="margin-top:26px; border:1px dashed rgba(26,34,64,.28); border-radius:var(--radius,14px); padding:18px 20px; display:flex; align-items:center; gap:12px; background:#fbf9f5;">
-            <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13px; color:rgba(26,34,64,.55);">Preis-Platzhalter</span>
-            <span style="font-size:15px; font-weight:300; color:rgba(26,34,64,.55);">· Startpaket, Zahl folgt</span>
+      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Der Preis</div>
+      <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:22ch; text-wrap:balance;">Klar im Preis.</h2>
+      <div style="max-width:640px; margin-top:48px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:44px 40px;">
+        <div style="display:flex; flex-wrap:wrap; gap:40px; align-items:baseline;">
+          <div>
+            <div style="font-size:clamp(40px,5vw,56px); font-weight:500; line-height:1.1; color:#1A2240;">599 €</div>
+            <div style="margin-top:4px; font-size:15px; font-weight:300; color:rgba(26,34,64,.55);">zum Start</div>
+          </div>
+          <div>
+            <div style="font-size:clamp(40px,5vw,56px); font-weight:500; line-height:1.1; color:#1A2240;">239 €</div>
+            <div style="margin-top:4px; font-size:15px; font-weight:300; color:rgba(26,34,64,.55);">im Monat</div>
           </div>
         </div>
-        <div style="background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:40px 36px; display:flex; flex-direction:column;">
-          <h3 style="font-size:24px; font-weight:500; letter-spacing:-.015em; color:#1A2240;">Das Abo</h3>
-          <p style="margin-top:14px; font-size:18px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.64); flex:1;">Lebt, wächst, immer da. Ihr Firmengedächtnis bleibt aktuell und ist jederzeit fragbar — Monat für Monat.</p>
-          <div style="margin-top:26px; border:1px dashed rgba(26,34,64,.28); border-radius:var(--radius,14px); padding:18px 20px; display:flex; align-items:center; gap:12px; background:#fbf9f5;">
-            <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13px; color:rgba(26,34,64,.55);">Preis-Platzhalter</span>
-            <span style="font-size:15px; font-weight:300; color:rgba(26,34,64,.55);">· monatlich, Zahl folgt</span>
-          </div>
-        </div>
+        <p style="margin-top:28px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.64);">Jeder weitere Platz im Team 10 € im Monat. Monatlicher Kostendeckel, keine Überraschung. Kündigen mit einem Klick.</p>
+        <div style="margin-top:10px; font-size:14px; font-weight:300; color:rgba(26,34,64,.48);">Alle Preise inklusive 19 % MwSt.</div>
+        <a href="#kontakt" style="margin-top:32px; display:inline-flex; align-items:center; gap:10px; background:#1c7cd2; color:#fff; font-weight:500; font-size:17px; padding:17px 28px; border-radius:var(--radius,14px); text-decoration:none; box-shadow:0 1px 2px rgba(26,34,64,.10); transition:background .18s ease;" style-hover="background:#1769b4;">Erstgespräch vereinbaren →</a>
       </div>
+      <p style="margin-top:20px; font-size:17px; font-weight:300; color:rgba(26,34,64,.62);">Noch Fragen zum Preis? Fragen Sie die Krake: <a href="#krake" onClick="{{fragPreis}}" style="color:#1c7cd2; text-decoration:underline; transition:color .18s ease;" style-hover="color:#1769b4;">Was kostet das wirklich?</a></p>
     </div>
   </section>
 
@@ -384,6 +382,7 @@ class Component extends DCLogic {
       beispiel2: () => this.senden('Was unterscheidet Second von ChatGPT?'),
       beispiel3: () => this.senden('Was kostet das wirklich?'),
       fragDaten: () => this.senden('Wer sieht meine Daten?'),
+      fragPreis: () => this.senden('Was kostet das wirklich?'),
       zeigeKarte: laden || !!antwort,
       kartenLabel: label ?? '',
       antwortText: laden ? 'Einen Moment …' : (antwort ?? ''),
