@@ -73,6 +73,39 @@
     </div>
   </section>
 
+  <!-- 5a · KRAKE -->
+  <section id="krake" style="padding:var(--sp,110px) 32px; background:#fbf9f5; text-align:center;">
+    <div style="max-width:680px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
+      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Die Krake</div>
+      <p style="margin-top:18px; font-size:19px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.60);">Keine Katze im Sack. Fragen Sie, bevor Sie sich entscheiden.</p>
+      <div style="width:min(420px,100%); height:260px; margin-top:40px; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle,rgba(26,34,64,.05) 0%,rgba(26,34,64,0) 70%);">
+        <img src="krake.png" alt="Die Krake von Second" style="width:230px; height:auto;">
+      </div>
+      <h2 style="margin-top:30px; font-size:clamp(30px,4.6vw,44px); font-weight:300; line-height:1.15; color:#1A2240; text-wrap:balance;">Womit kann ich <strong style="font-weight:500;">helfen</strong>?</h2>
+      <div style="width:100%; max-width:560px; margin-top:44px;">
+        <div style="position:relative;">
+          <input type="text" value="{{frage}}" onChange="{{onFrage}}" onKeyDown="{{onTaste}}" aria-label="Ihre Frage an die Krake" placeholder="Fragen Sie mich zu Second …" style="width:100%; padding:17px 184px 17px 20px; font-size:16px; font-family:'Figtree',system-ui,sans-serif; font-weight:300; color:#1A2240; background:#fff; border:1px solid rgba(26,34,64,.12); border-radius:14px; outline:none;" style-focus="border-color:#1c7cd2; box-shadow:0 0 0 3px rgba(28,124,210,.10);">
+          <div style="position:absolute; top:50%; right:18px; transform:translateY(-50%); color:rgba(26,34,64,.40); font-size:14px; font-weight:300; white-space:nowrap; pointer-events:none;">Einfach ↵ Enter drücken</div>
+        </div>
+        <div style="margin-top:14px; font-size:13.5px; font-weight:300; color:rgba(26,34,64,.44);">Fragen Sie wie einen Kollegen, nicht wie eine Suchmaschine.</div>
+
+        <sc-if value="{{zeigeKarte}}" hint-placeholder-val="{{false}}">
+          <div style="margin-top:26px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:14px; padding:26px 28px; text-align:left; box-shadow:0 10px 30px -22px rgba(26,34,64,.20);">
+            <div style="font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#c46a2c;">{{kartenLabel}}</div>
+            <p style="margin-top:12px; font-size:16.5px; font-weight:300; line-height:1.65; color:#1A2240; white-space:pre-line;">{{antwortText}}</p>
+          </div>
+        </sc-if>
+
+        <div style="margin-top:40px; font-size:12px; font-weight:400; letter-spacing:.09em; text-transform:uppercase; color:rgba(26,34,64,.44);">Zum Beispiel</div>
+        <div style="margin-top:10px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <button type="button" onClick="{{beispiel1}}" style="border:0; padding:0; background:transparent; color:rgba(26,34,64,.62); font-family:'Figtree',system-ui,sans-serif; font-size:17px; font-weight:300; cursor:pointer; transition:color .15s ease;" style-hover="color:#1c7cd2;">Wer sieht meine Daten?</button>
+          <button type="button" onClick="{{beispiel2}}" style="border:0; padding:0; background:transparent; color:rgba(26,34,64,.62); font-family:'Figtree',system-ui,sans-serif; font-size:17px; font-weight:300; cursor:pointer; transition:color .15s ease;" style-hover="color:#1c7cd2;">Was unterscheidet Second von ChatGPT?</button>
+          <button type="button" onClick="{{beispiel3}}" style="border:0; padding:0; background:transparent; color:rgba(26,34,64,.62); font-family:'Figtree',system-ui,sans-serif; font-size:17px; font-weight:300; cursor:pointer; transition:color .15s ease;" style-hover="color:#1c7cd2;">Was kostet das wirklich?</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 5 · USPs -->
   <section style="padding:var(--sp,110px) 32px; background:#f4f5f0; border-top:1px solid rgba(26,34,64,.08); border-bottom:1px solid rgba(26,34,64,.08);">
     <div style="max-width:1120px; margin:0 auto;">
@@ -248,13 +281,61 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
+  &quot;endpoint&quot;: {&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://krake.firmenwissen-retten.de/frage&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Krake&quot;,&quot;description&quot;:&quot;KRAKE_ENDPOINT — leer = Bald-Modus; URL eintragen = live&quot;},
   &quot;accentColor&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#c46a2c&quot;,&quot;options&quot;:[&quot;#c46a2c&quot;,&quot;#1c7cd2&quot;,&quot;#fd8c4a&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},
   &quot;radius&quot;: {&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:14,&quot;min&quot;:6,&quot;max&quot;:22,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Theme&quot;},
   &quot;sectionPad&quot;: {&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:110,&quot;min&quot;:70,&quot;max&quot;:170,&quot;step&quot;:2,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Theme&quot;}
 }">
 class Component extends DCLogic {
+  state = { frage: '', antwort: null, label: null, laden: false };
+
+  static ANTWORTEN = {};
+
+  senden(frage) {
+    const f = (frage ?? this.state.frage).trim();
+    if (!f) return;
+    const endpoint = this.props.endpoint ?? '';
+    if (!endpoint) {
+      const statisch = Component.ANTWORTEN[f];
+      if (statisch) {
+        this.setState({ frage: f, antwort: statisch, label: 'Antwort der Krake', laden: false });
+      } else {
+        this.setState({
+          frage: f,
+          antwort: 'Die Krake zieht gerade hier ein — schauen Sie in wenigen Tagen wieder vorbei.',
+          label: 'Bald verfügbar',
+          laden: false
+        });
+      }
+      return;
+    }
+    this.setState({ frage: f, laden: true, antwort: null, label: 'Einen Moment …' });
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ frage: f })
+    })
+      .then((r) => r.json())
+      .then((d) => this.setState({ laden: false, antwort: d.antwort, label: 'Antwort der Krake' }))
+      .catch(() => this.setState({
+        laden: false,
+        antwort: 'Das hat gerade nicht geklappt — bitte versuchen Sie es gleich noch einmal.',
+        label: 'Kleine Pause'
+      }));
+  }
+
   renderVals() {
+    const { frage, antwort, label, laden } = this.state;
     return {
+      frage,
+      onFrage: (e) => this.setState({ frage: e.target.value }),
+      onTaste: (e) => { if (e.key === 'Enter') this.senden(); },
+      beispiel1: () => this.senden('Wer sieht meine Daten?'),
+      beispiel2: () => this.senden('Was unterscheidet Second von ChatGPT?'),
+      beispiel3: () => this.senden('Was kostet das wirklich?'),
+      zeigeKarte: laden || !!antwort,
+      kartenLabel: label ?? '',
+      antwortText: laden ? 'Einen Moment …' : (antwort ?? ''),
       accentColor: this.props.accentColor ?? '#c46a2c',
       radius: this.props.radius ?? 14,
       sectionPad: this.props.sectionPad ?? 110,
