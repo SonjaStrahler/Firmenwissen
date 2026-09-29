@@ -21,7 +21,7 @@
 <div style="--accent: {{accentColor}}; --radius: {{radius}}px; --sp: {{sectionPad}}px; background:#fbf9f5; color:#1A2240; min-height:100vh; font-weight:400; line-height:1.5;">
 
   <header style="position:sticky; top:0; z-index:20; background:rgba(251,249,245,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(26,34,64,.10);">
-    <div style="max-width:1120px; margin:0 auto; padding:17px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px;">
+    <div style="max-width:1120px; margin:0 auto; padding:17px 32px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
       <div style="display:flex; align-items:center; gap:11px;">
         <div style="width:11px; height:11px; border-radius:50%; background:#1c7cd2;"></div>
         <span style="font-weight:500; font-size:17px; letter-spacing:-.01em; color:#1A2240;">Firmenwissen&nbsp;retten</span>
@@ -34,17 +34,33 @@
   </header>
 
   <!-- 1 · HERO -->
-  <section style="padding:130px 32px 110px;">
-    <div style="max-width:1120px; margin:0 auto;">
-      <h1 style="font-size:clamp(42px,6.4vw,78px); font-weight:500; line-height:1.03; letter-spacing:-.025em; color:#1A2240; max-width:15ch; text-wrap:balance;">Wenn Ihre Besten gehen, bleibt ihr Wissen.</h1>
-      <p style="margin-top:30px; font-size:clamp(19px,2.2vw,23px); font-weight:300; line-height:1.55; color:rgba(26,34,64,.60); max-width:60ch;">Das Erfahrungswissen Ihrer langjährigen Mitarbeitenden — gesichert, durchsuchbar und jederzeit da. Auch dann, wenn die Person längst in Rente ist.</p>
+  <section id="second-hero" style="padding:130px 32px 110px; overflow:hidden;">
+    <style>
+      @media (max-width:799px) {
+        #second-hero { --hero-columns:minmax(0,1fr); --hero-image-order:-1; --hero-image-width:200px; --hero-image-shift:0%; }
+      }
+      @keyframes second-hero-approach {
+        from { opacity:.08; transform:translate3d(calc(var(--hero-image-shift,5%) + 14%),12%,0) scale(.42) rotate(-7deg); }
+        to { opacity:.85; transform:translate3d(var(--hero-image-shift,5%),0,0) scale(1) rotate(-2deg); }
+      }
+      @media (prefers-reduced-motion:reduce) {
+        #second-hero { --hero-animation:none; }
+      }
+    </style>
+    <div style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:var(--hero-columns,minmax(0,1.1fr) minmax(0,1fr)); align-items:center; gap:32px;">
+      <div style="min-width:0; position:relative; z-index:1;">
+      <div style="margin-bottom:20px; font-size:13px; font-weight:500; letter-spacing:.09em; color:var(--accent,#c46a2c);">Second · Das Firmengedächtnis</div>
+      <h1 style="font-size:clamp(42px,6.4vw,78px); font-weight:500; line-height:1.03; letter-spacing:-.025em; color:#1A2240; max-width:15ch; text-wrap:balance;">Alles, was Ihre Firma je gewusst hat. Eine Frage entfernt.</h1>
+      <p style="margin-top:30px; font-size:clamp(19px,2.2vw,23px); font-weight:300; line-height:1.55; color:rgba(26,34,64,.60); max-width:60ch;">Second hört zu, behält und erinnert Sie. Mit Quelle, in Deutschland, ohne dass Sie ein System füttern müssen.</p>
       <div style="margin-top:42px; display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
-        <a href="#kontakt" style="display:inline-flex; align-items:center; gap:10px; background:#1c7cd2; color:#fff; font-weight:500; font-size:17px; padding:17px 28px; border-radius:var(--radius,14px); text-decoration:none; box-shadow:0 1px 2px rgba(26,34,64,.10); transition:background .18s ease;" style-hover="background:#1769b4;">
-          Das erste Interview ist der Beweis
+        <a href="krake.html" style="display:inline-flex; align-items:center; gap:10px; background:#1c7cd2; color:#fff; font-weight:500; font-size:17px; padding:17px 28px; border-radius:var(--radius,14px); text-decoration:none; box-shadow:0 1px 2px rgba(26,34,64,.10); transition:background .18s ease;" style-hover="background:#1769b4;">
+          Die Krake fragen
           <span style="font-size:19px; line-height:0;">→</span>
         </a>
-        <span style="font-size:15px; font-weight:300; color:rgba(26,34,64,.52);">Ein Gespräch. Kein Risiko.</span>
+        <a href="#kontakt" style="display:inline-flex; align-items:center; gap:10px; color:#1c7cd2; font-weight:500; font-size:17px; padding:17px 28px; border:1px solid #1c7cd2; border-radius:var(--radius,14px); text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Erstgespräch vereinbaren</a>
       </div>
+      </div>
+      <img src="Images/krake-hero.webp" width="1200" height="1067" alt="Die Krake, das Maskottchen von Second" fetchpriority="high" style="display:block; width:var(--hero-image-width,120%); max-width:none; height:auto; justify-self:center; order:var(--hero-image-order,0); transform:translate3d(var(--hero-image-shift,5%),0,0) scale(1) rotate(-2deg); will-change:transform,opacity; filter:brightness(1.06); mix-blend-mode:multiply; opacity:.85; animation:var(--hero-animation,second-hero-approach 5.6s cubic-bezier(.22,.61,.36,1) both);">
     </div>
   </section>
 
