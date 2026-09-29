@@ -11,13 +11,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
-<title>Second – Das Firmengedächtnis für Ihr Unternehmen</title>
-<meta name="description" content="Second ist das Firmengedächtnis für den Mittelstand. Es hört zu, behält Ihr Wissen und zeigt bei jeder Antwort, woher sie kommt. Daten in Deutschland.">
+<title>Second – der zweite Kopf Ihrer Firma | Firmenwissen retten</title>
+<meta name="description" content="Second ist das Firmengedächtnis für den deutschen Mittelstand. Der zweite Kopf Ihrer Firma: hört zu, behält Ihr Wissen und zeigt bei jeder Antwort, woher sie kommt. Daten in Deutschland.">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Figtree',system-ui,sans-serif;background:#fbf9f5;-webkit-font-smoothing:antialiased}
   a{color:inherit}
   ::selection{background:#1c7cd2;color:#fff}
+  .fr-wort{display:inline-block;opacity:0;transform:translateY(18px);animation:fr-wort-einblenden .6s ease both;animation-delay:calc(.4s + var(--fr-index)*.08s)}
+  @keyframes fr-wort-einblenden{to{opacity:1;transform:translateY(0)}}
+  .fr-scrollstrich{width:1px;height:34px;background:rgba(255,255,255,.40);animation:fr-scroll-pulsieren 1.8s ease-in-out infinite}
+  @keyframes fr-scroll-pulsieren{0%,100%{transform:translateY(0);opacity:.65}50%{transform:translateY(6px);opacity:1}}
+  .fr-laufband__fenster{overflow:hidden;padding:22px 0;background:#fd8c4a;color:#1A2240}
+  .fr-laufband__spur{display:flex;width:max-content;animation:fr-laufband 40s linear infinite}
+  .fr-laufband__gruppe{display:flex;flex:0 0 auto;align-items:center;gap:28px;padding-right:28px;white-space:nowrap;font-size:clamp(22px,2.8vw,34px);font-weight:500}
+  @keyframes fr-laufband{to{transform:translateX(-50%)}}
+  @keyframes fr-auftauchen{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+  @supports (animation-timeline:view()){.fr-auftauchen{animation:fr-auftauchen linear both;animation-timeline:view();animation-range:entry 0% cover 30%}}
+  @supports not (animation-timeline:view()){.fr-auftauchen{opacity:1;transform:none;animation:none}}
+  @media (max-width:480px){.fr-hero{padding-left:8px!important;padding-right:8px!important}.fr-hero>div{width:100%;min-width:0}}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.fr-wort,.fr-auftauchen{opacity:1!important;transform:none!important}.fr-laufband__spur{transform:none!important}}
 </style>
 </helmet>
 <div style="--accent: {{accentColor}}; --radius: {{radius}}px; --sp: {{sectionPad}}px; background:#fbf9f5; color:#1A2240; min-height:100vh; font-weight:400; line-height:1.5;">
@@ -36,39 +49,51 @@
   </header>
 
   <!-- 1 · HERO -->
-  <section id="second-hero" style="padding:130px 32px 110px; overflow:hidden;">
+  <section id="second-hero" class="fr-hero" style="position:relative; min-height:100vh; padding:90px 32px 110px; display:flex; align-items:center; overflow:hidden; background:#1A2240; color:#fff;">
     <div style="max-width:1120px; margin:0 auto;">
       <div style="min-width:0; position:relative; z-index:1;">
-      <div style="margin-bottom:20px; font-size:13px; font-weight:500; letter-spacing:.09em; color:var(--accent,#c46a2c);">Second · Das Firmengedächtnis</div>
-      <h1 style="font-size:clamp(42px,6.4vw,78px); font-weight:500; line-height:1.03; letter-spacing:-.025em; color:#1A2240; max-width:18ch; text-wrap:balance;">Alles, was Ihre Firma je gewusst hat. Eine Frage entfernt.</h1>
-      <p style="margin-top:30px; font-size:clamp(19px,2.2vw,23px); font-weight:300; line-height:1.55; color:rgba(26,34,64,.60); max-width:60ch;">Second hört zu, behält und erinnert Sie. Mit Quelle, in Deutschland, ohne dass Sie ein System füttern müssen.</p>
+      <div style="font-size:clamp(88px,17vw,240px); font-weight:500; letter-spacing:-.045em; line-height:.9; color:#fff;">Second<span style="color:#fd8c4a;">.</span></div>
+      <div style="margin-top:12px; font-size:clamp(22px,2.6vw,32px); font-weight:300; color:rgba(255,255,255,.72);">Der zweite Kopf Ihrer Firma.</div>
+      <h1 style="margin-top:56px; font-size:clamp(32px,4.4vw,56px); font-weight:500; line-height:1.1; letter-spacing:-.025em; color:#fff; max-width:20ch; text-wrap:balance;"><span class="fr-wort" style="--fr-index:0;">Alles,</span> <span class="fr-wort" style="--fr-index:1;">was</span> <span class="fr-wort" style="--fr-index:2;">Ihre</span> <span class="fr-wort" style="--fr-index:3;">Firma</span> <span class="fr-wort" style="--fr-index:4;">je</span> <span class="fr-wort" style="--fr-index:5;">gewusst</span> <span class="fr-wort" style="--fr-index:6;">hat.</span> <span class="fr-wort" style="--fr-index:7;">Eine</span> <span class="fr-wort" style="--fr-index:8;">Frage</span> <span class="fr-wort" style="--fr-index:9;">entfernt.</span></h1>
+      <p style="margin-top:30px; font-size:clamp(19px,2.2vw,23px); font-weight:300; line-height:1.55; color:rgba(255,255,255,.62); max-width:60ch;">Second hört zu, behält und erinnert Sie. Mit Quelle, in Deutschland, ohne dass Sie ein System füttern müssen.</p>
       <div style="margin-top:42px; display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
         <a href="#krake" style="display:inline-flex; align-items:center; gap:10px; background:#1c7cd2; color:#fff; font-weight:500; font-size:17px; padding:17px 28px; border-radius:var(--radius,14px); text-decoration:none; box-shadow:0 1px 2px rgba(26,34,64,.10); transition:background .18s ease;" style-hover="background:#1769b4;">
           Die Krake fragen
           <span style="font-size:19px; line-height:0;">→</span>
         </a>
-        <a href="#kontakt" style="display:inline-flex; align-items:center; gap:10px; color:#1c7cd2; font-weight:500; font-size:17px; padding:17px 28px; border:1px solid #1c7cd2; border-radius:var(--radius,14px); text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Erstgespräch vereinbaren</a>
+        <a href="#kontakt" style="display:inline-flex; align-items:center; gap:10px; color:#fff; font-weight:500; font-size:17px; padding:17px 28px; border:1px solid rgba(255,255,255,.72); border-radius:var(--radius,14px); text-decoration:none; transition:background .18s ease;" style-hover="background:rgba(255,255,255,.08);">Erstgespräch vereinbaren</a>
       </div>
       </div>
     </div>
+    <div style="position:absolute; bottom:24px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:10px; color:rgba(255,255,255,.40); font-size:12px; font-weight:300;">
+      <span>Scrollen</span>
+      <span class="fr-scrollstrich"></span>
+    </div>
   </section>
+
+  <div class="fr-laufband__fenster" aria-label="Hört zu, behält, erinnert, denkt mit, wacht, schreibt, zeigt">
+    <div class="fr-laufband__spur">
+      <div class="fr-laufband__gruppe"><span>Hört zu</span><span>·</span><span>Behält</span><span>·</span><span>Erinnert</span><span>·</span><span>Denkt mit</span><span>·</span><span>Wacht</span><span>·</span><span>Schreibt</span><span>·</span><span>Zeigt</span><span>·</span></div>
+      <div class="fr-laufband__gruppe" aria-hidden="true"><span>Hört zu</span><span>·</span><span>Behält</span><span>·</span><span>Erinnert</span><span>·</span><span>Denkt mit</span><span>·</span><span>Wacht</span><span>·</span><span>Schreibt</span><span>·</span><span>Zeigt</span><span>·</span></div>
+    </div>
+  </div>
 
   <!-- 4 · GÄNSEHAUT + VIDEO -->
   <section style="padding:var(--sp,110px) 32px;">
     <div style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:56px; align-items:center;">
       <div>
-        <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Der Moment</div>
-        <h2 style="margin-top:26px; font-size:clamp(26px,3.4vw,38px); font-weight:500; line-height:1.24; letter-spacing:-.02em; color:#1A2240; text-wrap:balance;">Sie dürfen vergessen. Second nicht.</h2>
-        <p style="margin-top:22px; font-size:18px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.62); max-width:52ch;">Das Angebot vom letzten Jahr. Die Zusage an Müller. Warum die Presse bei Charge 4 immer länger braucht. Irgendwo steht es. Nur wo? Sie fragen. Second antwortet und sagt dazu, woher es das weiß: aus dem Gespräch vom 12. März, aus der Preisliste vom Januar. Ihr Gedächtnis, mit Fußnoten.</p>
+        <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Der Moment</div>
+        <h2 class="fr-auftauchen" style="margin-top:26px; font-size:clamp(26px,3.4vw,38px); font-weight:500; line-height:1.24; letter-spacing:-.02em; color:#1A2240; text-wrap:balance;">Sie dürfen vergessen. Second nicht.</h2>
+        <p class="fr-auftauchen" style="margin-top:22px; font-size:18px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.62); max-width:52ch;">Das Angebot vom letzten Jahr. Die Zusage an Müller. Warum die Presse bei Charge 4 immer länger braucht. Irgendwo steht es. Nur wo? Sie fragen. Second antwortet und sagt dazu, woher es das weiß: aus dem Gespräch vom 12. März, aus der Preisliste vom Januar. Ihr Gedächtnis, mit Fußnoten.</p>
       </div>
       <div>
-        <div style="position:relative; aspect-ratio:16/9; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); overflow:hidden; box-shadow:0 1px 2px rgba(26,34,64,.06); display:flex; align-items:center; justify-content:center;">
+        <div class="fr-auftauchen" style="position:relative; aspect-ratio:16/9; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); overflow:hidden; box-shadow:0 1px 2px rgba(26,34,64,.06); display:flex; align-items:center; justify-content:center;">
           <div style="position:absolute; inset:0; background:repeating-linear-gradient(45deg,#f8f6f1,#f8f6f1 13px,#f2f0ea 13px,#f2f0ea 26px);"></div>
           <div style="position:relative; z-index:1; width:76px; height:76px; border-radius:50%; background:#1c7cd2; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(28,124,210,.32);">
             <div style="width:0; height:0; border-style:solid; border-width:13px 0 13px 22px; border-color:transparent transparent transparent #fff; margin-left:6px;"></div>
           </div>
         </div>
-        <div style="margin-top:16px; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13px; letter-spacing:.02em; color:rgba(26,34,64,.52);">Video folgt.</div>
+        <div class="fr-auftauchen" style="margin-top:16px; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13px; letter-spacing:.02em; color:rgba(26,34,64,.52);">Video folgt.</div>
       </div>
     </div>
   </section>
@@ -76,31 +101,31 @@
   <!-- 5a · KRAKE -->
   <section id="krake" style="padding:var(--sp,110px) 32px; background:#fbf9f5; text-align:center;">
     <div style="max-width:680px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Die Krake</div>
-      <p style="margin-top:18px; font-size:19px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.60);">Keine Katze im Sack. Fragen Sie, bevor Sie sich entscheiden.</p>
-      <div style="width:min(420px,100%); height:260px; margin-top:40px; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle,rgba(26,34,64,.05) 0%,rgba(26,34,64,0) 70%);">
+      <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Die Krake</div>
+      <p class="fr-auftauchen" style="margin-top:18px; font-size:19px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.60);">Keine Katze im Sack. Fragen Sie, bevor Sie sich entscheiden.</p>
+      <div class="fr-auftauchen" style="width:min(420px,100%); height:260px; margin-top:40px; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle,rgba(26,34,64,.05) 0%,rgba(26,34,64,0) 70%);">
         <img src="krake.png" alt="Die Krake von Second" style="width:230px; height:auto;">
       </div>
-      <h2 style="margin-top:30px; font-size:clamp(30px,4.6vw,44px); font-weight:300; line-height:1.15; color:#1A2240; text-wrap:balance;">Womit kann ich <strong style="font-weight:500;">helfen</strong>?</h2>
-      <div style="width:100%; max-width:560px; margin-top:44px;">
+      <h2 class="fr-auftauchen" style="margin-top:30px; font-size:clamp(30px,4.6vw,44px); font-weight:300; line-height:1.15; color:#1A2240; text-wrap:balance;">Womit kann ich <strong style="font-weight:500;">helfen</strong>?</h2>
+      <div class="fr-auftauchen" style="width:100%; max-width:560px; margin-top:44px;">
         <div style="position:relative;">
           <input type="text" value="{{frage}}" onChange="{{onFrage}}" onKeyDown="{{onTaste}}" aria-label="Ihre Frage an die Krake" placeholder="Fragen Sie mich zu Second …" style="width:100%; padding:17px 184px 17px 20px; font-size:16px; font-family:'Figtree',system-ui,sans-serif; font-weight:300; color:#1A2240; background:#fff; border:1px solid rgba(26,34,64,.12); border-radius:14px; outline:none;" style-focus="border-color:#1c7cd2; box-shadow:0 0 0 3px rgba(28,124,210,.10);">
           <div style="position:absolute; top:50%; right:18px; transform:translateY(-50%); color:rgba(26,34,64,.40); font-size:14px; font-weight:300; white-space:nowrap; pointer-events:none;">Einfach ↵ Enter drücken</div>
         </div>
-        <div style="margin-top:14px; font-size:13.5px; font-weight:300; color:rgba(26,34,64,.44);">Fragen Sie wie einen Kollegen, nicht wie eine Suchmaschine.</div>
+        <div class="fr-auftauchen" style="margin-top:14px; font-size:13.5px; font-weight:300; color:rgba(26,34,64,.44);">Fragen Sie wie einen Kollegen, nicht wie eine Suchmaschine.</div>
 
         <sc-if value="{{zeigeKarte}}" hint-placeholder-val="{{false}}">
-          <div style="margin-top:26px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:14px; padding:26px 28px; text-align:left; box-shadow:0 10px 30px -22px rgba(26,34,64,.20);">
+          <div class="fr-auftauchen" style="margin-top:26px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:14px; padding:26px 28px; text-align:left; box-shadow:0 10px 30px -22px rgba(26,34,64,.20);">
             <div style="font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#c46a2c;">{{kartenLabel}}</div>
-            <p style="margin-top:12px; font-size:16.5px; font-weight:300; line-height:1.65; color:#1A2240; white-space:pre-line;">{{antwortText}}</p>
+            <p class="fr-auftauchen" style="margin-top:12px; font-size:16.5px; font-weight:300; line-height:1.65; color:#1A2240; white-space:pre-line;">{{antwortText}}</p>
           </div>
         </sc-if>
 
-        <div style="margin-top:40px; font-size:12px; font-weight:400; letter-spacing:.09em; text-transform:uppercase; color:rgba(26,34,64,.44);">Zum Beispiel</div>
-        <div style="margin-top:10px; display:flex; flex-direction:column; align-items:center; gap:10px;">
-          <button type="button" onClick="{{beispiel1}}" style="border:0; padding:0; background:transparent; color:rgba(26,34,64,.62); font-family:'Figtree',system-ui,sans-serif; font-size:17px; font-weight:300; cursor:pointer; transition:color .15s ease;" style-hover="color:#1c7cd2;">Wer sieht meine Daten?</button>
-          <button type="button" onClick="{{beispiel2}}" style="border:0; padding:0; background:transparent; color:rgba(26,34,64,.62); font-family:'Figtree',system-ui,sans-serif; font-size:17px; font-weight:300; cursor:pointer; transition:color .15s ease;" style-hover="color:#1c7cd2;">Was unterscheidet Second von ChatGPT?</button>
-          <button type="button" onClick="{{beispiel3}}" style="border:0; padding:0; background:transparent; color:rgba(26,34,64,.62); font-family:'Figtree',system-ui,sans-serif; font-size:17px; font-weight:300; cursor:pointer; transition:color .15s ease;" style-hover="color:#1c7cd2;">Was kostet das wirklich?</button>
+        <div class="fr-auftauchen" style="margin-top:40px; font-size:12px; font-weight:400; letter-spacing:.09em; text-transform:uppercase; color:rgba(26,34,64,.44);">Zum Beispiel</div>
+        <div class="fr-auftauchen" style="margin-top:10px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <button class="fr-auftauchen" type="button" onClick="{{beispiel1}}" style="border:0; padding:0; background:transparent; color:rgba(26,34,64,.62); font-family:'Figtree',system-ui,sans-serif; font-size:17px; font-weight:300; cursor:pointer; transition:color .15s ease;" style-hover="color:#1c7cd2;">Wer sieht meine Daten?</button>
+          <button class="fr-auftauchen" type="button" onClick="{{beispiel2}}" style="border:0; padding:0; background:transparent; color:rgba(26,34,64,.62); font-family:'Figtree',system-ui,sans-serif; font-size:17px; font-weight:300; cursor:pointer; transition:color .15s ease;" style-hover="color:#1c7cd2;">Was unterscheidet Second von ChatGPT?</button>
+          <button class="fr-auftauchen" type="button" onClick="{{beispiel3}}" style="border:0; padding:0; background:transparent; color:rgba(26,34,64,.62); font-family:'Figtree',system-ui,sans-serif; font-size:17px; font-weight:300; cursor:pointer; transition:color .15s ease;" style-hover="color:#1c7cd2;">Was kostet das wirklich?</button>
         </div>
       </div>
     </div>
@@ -109,65 +134,65 @@
   <!-- 6 · WAS SECOND TUT -->
   <section style="padding:var(--sp,110px) 32px; background:#f4f5f0; border-top:1px solid rgba(26,34,64,.08); border-bottom:1px solid rgba(26,34,64,.08);">
     <div style="max-width:1120px; margin:0 auto;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Was Second tut</div>
-      <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:26ch; text-wrap:balance;">Ein Gedächtnis, das mitdenkt.</h2>
-      <p style="margin-top:18px; font-size:19px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.60); max-width:56ch;">Second ist das Firmengedächtnis für den deutschen Mittelstand.</p>
+      <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Was Second tut</div>
+      <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:26ch; text-wrap:balance;">Ein Gedächtnis, das mitdenkt.</h2>
+      <p class="fr-auftauchen" style="margin-top:18px; font-size:19px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.60); max-width:56ch;">Second ist das Firmengedächtnis für den deutschen Mittelstand.</p>
       <div style="margin-top:48px; display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; -webkit-overflow-scrolling:touch;">
-        <div style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 style="font-size:24px; font-weight:500; color:#1A2240;">Hört zu.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ein Gespräch genügt. Aufschreiben war gestern.</p>
+        <div class="fr-auftauchen" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;">Hört zu.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ein Gespräch genügt. Aufschreiben war gestern.</p>
         </div>
-        <div style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 style="font-size:24px; font-weight:500; color:#1A2240;">Behält.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Jedes Dokument, jedes Foto, jedes Wort. An einem Ort.</p>
+        <div class="fr-auftauchen" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;">Behält.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Jedes Dokument, jedes Foto, jedes Wort. An einem Ort.</p>
         </div>
-        <div style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 style="font-size:24px; font-weight:500; color:#1A2240;">Erinnert.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Jede Antwort zeigt, woher sie kommt.</p>
+        <div class="fr-auftauchen" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;">Erinnert.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Jede Antwort zeigt, woher sie kommt.</p>
         </div>
-        <div style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 style="font-size:24px; font-weight:500; color:#1A2240;">Denkt mit.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ein Gegenüber, das Ihre Firma kennt und sagt, was es nicht weiß.</p>
+        <div class="fr-auftauchen" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;">Denkt mit.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ein Gegenüber, das Ihre Firma kennt und sagt, was es nicht weiß.</p>
         </div>
-        <div style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 style="font-size:24px; font-weight:500; color:#1A2240;">Wacht.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Richtlinien, Ausschreibungen, Wettbewerb. Jeden Morgen im Blick.</p>
+        <div class="fr-auftauchen" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;">Wacht.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Richtlinien, Ausschreibungen, Wettbewerb. Jeden Morgen im Blick.</p>
         </div>
-        <div style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 style="font-size:24px; font-weight:500; color:#1A2240;">Schreibt.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Der Bericht für Bank, Beirat oder Team. Aus Ihrem Wissen, nicht aus dem Netz.</p>
+        <div class="fr-auftauchen" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;">Schreibt.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Der Bericht für Bank, Beirat oder Team. Aus Ihrem Wissen, nicht aus dem Netz.</p>
         </div>
-        <div style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
-          <h3 style="font-size:24px; font-weight:500; color:#1A2240;">Zeigt.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ihr eigenes Schaufenster nach draußen. Mit eigenem Schlüssel für jeden Gast.</p>
+        <div class="fr-auftauchen" style="flex:0 0 280px; scroll-snap-align:start; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 30px;">
+          <h3 class="fr-auftauchen" style="font-size:24px; font-weight:500; color:#1A2240;">Zeigt.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ihr eigenes Schaufenster nach draußen. Mit eigenem Schlüssel für jeden Gast.</p>
         </div>
       </div>
-      <div style="margin-top:18px; font-size:13.5px; font-weight:300; color:rgba(26,34,64,.44);">Wischen oder scrollen →</div>
+      <div class="fr-auftauchen" style="margin-top:18px; font-size:13.5px; font-weight:300; color:rgba(26,34,64,.44);">Wischen oder scrollen →</div>
     </div>
   </section>
 
   <!-- 7 · VERTRAUEN -->
   <section style="padding:var(--sp,110px) 32px; background:#1A2240; color:#fff;">
     <div style="max-width:1120px; margin:0 auto;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#fd8c4a;">Ihre Daten</div>
-      <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; color:#fff;">Ihr Wissen bleibt Ihres.</h2>
+      <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#fd8c4a;">Ihre Daten</div>
+      <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; color:#fff;">Ihr Wissen bleibt Ihres.</h2>
       <div style="margin-top:52px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:40px;">
         <div>
-          <h3 style="font-size:22px; font-weight:500; color:#fff;">In Deutschland.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Auf eigener Hardware, nicht in fremder Cloud.</p>
+          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#fff;">In Deutschland.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Auf eigener Hardware, nicht in fremder Cloud.</p>
         </div>
         <div>
-          <h3 style="font-size:22px; font-weight:500; color:#fff;">Ehrlich, was hinausgeht.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Nur die passenden Ausschnitte gehen an das Sprachmodell. Das sagen wir, statt „100 % lokal“ zu versprechen.</p>
+          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#fff;">Ehrlich, was hinausgeht.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Nur die passenden Ausschnitte gehen an das Sprachmodell. Das sagen wir, statt „100 % lokal“ zu versprechen.</p>
         </div>
         <div>
-          <h3 style="font-size:22px; font-weight:500; color:#fff;">Es rät nicht.</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Zahlen kommen aus Ihren Dokumenten.</p>
+          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#fff;">Es rät nicht.</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Zahlen kommen aus Ihren Dokumenten.</p>
         </div>
       </div>
       <div style="margin-top:48px; font-size:17px; font-weight:400;">
-        <div><a href="datenschutz.html" style="color:#fff; text-decoration:none; transition:color .18s ease;" style-hover="color:#fd8c4a;">Mehr zum Datenschutz →</a></div>
-        <div style="margin-top:12px; color:rgba(255,255,255,.70);">Noch Fragen dazu? Fragen Sie die Krake: <a href="#krake" onClick="{{fragDaten}}" style="color:#fff; text-decoration:underline; transition:color .18s ease;" style-hover="color:#fd8c4a;">Wer sieht meine Daten?</a></div>
+        <div class="fr-auftauchen"><a href="datenschutz.html" style="color:#fff; text-decoration:none; transition:color .18s ease;" style-hover="color:#fd8c4a;">Mehr zum Datenschutz →</a></div>
+        <div class="fr-auftauchen" style="margin-top:12px; color:rgba(255,255,255,.70);">Noch Fragen dazu? Fragen Sie die Krake: <a href="#krake" onClick="{{fragDaten}}" style="color:#fff; text-decoration:underline; transition:color .18s ease;" style-hover="color:#fd8c4a;">Wer sieht meine Daten?</a></div>
       </div>
     </div>
   </section>
@@ -175,31 +200,31 @@
   <!-- 8 · BIBLIOTHEK -->
   <section style="padding:var(--sp,110px) 32px; background:#fbf9f5;">
     <div style="max-width:1120px; margin:0 auto;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Die Bibliothek</div>
-      <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:26ch; text-wrap:balance;">Über 100 Fachbücher denken mit.</h2>
-      <p style="margin-top:22px; font-size:19px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.62); max-width:56ch;">Führung, Methoden, Management: Second kennt nicht nur Ihre Firma, sondern auch die Literatur dazu. Und Ihre eigenen Fachbücher lesen Sie einfach dazu ein. So wird aus einer Antwort ein Rat.</p>
+      <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Die Bibliothek</div>
+      <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:26ch; text-wrap:balance;">Über 100 Fachbücher denken mit.</h2>
+      <p class="fr-auftauchen" style="margin-top:22px; font-size:19px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.62); max-width:56ch;">Führung, Methoden, Management: Second kennt nicht nur Ihre Firma, sondern auch die Literatur dazu. Und Ihre eigenen Fachbücher lesen Sie einfach dazu ein. So wird aus einer Antwort ein Rat.</p>
     </div>
   </section>
 
   <!-- 9 · FÜR WEN -->
   <section style="padding:var(--sp,110px) 32px; background:#f4f5f0; border-top:1px solid rgba(26,34,64,.08); border-bottom:1px solid rgba(26,34,64,.08);">
     <div style="max-width:1120px; margin:0 auto;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Für wen</div>
-      <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:26ch; text-wrap:balance;">Für wen Second gemacht ist.</h2>
+      <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Für wen</div>
+      <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:26ch; text-wrap:balance;">Für wen Second gemacht ist.</h2>
       <div style="margin-top:52px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;">
-        <a href="#kontakt" style="display:flex; flex-direction:column; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:36px 32px; color:inherit; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
-          <h3 style="font-size:22px; font-weight:500; color:#1A2240;">Unternehmen</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Die Firma, die nichts mehr vergisst. Auch nicht, wenn jemand geht.</p>
+        <a class="fr-auftauchen" href="#kontakt" style="display:flex; flex-direction:column; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:36px 32px; color:inherit; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
+          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#1A2240;">Unternehmen</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Die Firma, die nichts mehr vergisst. Auch nicht, wenn jemand geht.</p>
           <div style="margin-top:20px; font-size:15px; font-weight:500; color:#1c7cd2;">Mehr erfahren →</div>
         </a>
-        <a href="#kontakt" style="display:flex; flex-direction:column; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:36px 32px; color:inherit; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
-          <h3 style="font-size:22px; font-weight:500; color:#1A2240;">Beratung</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Jeder Mandant, jedes Gespräch, jede Zusage. Eine Frage entfernt.</p>
+        <a class="fr-auftauchen" href="#kontakt" style="display:flex; flex-direction:column; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:36px 32px; color:inherit; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
+          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#1A2240;">Beratung</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Jeder Mandant, jedes Gespräch, jede Zusage. Eine Frage entfernt.</p>
           <div style="margin-top:20px; font-size:15px; font-weight:500; color:#1c7cd2;">Mehr erfahren →</div>
         </a>
-        <a href="#kontakt" style="display:flex; flex-direction:column; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:36px 32px; color:inherit; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
-          <h3 style="font-size:22px; font-weight:500; color:#1A2240;">Kammern und Verbände</h3>
-          <p style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ein Gedächtnis für jeden Betrieb in Ihrem Netzwerk.</p>
+        <a class="fr-auftauchen" href="#kontakt" style="display:flex; flex-direction:column; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:36px 32px; color:inherit; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
+          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#1A2240;">Kammern und Verbände</h3>
+          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ein Gedächtnis für jeden Betrieb in Ihrem Netzwerk.</p>
           <div style="margin-top:20px; font-size:15px; font-weight:500; color:#1c7cd2;">Mehr erfahren →</div>
         </a>
       </div>
@@ -209,14 +234,14 @@
   <!-- 8 · BEGRÜSSUNG SONJA -->
   <section style="padding:var(--sp,110px) 32px; background:#f4f5f0; border-top:1px solid rgba(26,34,64,.08); border-bottom:1px solid rgba(26,34,64,.08);">
     <div style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:start;">
-      <div style="width:190px; height:190px; border-radius:50%; overflow:hidden; position:relative; border:1px solid rgba(26,34,64,.10); flex-shrink:0;">
+      <div class="fr-auftauchen" style="width:190px; height:190px; border-radius:50%; overflow:hidden; position:relative; border:1px solid rgba(26,34,64,.10); flex-shrink:0;">
         <img src="Images/sonja.webp" width="480" height="480" alt="Sonja Strahler, Gründerin von Second" loading="lazy" style="display:block; width:100%; height:100%; object-fit:cover;">
       </div>
       <div style="max-width:52ch;">
-        <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Ein Mensch dahinter</div>
-        <p style="margin-top:22px; font-size:clamp(20px,2.4vw,25px); font-weight:400; line-height:1.5; color:#1A2240;">Ich baue das, weil ich es leid bin, zuzusehen, wie gute Firmen ihr Bestes verlieren — nur weil niemand rechtzeitig zugehört hat. Ich mache das offen und ehrlich, Schritt für Schritt. Kein Konzern, keine Blackbox. Wenn Sie mich anrufen, gehe ich ran.</p>
-        <div style="margin-top:26px; font-size:16px; font-weight:500; color:#1A2240;">Sonja Strahler</div>
-        <div style="font-size:15px; font-weight:300; color:rgba(26,34,64,.55);">Ein offener Blick GmbH</div>
+        <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Ein Mensch dahinter</div>
+        <p class="fr-auftauchen" style="margin-top:22px; font-size:clamp(20px,2.4vw,25px); font-weight:400; line-height:1.5; color:#1A2240;">Ich baue das, weil ich es leid bin, zuzusehen, wie gute Firmen ihr Bestes verlieren — nur weil niemand rechtzeitig zugehört hat. Ich mache das offen und ehrlich, Schritt für Schritt. Kein Konzern, keine Blackbox. Wenn Sie mich anrufen, gehe ich ran.</p>
+        <div class="fr-auftauchen" style="margin-top:26px; font-size:16px; font-weight:500; color:#1A2240;">Sonja Strahler</div>
+        <div class="fr-auftauchen" style="font-size:15px; font-weight:300; color:rgba(26,34,64,.55);">Ein offener Blick GmbH</div>
       </div>
     </div>
   </section>
@@ -224,32 +249,32 @@
   <!-- 11 · PREIS -->
   <section style="padding:var(--sp,110px) 32px;">
     <div style="max-width:1120px; margin:0 auto;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Der Preis</div>
-      <h2 style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:22ch; text-wrap:balance;">Klar im Preis.</h2>
-      <div style="max-width:640px; margin-top:48px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:44px 40px;">
+      <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Der Preis</div>
+      <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:22ch; text-wrap:balance;">Klar im Preis.</h2>
+      <div class="fr-auftauchen" style="max-width:640px; margin-top:48px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:44px 40px;">
         <div style="display:flex; flex-wrap:wrap; gap:40px; align-items:baseline;">
-          <div>
+          <div class="fr-auftauchen">
             <div style="font-size:clamp(40px,5vw,56px); font-weight:500; line-height:1.1; color:#1A2240;">599 €</div>
             <div style="margin-top:4px; font-size:15px; font-weight:300; color:rgba(26,34,64,.55);">zum Start</div>
           </div>
-          <div>
+          <div class="fr-auftauchen">
             <div style="font-size:clamp(40px,5vw,56px); font-weight:500; line-height:1.1; color:#1A2240;">239 €</div>
             <div style="margin-top:4px; font-size:15px; font-weight:300; color:rgba(26,34,64,.55);">im Monat</div>
           </div>
         </div>
-        <p style="margin-top:28px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.64);">Jeder weitere Platz im Team 10 € im Monat. Monatlicher Kostendeckel, keine Überraschung. Kündigen mit einem Klick.</p>
-        <div style="margin-top:10px; font-size:14px; font-weight:300; color:rgba(26,34,64,.48);">Alle Preise inklusive 19 % MwSt.</div>
-        <a href="#kontakt" style="margin-top:32px; display:inline-flex; align-items:center; gap:10px; background:#1c7cd2; color:#fff; font-weight:500; font-size:17px; padding:17px 28px; border-radius:var(--radius,14px); text-decoration:none; box-shadow:0 1px 2px rgba(26,34,64,.10); transition:background .18s ease;" style-hover="background:#1769b4;">Erstgespräch vereinbaren →</a>
+        <p class="fr-auftauchen" style="margin-top:28px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.64);">Jeder weitere Platz im Team 10 € im Monat. Monatlicher Kostendeckel, keine Überraschung. Kündigen mit einem Klick.</p>
+        <div class="fr-auftauchen" style="margin-top:10px; font-size:14px; font-weight:300; color:rgba(26,34,64,.48);">Alle Preise inklusive 19 % MwSt.</div>
+        <a class="fr-auftauchen" href="#kontakt" style="margin-top:32px; display:inline-flex; align-items:center; gap:10px; background:#1c7cd2; color:#fff; font-weight:500; font-size:17px; padding:17px 28px; border-radius:var(--radius,14px); text-decoration:none; box-shadow:0 1px 2px rgba(26,34,64,.10); transition:background .18s ease;" style-hover="background:#1769b4;">Erstgespräch vereinbaren →</a>
       </div>
-      <p style="margin-top:20px; font-size:17px; font-weight:300; color:rgba(26,34,64,.62);">Noch Fragen zum Preis? Fragen Sie die Krake: <a href="#krake" onClick="{{fragPreis}}" style="color:#1c7cd2; text-decoration:underline; transition:color .18s ease;" style-hover="color:#1769b4;">Was kostet das wirklich?</a></p>
+      <p class="fr-auftauchen" style="margin-top:20px; font-size:17px; font-weight:300; color:rgba(26,34,64,.62);">Noch Fragen zum Preis? Fragen Sie die Krake: <a href="#krake" onClick="{{fragPreis}}" style="color:#1c7cd2; text-decoration:underline; transition:color .18s ease;" style-hover="color:#1769b4;">Was kostet das wirklich?</a></p>
     </div>
   </section>
 
   <!-- 10 · CTA (navy) -->
   <section id="kontakt" style="padding:clamp(90px,11vw,130px) 32px; background:#1A2240; color:#fff;">
     <div style="max-width:820px; margin:0 auto;">
-      <h2 style="font-size:clamp(30px,4.4vw,50px); font-weight:500; line-height:1.14; letter-spacing:-.022em; text-wrap:balance;">Das erste Interview ist der Beweis.</h2>
-      <p style="margin-top:24px; font-size:clamp(18px,2.2vw,21px); font-weight:300; line-height:1.6; color:rgba(255,255,255,.72); max-width:56ch;">Nach einem Gespräch zeigen wir Ihnen, wie das Wissen durchsuchbar wird — in seinen Worten. Dann entscheiden Sie.</p>
+      <h2 class="fr-auftauchen" style="font-size:clamp(30px,4.4vw,50px); font-weight:500; line-height:1.14; letter-spacing:-.022em; text-wrap:balance;">Das erste Interview ist der Beweis.</h2>
+      <p class="fr-auftauchen" style="margin-top:24px; font-size:clamp(18px,2.2vw,21px); font-weight:300; line-height:1.6; color:rgba(255,255,255,.72); max-width:56ch;">Nach einem Gespräch zeigen wir Ihnen, wie das Wissen durchsuchbar wird — in seinen Worten. Dann entscheiden Sie.</p>
       <div style="margin-top:40px;">
         <a href="https://tally.so/r/3jp1aQ" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; background:#1c7cd2; color:#fff; font-weight:500; font-size:17px; padding:17px 30px; border-radius:var(--radius,14px); text-decoration:none; transition:background .18s ease;" style-hover="background:#1769b4;">
           Erstgespräch vereinbaren
@@ -261,31 +286,31 @@
 
   <!-- 11 · LINKEDIN -->
   <section style="padding:clamp(64px,8vw,90px) 32px;">
-    <div style="max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 36px;">
+    <div class="fr-auftauchen" style="max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 36px;">
       <div style="max-width:52ch;">
-        <h3 style="font-size:21px; font-weight:500; letter-spacing:-.01em; color:#1A2240;">Mehr im Maschinenraum</h3>
-        <p style="margin-top:10px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Mein KI-Podcast und wie ich das hier offen aufbaue — Strategie, Zweifel, Fortschritt. Ohne Filter.</p>
+        <h3 class="fr-auftauchen" style="font-size:21px; font-weight:500; letter-spacing:-.01em; color:#1A2240;">Mehr im Maschinenraum</h3>
+        <p class="fr-auftauchen" style="margin-top:10px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Mein KI-Podcast und wie ich das hier offen aufbaue — Strategie, Zweifel, Fortschritt. Ohne Filter.</p>
       </div>
-      <a href="https://www.linkedin.com/in/sonja-strahler/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; color:#1c7cd2; font-weight:500; font-size:16px; text-decoration:none; white-space:nowrap;" style-hover="color:#1769b4;">Auf LinkedIn folgen <span style="font-size:18px; line-height:0;">→</span></a>
+      <a class="fr-auftauchen" href="https://www.linkedin.com/in/sonja-strahler/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; color:#1c7cd2; font-weight:500; font-size:16px; text-decoration:none; white-space:nowrap;" style-hover="color:#1769b4;">Auf LinkedIn folgen <span style="font-size:18px; line-height:0;">→</span></a>
     </div>
   </section>
 
   <!-- 12 · BLOG -->
   <section style="padding:var(--sp,110px) 32px; background:#f4f5f0; border-top:1px solid rgba(26,34,64,.08); border-bottom:1px solid rgba(26,34,64,.08);">
     <div style="max-width:1120px; margin:0 auto;">
-      <div style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Aus dem Blog</div>
-      <h2 style="margin-top:20px; font-size:clamp(26px,3.4vw,38px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240;">Zum Weiterdenken.</h2>
+      <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Aus dem Blog</div>
+      <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(26px,3.4vw,38px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240;">Zum Weiterdenken.</h2>
       <div style="max-width:560px; margin-top:48px;">
-        <a href="blog/unternehmensnachfolge-stagnation-2030/" style="display:block; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); overflow:hidden; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
+        <a class="fr-auftauchen" href="blog/unternehmensnachfolge-stagnation-2030/" style="display:block; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); overflow:hidden; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
           <img src="blog/images/blog-2026-05-04-nachfolge-stagnation.jpg" alt="" loading="lazy" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px;">
           <div style="padding:0 30px 34px;">
-            <div style="margin-top:20px; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12px; letter-spacing:.02em; color:rgba(26,34,64,.44);">4. Mai 2026</div>
-            <h3 style="margin-top:14px; font-size:20px; font-weight:500; line-height:1.3; letter-spacing:-.01em; color:#1A2240;">Unternehmensnachfolge: Die Zahl, die niemand hören will</h3>
-            <div style="margin-top:18px; color:#1c7cd2; font-weight:500; font-size:15px;">Lesen →</div>
+            <div class="fr-auftauchen" style="margin-top:20px; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12px; letter-spacing:.02em; color:rgba(26,34,64,.44);">4. Mai 2026</div>
+            <h3 class="fr-auftauchen" style="margin-top:14px; font-size:20px; font-weight:500; line-height:1.3; letter-spacing:-.01em; color:#1A2240;">Unternehmensnachfolge: Die Zahl, die niemand hören will</h3>
+            <div class="fr-auftauchen" style="margin-top:18px; color:#1c7cd2; font-weight:500; font-size:15px;">Lesen →</div>
           </div>
         </a>
       </div>
-      <a href="blog/" style="display:inline-block; margin-top:28px; color:#1c7cd2; font-size:16px; font-weight:500; text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Alle Artikel →</a>
+      <a class="fr-auftauchen" href="blog/" style="display:inline-block; margin-top:28px; color:#1c7cd2; font-size:16px; font-weight:500; text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Alle Artikel →</a>
     </div>
   </section>
 
