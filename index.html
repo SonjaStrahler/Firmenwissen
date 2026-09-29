@@ -29,10 +29,19 @@
   @keyframes fr-auftauchen{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
   .fr-hoverkarte{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
   .fr-hoverkarte:hover{transform:translateY(-6px)!important;box-shadow:0 20px 40px -24px rgba(26,34,64,.3)}
+  .fr-szene{view-timeline-name:--fr-szene;view-timeline-axis:block}
+  .fr-szene__frage{white-space:normal}
+  .fr-szene__cursor{display:none}
+  @keyframes fr-szene-tippt{0%{clip-path:inset(0 100% 0 0)}50%,100%{clip-path:inset(0)}}
+  @keyframes fr-szene-cursor{0%,10%,20%,30%,40%,50%{opacity:1}5%,15%,25%,35%,45%,100%{opacity:0}}
+  @keyframes fr-szene-antwort{0%,58.333%{opacity:0;transform:translateY(8px)}70%,100%{opacity:1;transform:translateY(0)}}
+  @keyframes fr-szene-quelle-1{0%,79.167%{opacity:0;transform:translateY(8px) scale(.96)}85.417%,100%{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes fr-szene-quelle-2{0%,85.417%{opacity:0;transform:translateY(8px) scale(.96)}91.667%,100%{opacity:1;transform:translateY(0) scale(1)}}
+  @supports (animation-timeline:view()){.fr-szene__fragefeld{position:relative;overflow:hidden}.fr-szene__frage{display:block;clip-path:inset(0 100% 0 0);animation:fr-szene-tippt 4.8s steps(43,end) both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}.fr-szene__cursor{position:absolute;right:14px;bottom:14px;display:block;width:1px;height:1.1em;background:#1c7cd2;animation:fr-szene-cursor 4.8s steps(1,end) both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}.fr-szene__antwort{opacity:0;animation:fr-szene-antwort 4.8s linear both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}.fr-szene__quelle--1{opacity:0;animation:fr-szene-quelle-1 4.8s linear both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}.fr-szene__quelle--2{opacity:0;animation:fr-szene-quelle-2 4.8s linear both;animation-timeline:--fr-szene;animation-range:entry 0% cover 45%}}
   @supports (animation-timeline:view()){.fr-auftauchen{animation:fr-auftauchen linear both;animation-timeline:view();animation-range:entry 0% cover 30%}}
   @supports not (animation-timeline:view()){.fr-auftauchen{opacity:1;transform:none;animation:none}}
   @media (max-width:480px){.fr-hero{padding-left:8px!important;padding-right:8px!important}.fr-hero>div{width:100%;min-width:0}}
-  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.fr-wort,.fr-auftauchen{opacity:1!important;transform:none!important}.fr-hoverkarte:hover{transform:none!important;box-shadow:none!important}.fr-laufband__spur{transform:none!important}}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.fr-wort,.fr-auftauchen{opacity:1!important;transform:none!important}.fr-hoverkarte:hover{transform:none!important;box-shadow:none!important}.fr-szene__frage{clip-path:none!important}.fr-szene__cursor{display:none!important}.fr-szene__antwort,.fr-szene__quelle{opacity:1!important;transform:none!important}.fr-laufband__spur{transform:none!important}}
 </style>
 </helmet>
 <div style="--accent: {{accentColor}}; --radius: {{radius}}px; --sp: {{sectionPad}}px; background:#fbf9f5; color:#1A2240; min-height:100vh; font-weight:400; line-height:1.5;">
@@ -83,21 +92,40 @@
 
   <!-- 4 · GÄNSEHAUT + VIDEO -->
   <section style="padding:var(--sp,110px) 32px;">
-    <div style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:56px; align-items:center;">
+    <div style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:56px; align-items:center;">
       <div>
         <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Der Moment</div>
         <h2 class="fr-auftauchen" style="margin-top:26px; font-size:clamp(26px,3.4vw,38px); font-weight:500; line-height:1.24; letter-spacing:-.02em; color:#1A2240; text-wrap:balance;">Sie dürfen vergessen. Second nicht.</h2>
         <p class="fr-auftauchen" style="margin-top:22px; font-size:18px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.62); max-width:52ch;">Das Angebot vom letzten Jahr. Die Zusage an Müller. Warum die Presse bei Charge 4 immer länger braucht. Irgendwo steht es. Nur wo? Sie fragen. Second antwortet und sagt dazu, woher es das weiß: aus dem Gespräch vom 12. März, aus der Preisliste vom Januar. Ihr Gedächtnis, mit Fußnoten.</p>
       </div>
       <div>
-        <div class="fr-auftauchen" style="position:relative; aspect-ratio:16/9; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); overflow:hidden; box-shadow:0 1px 2px rgba(26,34,64,.06); display:flex; align-items:center; justify-content:center;">
-          <div style="position:absolute; inset:0; background:repeating-linear-gradient(45deg,#f8f6f1,#f8f6f1 13px,#f2f0ea 13px,#f2f0ea 26px);"></div>
-          <div style="position:relative; z-index:1; width:76px; height:76px; border-radius:50%; background:#1c7cd2; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(28,124,210,.32);">
-            <div style="width:0; height:0; border-style:solid; border-width:13px 0 13px 22px; border-color:transparent transparent transparent #fff; margin-left:6px;"></div>
+        <div class="fr-szene" style="background:#fff; border-radius:18px; box-shadow:0 30px 60px -30px rgba(26,34,64,.35); padding:28px;">
+          <div style="display:flex; align-items:center; gap:7px;">
+            <span style="width:7px; height:7px; border-radius:50%; background:rgba(26,34,64,.20);"></span>
+            <span style="width:7px; height:7px; border-radius:50%; background:rgba(26,34,64,.20);"></span>
+            <span style="width:7px; height:7px; border-radius:50%; background:rgba(26,34,64,.20);"></span>
+            <span style="margin-left:7px; font-size:13px; font-weight:500; color:rgba(26,34,64,.60);">Second</span>
+          </div>
+          <div class="fr-szene__fragefeld" style="margin-top:24px; padding:14px 16px; border:1px solid rgba(26,34,64,.16); border-radius:12px; font-size:14px; line-height:1.5; color:#1A2240;">
+            <span class="fr-szene__frage">Was haben wir Müller letztes Jahr zugesagt?</span><span class="fr-szene__cursor" aria-hidden="true"></span>
+          </div>
+          <p class="fr-szene__antwort" style="margin-top:22px; font-size:15px; font-weight:300; line-height:1.6; color:rgba(26,34,64,.78);">„Lieferung in KW 14, Sonderpreis 4 % auf die Rahmenmenge. Die Presse für Charge 4 wurde dafür vorgezogen.“</p>
+          <div style="margin-top:18px; display:flex; flex-wrap:wrap; gap:8px;">
+            <span class="fr-szene__quelle fr-szene__quelle--1" style="display:inline-flex; align-items:baseline; gap:5px; padding:7px 10px; background:#f4f5f0; border:1px solid rgba(26,34,64,.12); border-radius:999px; font-size:13px; color:rgba(26,34,64,.72);"><sup style="font-size:10px; color:#c46a2c;">1</sup>Gespräch vom 12. März</span>
+            <span class="fr-szene__quelle fr-szene__quelle--2" style="display:inline-flex; align-items:baseline; gap:5px; padding:7px 10px; background:#f4f5f0; border:1px solid rgba(26,34,64,.12); border-radius:999px; font-size:13px; color:rgba(26,34,64,.72);"><sup style="font-size:10px; color:#c46a2c;">2</sup>Preisliste Januar</span>
           </div>
         </div>
-        <div class="fr-auftauchen" style="margin-top:16px; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13px; letter-spacing:.02em; color:rgba(26,34,64,.52);">Video folgt.</div>
+        <div class="fr-auftauchen" style="margin-top:14px; font-size:13px; font-weight:300; line-height:1.5; color:rgba(26,34,64,.44);">Beispielszene. So sieht jede Antwort in Second aus: mit Quelle.</div>
       </div>
+    </div>
+    <div style="max-width:880px; margin:64px auto 0;">
+      <div class="fr-auftauchen" style="position:relative; aspect-ratio:16/9; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); overflow:hidden; box-shadow:0 1px 2px rgba(26,34,64,.06); display:flex; align-items:center; justify-content:center;">
+        <div style="position:absolute; inset:0; background:repeating-linear-gradient(45deg,#f8f6f1,#f8f6f1 13px,#f2f0ea 13px,#f2f0ea 26px);"></div>
+        <div style="position:relative; z-index:1; width:76px; height:76px; border-radius:50%; background:#1c7cd2; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(28,124,210,.32);">
+          <div style="width:0; height:0; border-style:solid; border-width:13px 0 13px 22px; border-color:transparent transparent transparent #fff; margin-left:6px;"></div>
+        </div>
+      </div>
+      <div class="fr-auftauchen" style="margin-top:16px; text-align:center; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:13px; letter-spacing:.02em; color:rgba(26,34,64,.52);">Video folgt.</div>
     </div>
   </section>
 
