@@ -23,17 +23,19 @@
   .legal li{margin:0 0 8px;}
   .legal a{color:#1c7cd2;text-decoration:underline;text-underline-offset:2px;}
   .legal strong{font-weight:500;}
+  @media (max-width:699px){.fr-rechtskopf>div{padding:12px 16px!important;gap:8px!important}.fr-rechtskopf__marke{gap:7px!important}.fr-rechtskopf__zusatz{font-size:12px!important}.fr-rechtskopf__zurueck{font-size:13px!important}}
 </style>
 </helmet>
 <div style="background:#fbf9f5; color:#1A2240; min-height:100vh;">
 
-  <header style="position:sticky; top:0; z-index:20; background:rgba(251,249,245,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(26,34,64,.10);">
-    <div style="max-width:820px; margin:0 auto; padding:17px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px;">
-      <a href="Firmenwissen%20retten.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none; color:#1A2240;">
-        <div style="width:11px; height:11px; border-radius:50%; background:#1c7cd2;"></div>
-        <span style="font-weight:500; font-size:17px; letter-spacing:-.01em;">Firmenwissen&nbsp;retten</span>
+  <header class="fr-rechtskopf" style="position:sticky; top:0; z-index:20; background:rgba(251,249,245,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(26,34,64,.10);">
+    <div style="max-width:1120px; margin:0 auto; padding:17px 32px; display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between; gap:20px;">
+      <a class="fr-rechtskopf__marke" href="index.html" style="display:flex; align-items:center; gap:11px; text-decoration:none; color:#1A2240; white-space:nowrap;">
+        <span style="display:block; width:11px; height:11px; border-radius:50%; background:#1c7cd2; flex-shrink:0;"></span>
+        <span style="font-weight:500; font-size:17px; letter-spacing:-.01em;">Second</span>
+        <span class="fr-rechtskopf__zusatz" style="font-size:14px; font-weight:300; color:rgba(26,34,64,.45);">der zweite Kopf</span>
       </a>
-      <a href="Firmenwissen%20retten.dc.html" style="color:#1c7cd2; font-weight:500; font-size:15px; text-decoration:none;" style-hover="color:#1769b4;">← Zur Startseite</a>
+      <a class="fr-rechtskopf__zurueck" href="index.html" style="color:#1c7cd2; font-weight:500; font-size:15px; text-decoration:none; white-space:nowrap;" style-hover="color:#1769b4;">← Zur Startseite</a>
     </div>
   </header>
 
@@ -116,14 +118,35 @@
     </div>
   </main>
 
-  <footer style="border-top:1px solid rgba(26,34,64,.10); margin-top:64px; padding:36px 32px 48px;">
-    <div style="max-width:820px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; font-size:15px; font-weight:300;">
-      <span style="color:#1A2240; font-weight:500;">AGB</span>
-      <a href="avv.html" style="color:#1c7cd2; text-decoration:none;">AVV</a>
-      <a href="widerruf.html" style="color:#1c7cd2; text-decoration:none;">Widerruf</a>
-      <a href="datenschutz.html" style="color:#1c7cd2; text-decoration:none;">Datenschutz</a>
-      <a href="Impressum.dc.html" style="color:#1c7cd2; text-decoration:none;">Impressum</a>
-      <span style="margin-left:auto; color:rgba(26,34,64,.44);">© 2026 Ein offener Blick GmbH</span>
+  <footer style="background:#1A2240; color:#fff; padding:70px 32px 44px;">
+    <div style="max-width:1120px; margin:0 auto;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px; align-items:flex-start;">
+        <div style="display:flex; flex-direction:column; align-items:flex-start;">
+          <div style="display:flex; align-items:center; gap:11px;">
+            <div style="width:11px; height:11px; border-radius:50%; background:#1c7cd2;"></div>
+            <span style="font-weight:500; font-size:17px; letter-spacing:-.01em;">Second</span>
+          </div>
+          <div style="margin-top:10px; font-size:15px; font-weight:300; color:rgba(255,255,255,.60);">Second – der zweite Kopf. Das Firmengedächtnis für den deutschen Mittelstand.</div>
+        </div>
+        <nav style="display:flex; flex-wrap:wrap; gap:10px 26px; font-size:15px; font-weight:300;">
+          <a href="agb.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">AGB</a>
+          <a href="avv.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">AVV</a>
+          <a href="widerruf.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">Widerruf</a>
+          <a href="datenschutz.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">Datenschutz</a>
+          <a href="impressum.html" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">Impressum</a>
+          <a href="index.html#kontakt" style="color:rgba(255,255,255,.72); text-decoration:none;" style-hover="color:#fff;">Kontakt</a>
+        </nav>
+      </div>
+
+      <div style="margin-top:40px; padding:24px 26px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius,14px); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px;">
+        <div>
+          <div style="font-size:16px; font-weight:500;">Vertrag widerrufen</div>
+          <div style="margin-top:5px; font-size:14px; font-weight:300; color:rgba(255,255,255,.60);">Ohne Anmeldung erreichbar — Ihr gesetzliches Widerrufsrecht nach § 356a BGB.</div>
+        </div>
+        <a href="widerruf.html" style="display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,.45); color:#fff; font-weight:500; font-size:15px; padding:12px 22px; border-radius:var(--radius,14px); text-decoration:none; white-space:nowrap; transition:background .18s ease;" style-hover="background:rgba(255,255,255,.08);">Vertrag widerrufen</a>
+      </div>
+
+      <div style="margin-top:36px; padding-top:22px; border-top:1px solid rgba(255,255,255,.14); font-size:14px; font-weight:300; color:rgba(255,255,255,.52);">© 2026 Ein offener Blick GmbH · Second · firmenwissen-retten.de</div>
     </div>
   </footer>
 
