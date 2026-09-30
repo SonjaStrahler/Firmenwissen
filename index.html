@@ -75,6 +75,33 @@
   .fr-blogkarte__bild img{transition:transform .5s ease}
   @media (prefers-reduced-motion:no-preference){.fr-blogkarte:hover img{transform:scale(1.04)}}
   @media (max-width:699px){.fr-bibliothek,.fr-preise{grid-template-columns:minmax(0,1fr);gap:28px}.fr-bibliothek__zahl{min-width:0}.fr-person{grid-template-columns:minmax(0,1fr)!important;gap:32px!important}}
+  .fr-momente{background:#1A2240;color:#fff;font-family:'Figtree',system-ui,sans-serif;padding:clamp(90px,10vw,150px) 32px 130px}
+  .fr-momente__innen{max-width:1120px;margin:0 auto}
+  .fr-momente__ueberzeile{color:#fd8c4a;font-size:13px;font-weight:500;letter-spacing:.09em;text-transform:uppercase}
+  .fr-momente__moment{min-height:70svh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:48px 0}
+  .fr-momente__klein{max-width:56ch;color:rgba(255,255,255,.55);font-size:clamp(18px,1.5vw,20px);font-weight:300;line-height:1.5}
+  .fr-momente__gross{max-width:18ch;margin-top:22px;font-size:clamp(34px,5vw,64px);font-weight:500;line-height:1.12;letter-spacing:-.02em}
+  .fr-momente__wort{display:inline-block}
+  .fr-momente__aufloesung{text-align:center;padding-top:clamp(110px,17vh,220px);padding-bottom:20px}
+  .fr-momente__schluss{max-width:14ch;margin:0 auto;font-size:clamp(44px,7.5vw,104px);font-weight:500;line-height:1.04;letter-spacing:-.04em}
+  .fr-momente__zusatz{margin-top:30px;color:#fd8c4a;font-size:clamp(24px,3vw,36px);font-weight:400;line-height:1.2}
+  .fr-momente__aktionen{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:48px}
+  .fr-momente__knopf{display:inline-flex;justify-content:center;align-items:center;min-height:60px;padding:17px 28px;border-radius:var(--radius,14px);font-size:17px;font-weight:500;text-decoration:none;transition:background .18s ease}
+  .fr-momente__knopf--kaufen{background:#1c7cd2;color:#fff;box-shadow:0 1px 2px rgba(26,34,64,.10)}
+  .fr-momente__knopf--kaufen:hover{background:#1769b4}
+  .fr-momente__knopf--krake{border:1px solid rgba(255,255,255,.72);color:#fff}
+  .fr-momente__knopf--krake:hover{background:rgba(255,255,255,.08)}
+  .fr-momente__schlusszeile{margin-top:80px;font-size:15px;font-weight:300;color:rgba(255,255,255,.5)}
+  .fr-portrait{position:relative;height:100svh;min-height:650px;overflow:hidden;background:#f4f5f0;isolation:isolate}
+  .fr-portrait__bild{position:absolute;inset:0;display:block;--kx:56%;--ky:24%;z-index:0}
+  .fr-portrait__bild img{width:100%;height:100%;object-fit:cover;object-position:70% 30%;display:block}
+  .fr-portrait__text{position:absolute;z-index:1;top:50%;left:max(5vw,32px);transform:translateY(-50%);width:min(42vw,520px);color:#1A2240}
+  .fr-portrait__ueberzeile{font-size:13px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:#c46a2c}
+  .fr-portrait__zitat{margin-top:22px;max-width:22ch;font-size:clamp(26px,2.8vw,40px);font-weight:500;line-height:1.22;letter-spacing:-.02em}
+  .fr-portrait__name{margin-top:28px;font-size:16px;font-weight:500}
+  @media (max-width:900px){.fr-portrait__text{top:auto;bottom:0;left:0;transform:none;width:100%;padding:clamp(100px,19vh,170px) 32px 28px;background:linear-gradient(transparent,#f4f5f0 24%,#f4f5f0)}.fr-portrait__zitat{max-width:27ch}}
+  @media (max-width:699px){.fr-momente{padding:88px 24px 100px}.fr-momente__moment{min-height:60svh}.fr-momente__aktionen{flex-direction:column}.fr-momente__knopf{width:100%}.fr-portrait{min-height:760px}.fr-portrait__bild{--kx:38%;--ky:24%}.fr-portrait__text{padding:100px 20px 24px}.fr-portrait__zitat{max-width:none;font-size:26px;line-height:1.2;margin-top:12px}.fr-portrait__name{margin-top:18px;font-size:14px}}
+  @media (prefers-reduced-motion:reduce){.fr-portrait__bild{clip-path:none!important}.fr-portrait__text,.fr-portrait__text *,.fr-momente__klein,.fr-momente__wort{opacity:1!important;visibility:visible!important;transform:none!important}}
 </style>
 </helmet>
 <div style="--accent: {{accentColor}}; --radius: {{radius}}px; --sp: {{sectionPad}}px; background:#fbf9f5; color:#1A2240; min-height:100vh; font-weight:400; line-height:1.5;">
@@ -260,44 +287,52 @@
     </div>
   </section>
 
-  <!-- 9 · FÜR WEN -->
-  <section style="padding:var(--sp,110px) 32px; background:#f4f5f0; border-top:1px solid rgba(26,34,64,.08); border-bottom:1px solid rgba(26,34,64,.08);">
-    <div style="max-width:1120px; margin:0 auto;">
-      <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Für wen</div>
-      <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:26ch; text-wrap:balance;">Für wen der zweite Kopf gemacht ist.</h2>
-      <p class="fr-auftauchen" style="margin-top:18px; font-size:19px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Firmenwissen retten, bevor es geht. Für Betriebe, Beratungen und Netzwerke.</p>
-      <div class="fr-zielgruppen" style="margin-top:52px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px;">
-        <a class="fr-auftauchen fr-hoverkarte" href="#kontakt" style="display:flex; flex-direction:column; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:36px 32px; color:inherit; text-decoration:none;" style-hover="border-color:rgba(28,124,210,.5);">
-          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#1A2240;">Unternehmen</h3>
-          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Die Firma, die nichts mehr vergisst. Auch nicht, wenn jemand geht.</p>
-          <div style="margin-top:20px; font-size:15px; font-weight:500; color:#1c7cd2;">Mehr erfahren →</div>
-        </a>
-        <a class="fr-auftauchen fr-hoverkarte" href="#kontakt" style="display:flex; flex-direction:column; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:36px 32px; color:inherit; text-decoration:none;" style-hover="border-color:rgba(28,124,210,.5);">
-          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#1A2240;">Beratung</h3>
-          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Jeder Mandant, jedes Gespräch, jede Zusage. Eine Frage entfernt.</p>
-          <div style="margin-top:20px; font-size:15px; font-weight:500; color:#1c7cd2;">Mehr erfahren →</div>
-        </a>
-        <a class="fr-auftauchen fr-hoverkarte" href="#kontakt" style="display:flex; flex-direction:column; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:36px 32px; color:inherit; text-decoration:none;" style-hover="border-color:rgba(28,124,210,.5);">
-          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#1A2240;">Kammern und Verbände</h3>
-          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Ein Gedächtnis für jeden Betrieb in Ihrem Netzwerk.</p>
-          <div style="margin-top:20px; font-size:15px; font-weight:500; color:#1c7cd2;">Mehr erfahren →</div>
-        </a>
+  <!-- 9 · MOMENTE -->
+  <section id="momente" class="fr-momente">
+    <div class="fr-momente__innen">
+      <div class="fr-momente__ueberzeile">Kommt Ihnen das bekannt vor?</div>
+    <div class="fr-momente__moment">
+      <p class="fr-momente__klein">Sie haben es gewusst. Sie wissen sogar noch, dass Sie es gewusst haben.</p>
+      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Second</span> <span class="fr-momente__wort">weiß</span> <span class="fr-momente__wort">den</span> <span class="fr-momente__wort">Rest.</span> <span class="fr-momente__wort">Mit</span> <span class="fr-momente__wort">Datum</span> <span class="fr-momente__wort">und</span> <span class="fr-momente__wort">Quelle.</span></h2>
+    </div>
+    <div class="fr-momente__moment">
+      <p class="fr-momente__klein">Sie kennen ChatGPT. Es weiß alles über die Welt.</p>
+      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Second</span> <span class="fr-momente__wort">weiß</span> <span class="fr-momente__wort">alles</span> <span class="fr-momente__wort">über</span> <span class="fr-momente__wort">Ihre</span> <span class="fr-momente__wort">Firma.</span></h2>
+    </div>
+    <div class="fr-momente__moment">
+      <p class="fr-momente__klein">„Chef, kurze Frage …“ Zum elften Mal heute.</p>
+      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Ab</span> <span class="fr-momente__wort">morgen</span> <span class="fr-momente__wort">fragt</span> <span class="fr-momente__wort">Ihr</span> <span class="fr-momente__wort">Team</span> <span class="fr-momente__wort">zuerst</span> <span class="fr-momente__wort">Ihren</span> <span class="fr-momente__wort">zweiten</span> <span class="fr-momente__wort">Kopf.</span> <span class="fr-momente__wort">Und</span> <span class="fr-momente__wort">Sie</span> <span class="fr-momente__wort">haben</span> <span class="fr-momente__wort">Ihren</span> <span class="fr-momente__wort">eigenen</span> <span class="fr-momente__wort">wieder</span> <span class="fr-momente__wort">frei.</span></h2>
+    </div>
+    <div class="fr-momente__moment">
+      <p class="fr-momente__klein">Dreißig Jahre Erfahrung. Ein Abschiedsessen. Und dann?</p>
+      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Dann</span> <span class="fr-momente__wort">bleibt,</span> <span class="fr-momente__wort">was</span> <span class="fr-momente__wort">er</span> <span class="fr-momente__wort">wusste.</span> <span class="fr-momente__wort">Eine</span> <span class="fr-momente__wort">Frage</span> <span class="fr-momente__wort">entfernt.</span></h2>
+    </div>
+    <div class="fr-momente__moment">
+      <p class="fr-momente__klein">Sie übernehmen den Betrieb. Das meiste weiß noch der Senior.</p>
+      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Er</span> <span class="fr-momente__wort">erzählt.</span> <span class="fr-momente__wort">Ihr</span> <span class="fr-momente__wort">zweiter</span> <span class="fr-momente__wort">Kopf</span> <span class="fr-momente__wort">behält.</span> <span class="fr-momente__wort">Sie</span> <span class="fr-momente__wort">haben</span> <span class="fr-momente__wort">es</span> <span class="fr-momente__wort">für</span> <span class="fr-momente__wort">immer.</span></h2>
+    </div>
+    <div class="fr-momente__aufloesung">
+      <h2 class="fr-momente__schluss"><span class="fr-momente__wort">Niemand</span> <span class="fr-momente__wort">muss</span> <span class="fr-momente__wort">mehr</span> <span class="fr-momente__wort">alles</span> <span class="fr-momente__wort">im</span> <span class="fr-momente__wort">Kopf</span> <span class="fr-momente__wort">haben.</span></h2>
+      <p class="fr-momente__zusatz">Dafür gibt es den zweiten.</p>
+      <div class="fr-momente__aktionen">
+        <a href="https://konto.einoffenerblick.de/kaufen" class="fr-momente__knopf fr-momente__knopf--kaufen">Jetzt starten</a>
+        <a href="#krake" class="fr-momente__knopf fr-momente__knopf--krake">Die Krake fragen</a>
       </div>
+      <p class="fr-momente__schlusszeile">Firmenwissen retten, bevor es geht.</p>
+    </div>
     </div>
   </section>
 
-  <!-- 8 · BEGRÜSSUNG SONJA -->
-  <section style="padding:var(--sp,110px) 32px; background:#f4f5f0; border-top:1px solid rgba(26,34,64,.08); border-bottom:1px solid rgba(26,34,64,.08);">
-    <div class="fr-person" style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:start;">
-      <div class="fr-person__foto" style="width:190px; height:190px; border-radius:50%; overflow:hidden; position:relative; border:1px solid rgba(26,34,64,.10); flex-shrink:0;">
-        <img src="Images/sonja.webp" width="480" height="480" alt="Sonja Strahler, Gründerin von Second" loading="lazy" style="display:block; width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div style="max-width:52ch;">
-        <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Ein Mensch dahinter</div>
-        <p class="fr-zitat" style="margin-top:22px; font-size:clamp(20px,2.4vw,25px); font-weight:400; line-height:1.5; color:#1A2240;"><span class="fr-zitat__wort">Ich</span> <span class="fr-zitat__wort">baue</span> <span class="fr-zitat__wort">das,</span> <span class="fr-zitat__wort">weil</span> <span class="fr-zitat__wort">ich</span> <span class="fr-zitat__wort">es</span> <span class="fr-zitat__wort">leid</span> <span class="fr-zitat__wort">bin,</span> <span class="fr-zitat__wort">zuzusehen,</span> <span class="fr-zitat__wort">wie</span> <span class="fr-zitat__wort">gute</span> <span class="fr-zitat__wort">Firmen</span> <span class="fr-zitat__wort">ihr</span> <span class="fr-zitat__wort">Bestes</span> <span class="fr-zitat__wort">verlieren</span> <span class="fr-zitat__wort">—</span> <span class="fr-zitat__wort">nur</span> <span class="fr-zitat__wort">weil</span> <span class="fr-zitat__wort">niemand</span> <span class="fr-zitat__wort">rechtzeitig</span> <span class="fr-zitat__wort">zugehört</span> <span class="fr-zitat__wort">hat.</span> <span class="fr-zitat__wort">Ich</span> <span class="fr-zitat__wort">mache</span> <span class="fr-zitat__wort">das</span> <span class="fr-zitat__wort">offen</span> <span class="fr-zitat__wort">und</span> <span class="fr-zitat__wort">ehrlich,</span> <span class="fr-zitat__wort">Schritt</span> <span class="fr-zitat__wort">für</span> <span class="fr-zitat__wort">Schritt.</span> <span class="fr-zitat__wort">Kein</span> <span class="fr-zitat__wort">Konzern,</span> <span class="fr-zitat__wort">keine</span> <span class="fr-zitat__wort">Blackbox.</span> <span class="fr-zitat__wort">Wenn</span> <span class="fr-zitat__wort">Sie</span> <span class="fr-zitat__wort">mich</span> <span class="fr-zitat__wort">anrufen,</span> <span class="fr-zitat__wort">gehe</span> <span class="fr-zitat__wort">ich</span> <span class="fr-zitat__wort">ran.</span></p>
-        <div class="fr-auftauchen" style="margin-top:26px; font-size:16px; font-weight:500; color:#1A2240;">Sonja Strahler</div>
-        <div class="fr-auftauchen" style="font-size:15px; font-weight:300; color:rgba(26,34,64,.55);">Ein offener Blick GmbH</div>
-      </div>
+  <!-- 10 · DER OFFENE BLICK -->
+  <section class="fr-portrait" aria-label="Der offene Blick">
+    <picture class="fr-portrait__bild">
+      <source media="(max-width:699px)" srcset="Images/sonja-gross-mobil.webp" type="image/webp">
+      <img src="Images/sonja-gross.webp" width="2400" height="1601" alt="Sonja Strahler, Gründerin von Second" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:70% 30%;display:block;">
+    </picture>
+    <div class="fr-portrait__text">
+      <div class="fr-portrait__ueberzeile">Ein Mensch dahinter</div>
+      <p class="fr-portrait__zitat"><span class="fr-zitat__wort">Ich</span> <span class="fr-zitat__wort">baue</span> <span class="fr-zitat__wort">das,</span> <span class="fr-zitat__wort">weil</span> <span class="fr-zitat__wort">ich</span> <span class="fr-zitat__wort">es</span> <span class="fr-zitat__wort">leid</span> <span class="fr-zitat__wort">bin,</span> <span class="fr-zitat__wort">zuzusehen,</span> <span class="fr-zitat__wort">wie</span> <span class="fr-zitat__wort">gute</span> <span class="fr-zitat__wort">Firmen</span> <span class="fr-zitat__wort">ihr</span> <span class="fr-zitat__wort">Bestes</span> <span class="fr-zitat__wort">verlieren</span> <span class="fr-zitat__wort">—</span> <span class="fr-zitat__wort">nur</span> <span class="fr-zitat__wort">weil</span> <span class="fr-zitat__wort">niemand</span> <span class="fr-zitat__wort">rechtzeitig</span> <span class="fr-zitat__wort">zugehört</span> <span class="fr-zitat__wort">hat.</span> <span class="fr-zitat__wort">Ich</span> <span class="fr-zitat__wort">mache</span> <span class="fr-zitat__wort">das</span> <span class="fr-zitat__wort">offen</span> <span class="fr-zitat__wort">und</span> <span class="fr-zitat__wort">ehrlich,</span> <span class="fr-zitat__wort">Schritt</span> <span class="fr-zitat__wort">für</span> <span class="fr-zitat__wort">Schritt.</span> <span class="fr-zitat__wort">Kein</span> <span class="fr-zitat__wort">Konzern,</span> <span class="fr-zitat__wort">keine</span> <span class="fr-zitat__wort">Blackbox.</span> <span class="fr-zitat__wort">Wenn</span> <span class="fr-zitat__wort">Sie</span> <span class="fr-zitat__wort">mich</span> <span class="fr-zitat__wort">anrufen,</span> <span class="fr-zitat__wort">gehe</span> <span class="fr-zitat__wort">ich</span> <span class="fr-zitat__wort">ran.</span></p>
+      <div class="fr-portrait__name">Sonja Strahler <span aria-hidden="true">·</span> Ein offener Blick GmbH</div>
     </div>
   </section>
 
@@ -349,7 +384,7 @@
     <div class="fr-auftauchen" style="max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); padding:34px 36px;">
       <div style="max-width:52ch;">
         <h3 class="fr-auftauchen" style="font-size:21px; font-weight:500; letter-spacing:-.01em; color:#1A2240;">Mehr im Maschinenraum</h3>
-        <p class="fr-auftauchen" style="margin-top:10px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Mein KI-Podcast und wie ich das hier offen aufbaue — Strategie, Zweifel, Fortschritt. Ohne Filter.</p>
+        <p class="fr-auftauchen" style="margin-top:10px; font-size:17px; font-weight:300; line-height:1.55; color:rgba(26,34,64,.62);">Wie ich Second offen aufbaue: Strategie, Zweifel, Fortschritt. Ohne Filter.</p>
       </div>
       <a class="fr-auftauchen" href="https://www.linkedin.com/in/sonja-strahler/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; color:#1c7cd2; font-weight:500; font-size:16px; text-decoration:none; white-space:nowrap;" style-hover="color:#1769b4;">Auf LinkedIn folgen <span style="font-size:18px; line-height:0;">→</span></a>
     </div>
@@ -547,24 +582,53 @@ class Component extends DCLogic {
         onUpdate: () => { counterElement.textContent = Math.round(counter.value); },
         scrollTrigger: { trigger: '.fr-bibliothek', start: 'top 85%', once: true }
       });
-      ['.fr-zielgruppen', '.fr-preise'].forEach(selector => {
+      ['.fr-preise'].forEach(selector => {
         gsap.from(selector + ' > *', { opacity: 0, y: 40, duration: .7, stagger: .15,
           clearProps: 'opacity,transform', scrollTrigger: { trigger: selector, start: 'top 85%', once: true }
         });
       });
-      gsap.from('.fr-person__foto', { scale: .85, duration: .9, ease: 'power2.out',
-        scrollTrigger: { trigger: '.fr-person__foto', start: 'top 85%', once: true }
+      document.querySelectorAll('.fr-momente__moment').forEach(moment => {
+        gsap.from(moment.querySelector('.fr-momente__klein'), { opacity: 0, y: 24, duration: .7,
+          scrollTrigger: { trigger: moment, start: 'top 85%', once: true }
+        });
+        gsap.fromTo(moment.querySelectorAll('.fr-momente__wort'), { opacity: .15 },
+          { opacity: 1, stagger: 1, duration: 1, ease: 'none',
+            scrollTrigger: { trigger: moment, start: 'top 65%', end: 'bottom 40%', scrub: true }
+          });
       });
-      gsap.fromTo('.fr-zitat__wort', { opacity: .15 }, { opacity: 1, stagger: 1, duration: 1, ease: 'none',
-        scrollTrigger: { trigger: '.fr-zitat', start: 'top 80%', end: 'bottom 50%', scrub: true }
-      });
+      gsap.fromTo('.fr-momente__schluss .fr-momente__wort', { opacity: .15 },
+        { opacity: 1, stagger: 1, duration: 1, ease: 'none',
+          scrollTrigger: { trigger: '.fr-momente__schluss', start: 'top 80%', end: 'bottom 35%', scrub: true }
+        });
+      const portrait = document.querySelector('.fr-portrait');
+      const picture = portrait.querySelector('.fr-portrait__bild');
+      const portraitText = portrait.querySelector('.fr-portrait__text');
+      const portraitWords = portrait.querySelectorAll('.fr-zitat__wort');
+      const portraitCenter = () => {
+        const style = getComputedStyle(picture);
+        return `${style.getPropertyValue('--kx').trim()} ${style.getPropertyValue('--ky').trim()}`;
+      };
+      const portraitStart = () => `circle(120px at ${portraitCenter()})`;
+      const portraitEnd = () => `circle(150% at ${portraitCenter()})`;
+      gsap.set(picture, { clipPath: portraitStart });
+      gsap.set(portraitText, { autoAlpha: 0 });
+      const portraitTimeline = gsap.timeline({ scrollTrigger: {
+        trigger: portrait, start: 'top top', end: '+=140%', pin: true,
+        scrub: true, invalidateOnRefresh: true
+      } });
+      portraitTimeline
+        .fromTo(picture, { clipPath: portraitStart }, { clipPath: portraitEnd, duration: 3, ease: 'none' })
+        .set(portraitText, { autoAlpha: 1 })
+        .fromTo('.fr-portrait__ueberzeile', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .35 })
+        .fromTo(portraitWords, { opacity: .15, y: 10 }, { opacity: 1, y: 0, duration: .4, stagger: .07 })
+        .fromTo('.fr-portrait__name', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .4 });
       gsap.from('.fr-kontakt__wort', { opacity: 0, y: 30, duration: .65, stagger: .1,
         scrollTrigger: { trigger: '.fr-kontakt__titel', start: 'top 85%', once: true }
       });
       // Animate only the outer reveal element, avoiding compounded nested fades.
       // Conditional Krake answers stay immediately visible after React inserts them.
       document.querySelectorAll('.fr-auftauchen').forEach(element => {
-        if (element.parentElement.closest('.fr-auftauchen') || element.closest('.fr-karten, .fr-vertrauen, .fr-zielgruppen, .fr-preise, #krake sc-if')) return;
+        if (element.parentElement.closest('.fr-auftauchen') || element.closest('.fr-karten, .fr-vertrauen, .fr-preise, #krake sc-if')) return;
         gsap.from(element, { opacity: 0, y: 40, duration: .7, clearProps: 'opacity,transform', scrollTrigger: {
           trigger: element, start: 'top 90%', once: true
         } });
