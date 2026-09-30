@@ -75,33 +75,43 @@
   .fr-blogkarte__bild img{transition:transform .5s ease}
   @media (prefers-reduced-motion:no-preference){.fr-blogkarte:hover img{transform:scale(1.04)}}
   @media (max-width:699px){.fr-bibliothek,.fr-preise{grid-template-columns:minmax(0,1fr);gap:28px}.fr-bibliothek__zahl{min-width:0}.fr-person{grid-template-columns:minmax(0,1fr)!important;gap:32px!important}}
-  .fr-momente{background:#1A2240;color:#fff;font-family:'Figtree',system-ui,sans-serif;padding:clamp(90px,10vw,150px) 32px 130px}
-  .fr-momente__innen{max-width:1120px;margin:0 auto}
-  .fr-momente__ueberzeile{color:#fd8c4a;font-size:13px;font-weight:500;letter-spacing:.09em;text-transform:uppercase}
-  .fr-momente__moment{min-height:70svh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:48px 0}
-  .fr-momente__klein{max-width:56ch;color:rgba(255,255,255,.55);font-size:clamp(18px,1.5vw,20px);font-weight:300;line-height:1.5}
-  .fr-momente__gross{max-width:18ch;margin-top:22px;font-size:clamp(34px,5vw,64px);font-weight:500;line-height:1.12;letter-spacing:-.02em}
-  .fr-momente__wort{display:inline-block}
-  .fr-momente__aufloesung{text-align:center;padding-top:clamp(110px,17vh,220px);padding-bottom:20px}
+  .fr-momente{color:#fff;font-family:'Figtree',system-ui,sans-serif;background:#1A2240}
+  .fr-momente__oeffner,.fr-momente__moment,.fr-momente__aufloesung{height:100svh;position:relative;overflow:hidden;padding-left:clamp(24px,8vw,140px);padding-right:clamp(24px,8vw,140px)}
+  .fr-momente__oeffner{display:flex;flex-direction:column;justify-content:flex-start;padding-top:clamp(140px,18svh,230px);background:#1A2240}
+  .fr-momente__oeffner h2,.fr-momente__oeffner p{max-width:16ch;font-size:clamp(48px,8vw,120px);font-weight:600;line-height:1.02;letter-spacing:-.03em}
+  .fr-momente__oeffner p{margin-top:.16em;color:#fd8c4a}
+  .fr-momente__oeffnerwort,.fr-momente__antwortwort,.fr-momente__schlusswort{display:inline-block}
+  .fr-momente__moment{background:#1A2240}
+  .fr-momente__problem{position:absolute;top:clamp(118px,14svh,180px);left:clamp(24px,8vw,140px);right:clamp(24px,8vw,140px);max-width:16ch;color:#fff;font-size:clamp(44px,7vw,108px);font-weight:600;line-height:1.02;letter-spacing:-.03em;transform-origin:top left}
+  .fr-momente__antwort{position:absolute;left:18%;right:clamp(24px,8vw,140px);bottom:11%;max-width:22ch;color:#1A2240;font-size:clamp(30px,4.2vw,60px);font-weight:300;line-height:1.18}
+  .fr-momente__akzent{color:#fd8c4a;font-weight:500}
+  .fr-momente__zaehler{position:absolute;right:clamp(24px,8vw,140px);bottom:32px;color:rgba(26,34,64,.65);font-size:14px;font-weight:300}
+  .fr-momente__aufloesung{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#fbf9f5;color:#1A2240}
   .fr-momente__schluss{max-width:14ch;margin:0 auto;font-size:clamp(44px,7.5vw,104px);font-weight:500;line-height:1.04;letter-spacing:-.04em}
-  .fr-momente__zusatz{margin-top:30px;color:#fd8c4a;font-size:clamp(24px,3vw,36px);font-weight:400;line-height:1.2}
+  .fr-momente__punkt{color:#fd8c4a}
+  .fr-momente__zusatz{margin-top:30px;font-size:clamp(22px,2.6vw,32px);font-weight:300;line-height:1.25}
   .fr-momente__aktionen{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:48px}
   .fr-momente__knopf{display:inline-flex;justify-content:center;align-items:center;min-height:60px;padding:17px 28px;border-radius:var(--radius,14px);font-size:17px;font-weight:500;text-decoration:none;transition:background .18s ease}
   .fr-momente__knopf--kaufen{background:#1c7cd2;color:#fff;box-shadow:0 1px 2px rgba(26,34,64,.10)}
   .fr-momente__knopf--kaufen:hover{background:#1769b4}
-  .fr-momente__knopf--krake{border:1px solid rgba(255,255,255,.72);color:#fff}
-  .fr-momente__knopf--krake:hover{background:rgba(255,255,255,.08)}
-  .fr-momente__schlusszeile{margin-top:80px;font-size:15px;font-weight:300;color:rgba(255,255,255,.5)}
-  .fr-portrait{position:relative;height:100svh;min-height:650px;overflow:hidden;background:#f4f5f0;isolation:isolate}
-  .fr-portrait__bild{position:absolute;inset:0;display:block;--kx:56%;--ky:24%;z-index:0}
-  .fr-portrait__bild img{width:100%;height:100%;object-fit:cover;object-position:70% 30%;display:block}
-  .fr-portrait__text{position:absolute;z-index:1;top:50%;left:max(5vw,32px);transform:translateY(-50%);width:min(42vw,520px);color:#1A2240}
+  .fr-momente__knopf--krake{border:1px solid #1A2240;color:#1A2240}
+  .fr-momente__knopf--krake:hover{background:#f4f5f0}
+  .fr-momente__schlusszeile{position:absolute;bottom:40px;margin:0;font-size:15px;font-weight:300;color:rgba(26,34,64,.55)}
+  .fr-vertrauen__liste{margin-top:52px}
+  .fr-vertrauen__zeile{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px;align-items:baseline;border-top:1px solid rgba(255,255,255,.12);padding:27px 0}
+  .fr-vertrauen__zeile:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+  .fr-vertrauen__zeile h3{font-size:clamp(24px,2.8vw,36px);font-weight:500;line-height:1.18}
+  .fr-vertrauen__zeile p{font-size:18px;font-weight:300;line-height:1.55;color:rgba(255,255,255,.65)}
+  .fr-portrait{position:relative;height:100svh;overflow:hidden;background:#e2e1e4;isolation:isolate}
+  .fr-portrait__bild{position:absolute;top:0;right:0;display:block;width:62%;height:100%;--tl:31.5%;--tr:43.5%;clip-path:inset(0 var(--tr) 0 var(--tl));-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22%);mask-image:linear-gradient(to right,transparent 0,#000 22%);z-index:0}
+  .fr-portrait__bild img{position:relative;top:56px;width:100%;height:calc(100% + 56px);object-fit:cover;object-position:70% 30%;display:block}
+  .fr-portrait__text{position:absolute;z-index:1;top:50%;left:clamp(24px,5vw,100px);transform:translateY(-50%);width:min(30vw,420px);color:#1A2240}
   .fr-portrait__ueberzeile{font-size:13px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:#c46a2c}
-  .fr-portrait__zitat{margin-top:22px;max-width:22ch;font-size:clamp(26px,2.8vw,40px);font-weight:500;line-height:1.22;letter-spacing:-.02em}
+  .fr-portrait__zitat{margin-top:22px;max-width:20ch;font-size:clamp(26px,2.8vw,40px);font-weight:500;line-height:1.2;letter-spacing:-.02em}
   .fr-portrait__name{margin-top:28px;font-size:16px;font-weight:500}
-  @media (max-width:900px){.fr-portrait__text{top:auto;bottom:0;left:0;transform:none;width:100%;padding:clamp(100px,19vh,170px) 32px 28px;background:linear-gradient(transparent,#f4f5f0 24%,#f4f5f0)}.fr-portrait__zitat{max-width:27ch}}
-  @media (max-width:699px){.fr-momente{padding:88px 24px 100px}.fr-momente__moment{min-height:60svh}.fr-momente__aktionen{flex-direction:column}.fr-momente__knopf{width:100%}.fr-portrait{min-height:760px}.fr-portrait__bild{--kx:38%;--ky:24%}.fr-portrait__text{padding:100px 20px 24px}.fr-portrait__zitat{max-width:none;font-size:26px;line-height:1.2;margin-top:12px}.fr-portrait__name{margin-top:18px;font-size:14px}}
-  @media (prefers-reduced-motion:reduce){.fr-portrait__bild{clip-path:none!important}.fr-portrait__text,.fr-portrait__text *,.fr-momente__klein,.fr-momente__wort{opacity:1!important;visibility:visible!important;transform:none!important}}
+  @media (max-width:899px){.fr-portrait__bild{left:0;right:0;width:100%;height:62svh;--tl:27%;--tr:27%}.fr-portrait__text{top:62svh;bottom:auto;left:0;transform:none;width:100%;padding:20px 24px 16px}.fr-portrait__zitat{max-width:none;font-size:clamp(20px,2.5vw,23px);line-height:1.15;margin-top:10px}.fr-portrait__name{margin-top:16px;font-size:14px}}
+  @media (max-width:699px){.fr-momente__oeffner,.fr-momente__moment,.fr-momente__aufloesung{min-height:0;padding-left:24px;padding-right:24px}.fr-momente__problem{left:24px;right:24px;font-size:clamp(36px,10vw,48px)}.fr-momente__antwort{left:24px;right:24px;bottom:13%;font-size:clamp(24px,6.5vw,30px)}.fr-momente__zaehler{right:24px}.fr-momente__aktionen{flex-direction:column}.fr-momente__knopf{width:100%}.fr-portrait__bild img{object-position:70% 0%}.fr-portrait__text{padding:16px 20px 12px}.fr-portrait__zitat{font-size:22px;line-height:1.13}}
+  @media (prefers-reduced-motion:reduce){.fr-momente__moment{background:#fbf9f5!important}.fr-momente__problem{color:#1A2240!important;transform:none!important}.fr-momente__antwort,.fr-momente__antwortwort,.fr-momente__zaehler,.fr-momente__oeffnerwort,.fr-momente__schlusswort,.fr-vertrauen__zeile,.fr-portrait__text,.fr-portrait__text *{opacity:1!important;visibility:visible!important;transform:none!important}.fr-portrait__bild{clip-path:none!important}}
 </style>
 </helmet>
 <div style="--accent: {{accentColor}}; --radius: {{radius}}px; --sp: {{sectionPad}}px; background:#fbf9f5; color:#1A2240; min-height:100vh; font-weight:400; line-height:1.5;">
@@ -250,23 +260,17 @@
   </section>
 
   <!-- 7 · VERTRAUEN -->
-  <section style="padding:var(--sp,110px) 32px; background:#1A2240; color:#fff;">
+  <section class="fr-vertrauen" style="padding:var(--sp,110px) 32px; background:#1A2240; color:#fff;">
     <div style="max-width:1120px; margin:0 auto;">
       <div class="fr-auftauchen" style="font-size:13px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#fd8c4a;">Ihre Daten</div>
       <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; color:#fff;">Ihr Wissen bleibt Ihres.</h2>
-      <div class="fr-vertrauen" style="margin-top:52px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:40px;">
-        <div>
-          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#fff;">In Deutschland.</h3>
-          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Auf eigener Hardware, nicht in fremder Cloud.</p>
-        </div>
-        <div>
-          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#fff;">Ehrlich, was hinausgeht.</h3>
-          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Nur die passenden Ausschnitte gehen an das Sprachmodell. Das sagen wir, statt „100 % lokal“ zu versprechen.</p>
-        </div>
-        <div>
-          <h3 class="fr-auftauchen" style="font-size:22px; font-weight:500; color:#fff;">Es rät nicht.</h3>
-          <p class="fr-auftauchen" style="margin-top:12px; font-size:17px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.70);">Zahlen kommen aus Ihren Dokumenten.</p>
-        </div>
+      <div class="fr-vertrauen__liste">
+        <div class="fr-vertrauen__zeile"><h3>Es findet die besten Treffer.</h3><p>Second sucht in Ihrem Wissen genau die Stellen, die zu Ihrer Frage passen. Daraus entsteht die Antwort.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Es rät nicht.</h3><p>Bei einer Zahl nennt es die geprüfte. Oder es sagt: Die habe ich nicht.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Jeder Rat zeigt, worauf er steht.</h3><p>Mit Fundstelle, zum Nachprüfen.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Es bleibt im Haus.</h3><p>Ihre Daten liegen in Deutschland, auf unserem eigenen Rechner. Jede Firma hat ihre eigenen Wände.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Nichts zu lernen.</h3><p>Reinsprechen, Foto machen, fragen. Fertig.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Kosten haben einen Deckel.</h3><p>Keine Überraschungen. Kündigen mit einem Klick.</p></div>
       </div>
       <div style="margin-top:48px; font-size:17px; font-weight:400;">
         <div class="fr-auftauchen"><a href="datenschutz.html" style="color:#fff; text-decoration:none; transition:color .18s ease;" style-hover="color:#fd8c4a;">Mehr zum Datenschutz →</a></div>
@@ -289,37 +293,50 @@
 
   <!-- 9 · MOMENTE -->
   <section id="momente" class="fr-momente">
-    <div class="fr-momente__innen">
-      <div class="fr-momente__ueberzeile">Kommt Ihnen das bekannt vor?</div>
-    <div class="fr-momente__moment">
-      <p class="fr-momente__klein">Sie haben es gewusst. Sie wissen sogar noch, dass Sie es gewusst haben.</p>
-      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Second</span> <span class="fr-momente__wort">weiß</span> <span class="fr-momente__wort">den</span> <span class="fr-momente__wort">Rest.</span> <span class="fr-momente__wort">Mit</span> <span class="fr-momente__wort">Datum</span> <span class="fr-momente__wort">und</span> <span class="fr-momente__wort">Quelle.</span></h2>
+    <div class="fr-momente__oeffner">
+      <h2><span class="fr-momente__oeffnerwort">Alle</span> <span class="fr-momente__oeffnerwort">fragen</span> <span class="fr-momente__oeffnerwort">Sie.</span></h2>
+      <p><span class="fr-momente__oeffnerwort">Wen</span> <span class="fr-momente__oeffnerwort">fragen</span> <span class="fr-momente__oeffnerwort">Sie?</span></p>
     </div>
-    <div class="fr-momente__moment">
-      <p class="fr-momente__klein">Sie kennen ChatGPT. Es weiß alles über die Welt.</p>
-      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Second</span> <span class="fr-momente__wort">weiß</span> <span class="fr-momente__wort">alles</span> <span class="fr-momente__wort">über</span> <span class="fr-momente__wort">Ihre</span> <span class="fr-momente__wort">Firma.</span></h2>
-    </div>
-    <div class="fr-momente__moment">
-      <p class="fr-momente__klein">„Chef, kurze Frage …“ Zum elften Mal heute.</p>
-      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Ab</span> <span class="fr-momente__wort">morgen</span> <span class="fr-momente__wort">fragt</span> <span class="fr-momente__wort">Ihr</span> <span class="fr-momente__wort">Team</span> <span class="fr-momente__wort">zuerst</span> <span class="fr-momente__wort">Ihren</span> <span class="fr-momente__wort">zweiten</span> <span class="fr-momente__wort">Kopf.</span> <span class="fr-momente__wort">Und</span> <span class="fr-momente__wort">Sie</span> <span class="fr-momente__wort">haben</span> <span class="fr-momente__wort">Ihren</span> <span class="fr-momente__wort">eigenen</span> <span class="fr-momente__wort">wieder</span> <span class="fr-momente__wort">frei.</span></h2>
-    </div>
-    <div class="fr-momente__moment">
-      <p class="fr-momente__klein">Dreißig Jahre Erfahrung. Ein Abschiedsessen. Und dann?</p>
-      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Dann</span> <span class="fr-momente__wort">bleibt,</span> <span class="fr-momente__wort">was</span> <span class="fr-momente__wort">er</span> <span class="fr-momente__wort">wusste.</span> <span class="fr-momente__wort">Eine</span> <span class="fr-momente__wort">Frage</span> <span class="fr-momente__wort">entfernt.</span></h2>
-    </div>
-    <div class="fr-momente__moment">
-      <p class="fr-momente__klein">Sie übernehmen den Betrieb. Das meiste weiß noch der Senior.</p>
-      <h2 class="fr-momente__gross"><span class="fr-momente__wort">Er</span> <span class="fr-momente__wort">erzählt.</span> <span class="fr-momente__wort">Ihr</span> <span class="fr-momente__wort">zweiter</span> <span class="fr-momente__wort">Kopf</span> <span class="fr-momente__wort">behält.</span> <span class="fr-momente__wort">Sie</span> <span class="fr-momente__wort">haben</span> <span class="fr-momente__wort">es</span> <span class="fr-momente__wort">für</span> <span class="fr-momente__wort">immer.</span></h2>
-    </div>
+    <section class="fr-momente__moment" aria-label="Moment 1 von 6">
+      <h3 class="fr-momente__problem">„Frag den Chef.“</h3>
+      <p class="fr-momente__antwort"><span class="fr-momente__antwortwort">Oder</span> <span class="fr-momente__antwortwort">Ihren</span> <span class="fr-momente__antwortwort fr-momente__akzent">zweiten</span> <span class="fr-momente__antwortwort fr-momente__akzent">Kopf.</span> <span class="fr-momente__antwortwort">Der</span> <span class="fr-momente__antwortwort">Chef</span> <span class="fr-momente__antwortwort">hat</span> <span class="fr-momente__antwortwort">Feierabend.</span></p>
+      <div class="fr-momente__zaehler" aria-hidden="true">1 / 6</div>
+    </section>
+    <section class="fr-momente__moment" aria-label="Moment 2 von 6">
+      <h3 class="fr-momente__problem">„Das muss ich erst mal mit jemandem durchdenken.“</h3>
+      <p class="fr-momente__antwort"><span class="fr-momente__antwortwort fr-momente__akzent">Second</span> <span class="fr-momente__antwortwort">kennt</span> <span class="fr-momente__antwortwort">Ihre</span> <span class="fr-momente__antwortwort">Firma</span> <span class="fr-momente__antwortwort">und</span> <span class="fr-momente__antwortwort">denkt</span> <span class="fr-momente__antwortwort">mit.</span> <span class="fr-momente__antwortwort">Auch</span> <span class="fr-momente__antwortwort">um</span> <span class="fr-momente__antwortwort">elf</span> <span class="fr-momente__antwortwort">Uhr</span> <span class="fr-momente__antwortwort">abends.</span></p>
+      <div class="fr-momente__zaehler" aria-hidden="true">2 / 6</div>
+    </section>
+    <section class="fr-momente__moment" aria-label="Moment 3 von 6">
+      <h3 class="fr-momente__problem">„Wo ist das Angebot vom letzten Jahr?“</h3>
+      <p class="fr-momente__antwort"><span class="fr-momente__antwortwort">Sie</span> <span class="fr-momente__antwortwort">fragen.</span> <span class="fr-momente__antwortwort fr-momente__akzent">Second</span> <span class="fr-momente__antwortwort">antwortet.</span> <span class="fr-momente__antwortwort">Mit</span> <span class="fr-momente__antwortwort">Fundstelle.</span></p>
+      <div class="fr-momente__zaehler" aria-hidden="true">3 / 6</div>
+    </section>
+    <section class="fr-momente__moment" aria-label="Moment 4 von 6">
+      <h3 class="fr-momente__problem">„Das trage ich später ins CRM ein.“</h3>
+      <p class="fr-momente__antwort"><span class="fr-momente__antwortwort">Sie</span> <span class="fr-momente__antwortwort">erzählen</span> <span class="fr-momente__antwortwort">es</span> <span class="fr-momente__antwortwort">einfach.</span> <span class="fr-momente__antwortwort">Ihr</span> <span class="fr-momente__antwortwort fr-momente__akzent">zweiter</span> <span class="fr-momente__antwortwort fr-momente__akzent">Kopf</span> <span class="fr-momente__antwortwort">ordnet</span> <span class="fr-momente__antwortwort">es</span> <span class="fr-momente__antwortwort">selbst.</span> <span class="fr-momente__antwortwort">Ohne</span> <span class="fr-momente__antwortwort">ein</span> <span class="fr-momente__antwortwort">einziges</span> <span class="fr-momente__antwortwort">Pflichtfeld.</span></p>
+      <div class="fr-momente__zaehler" aria-hidden="true">4 / 6</div>
+    </section>
+    <section class="fr-momente__moment" aria-label="Moment 5 von 6">
+      <h3 class="fr-momente__problem">„Die Bank will bis Freitag eine Seite.“</h3>
+      <p class="fr-momente__antwort"><span class="fr-momente__antwortwort fr-momente__akzent">Second</span> <span class="fr-momente__antwortwort">schreibt</span> <span class="fr-momente__antwortwort">sie.</span> <span class="fr-momente__antwortwort">Aus</span> <span class="fr-momente__antwortwort">Ihrem</span> <span class="fr-momente__antwortwort">Wissen,</span> <span class="fr-momente__antwortwort">nicht</span> <span class="fr-momente__antwortwort">aus</span> <span class="fr-momente__antwortwort">dem</span> <span class="fr-momente__antwortwort">Netz.</span></p>
+      <div class="fr-momente__zaehler" aria-hidden="true">5 / 6</div>
+    </section>
+    <section class="fr-momente__moment" aria-label="Moment 6 von 6">
+      <h3 class="fr-momente__problem">„Können Sie mir das mal schicken?“</h3>
+      <p class="fr-momente__antwort"><span class="fr-momente__antwortwort">Ihr</span> <span class="fr-momente__antwortwort">Schaufenster</span> <span class="fr-momente__antwortwort">steht</span> <span class="fr-momente__antwortwort">schon</span> <span class="fr-momente__antwortwort">offen.</span> <span class="fr-momente__antwortwort">Mit</span> <span class="fr-momente__antwortwort">eigenem</span> <span class="fr-momente__antwortwort">Schlüssel</span> <span class="fr-momente__antwortwort">für</span> <span class="fr-momente__antwortwort">jeden</span> <span class="fr-momente__antwortwort">Gast.</span></p>
+      <div class="fr-momente__zaehler" aria-hidden="true">6 / 6</div>
+    </section>
     <div class="fr-momente__aufloesung">
-      <h2 class="fr-momente__schluss"><span class="fr-momente__wort">Niemand</span> <span class="fr-momente__wort">muss</span> <span class="fr-momente__wort">mehr</span> <span class="fr-momente__wort">alles</span> <span class="fr-momente__wort">im</span> <span class="fr-momente__wort">Kopf</span> <span class="fr-momente__wort">haben.</span></h2>
-      <p class="fr-momente__zusatz">Dafür gibt es den zweiten.</p>
-      <div class="fr-momente__aktionen">
-        <a href="https://konto.einoffenerblick.de/kaufen" class="fr-momente__knopf fr-momente__knopf--kaufen">Jetzt starten</a>
-        <a href="#krake" class="fr-momente__knopf fr-momente__knopf--krake">Die Krake fragen</a>
+      <div>
+        <h2 class="fr-momente__schluss"><span class="fr-momente__schlusswort">Second<span class="fr-momente__punkt">.</span></span> <span class="fr-momente__schlusswort">Der</span> <span class="fr-momente__schlusswort">Kopf</span> <span class="fr-momente__schlusswort">neben</span> <span class="fr-momente__schlusswort">Ihrem.</span></h2>
+        <p class="fr-momente__zusatz">Niemand muss mehr alles im Kopf haben.</p>
+        <div class="fr-momente__aktionen">
+          <a href="https://konto.einoffenerblick.de/kaufen" class="fr-momente__knopf fr-momente__knopf--kaufen">Jetzt starten</a>
+          <a href="#krake" class="fr-momente__knopf fr-momente__knopf--krake">Die Krake fragen</a>
+        </div>
       </div>
       <p class="fr-momente__schlusszeile">Firmenwissen retten, bevor es geht.</p>
-    </div>
     </div>
   </section>
 
@@ -327,7 +344,7 @@
   <section class="fr-portrait" aria-label="Der offene Blick">
     <picture class="fr-portrait__bild">
       <source media="(max-width:699px)" srcset="Images/sonja-gross-mobil.webp" type="image/webp">
-      <img src="Images/sonja-gross.webp" width="2400" height="1601" alt="Sonja Strahler, Gründerin von Second" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:70% 30%;display:block;">
+      <img src="Images/sonja-gross.webp" width="2400" height="1601" alt="Sonja Strahler, Gründerin von Second" loading="lazy">
     </picture>
     <div class="fr-portrait__text">
       <div class="fr-portrait__ueberzeile">Ein Mensch dahinter</div>
@@ -572,9 +589,11 @@ class Component extends DCLogic {
         } });
         return () => { section.classList.remove('fr-pin'); cards.scrollLeft = 0; };
       });
-      gsap.from('.fr-vertrauen > div', { opacity: 0, y: 40, duration: .7, stagger: .15, scrollTrigger: {
-        trigger: '.fr-vertrauen', start: 'top 85%', once: true
-      } });
+      document.querySelectorAll('.fr-vertrauen__zeile').forEach(row => {
+        gsap.fromTo(row, { opacity: .15 }, { opacity: 1, duration: 1, ease: 'none',
+          scrollTrigger: { trigger: row, start: 'top 90%', end: 'top 52%', scrub: true }
+        });
+      });
       const counterElement = document.querySelector('.fr-zaehler');
       const counter = { value: 0 };
       counterElement.textContent = '0';
@@ -587,37 +606,43 @@ class Component extends DCLogic {
           clearProps: 'opacity,transform', scrollTrigger: { trigger: selector, start: 'top 85%', once: true }
         });
       });
-      document.querySelectorAll('.fr-momente__moment').forEach(moment => {
-        gsap.from(moment.querySelector('.fr-momente__klein'), { opacity: 0, y: 24, duration: .7,
-          scrollTrigger: { trigger: moment, start: 'top 85%', once: true }
-        });
-        gsap.fromTo(moment.querySelectorAll('.fr-momente__wort'), { opacity: .15 },
-          { opacity: 1, stagger: 1, duration: 1, ease: 'none',
-            scrollTrigger: { trigger: moment, start: 'top 65%', end: 'bottom 40%', scrub: true }
-          });
+      gsap.fromTo('.fr-momente__oeffnerwort', { opacity: .15 }, { opacity: 1, stagger: 1, duration: 1, ease: 'none',
+        scrollTrigger: { trigger: '.fr-momente__oeffner', start: 'top 75%', end: 'bottom 35%', scrub: true }
       });
-      gsap.fromTo('.fr-momente__schluss .fr-momente__wort', { opacity: .15 },
-        { opacity: 1, stagger: 1, duration: 1, ease: 'none',
-          scrollTrigger: { trigger: '.fr-momente__schluss', start: 'top 80%', end: 'bottom 35%', scrub: true }
-        });
+      document.querySelectorAll('.fr-momente__moment').forEach(moment => {
+        const problem = moment.querySelector('.fr-momente__problem');
+        const answer = moment.querySelector('.fr-momente__antwort');
+        const words = answer.querySelectorAll('.fr-momente__antwortwort');
+        const counter = moment.querySelector('.fr-momente__zaehler');
+        gsap.set(answer, { autoAlpha: 0 });
+        gsap.set(counter, { autoAlpha: 0 });
+        const scene = gsap.timeline({ scrollTrigger: {
+          trigger: moment, start: 'top top', end: '+=120%', pin: true, pinSpacing: true,
+          scrub: true, invalidateOnRefresh: true
+        } });
+        scene.to(moment, { backgroundColor: '#fbf9f5', duration: 1, ease: 'none' }, .3)
+          .to(problem, { scale: .45, y: -40, color: 'rgba(26,34,64,.35)', transformOrigin: 'top left', duration: 1, ease: 'none' }, .3)
+          .set(answer, { autoAlpha: 1 }, 1.3)
+          .fromTo(words, { opacity: .15, y: 16 }, { opacity: 1, y: 0, duration: .4, stagger: .12, ease: 'none' }, 1.3)
+          .to(counter, { autoAlpha: 1, duration: .3 }, 1.3);
+      });
+      gsap.fromTo('.fr-momente__schlusswort', { opacity: .15 }, { opacity: 1, stagger: 1, duration: 1, ease: 'none',
+        scrollTrigger: { trigger: '.fr-momente__aufloesung', start: 'top 80%', end: 'bottom 35%', scrub: true }
+      });
       const portrait = document.querySelector('.fr-portrait');
       const picture = portrait.querySelector('.fr-portrait__bild');
       const portraitText = portrait.querySelector('.fr-portrait__text');
       const portraitWords = portrait.querySelectorAll('.fr-zitat__wort');
-      const portraitCenter = () => {
-        const style = getComputedStyle(picture);
-        return `${style.getPropertyValue('--kx').trim()} ${style.getPropertyValue('--ky').trim()}`;
-      };
-      const portraitStart = () => `circle(120px at ${portraitCenter()})`;
-      const portraitEnd = () => `circle(150% at ${portraitCenter()})`;
-      gsap.set(picture, { clipPath: portraitStart });
+      const doorStart = () => innerWidth < 900 ? { left: '27%', right: '27%' } : { left: '31.5%', right: '43.5%' };
+      gsap.set(picture, { '--tl': doorStart().left, '--tr': doorStart().right });
       gsap.set(portraitText, { autoAlpha: 0 });
       const portraitTimeline = gsap.timeline({ scrollTrigger: {
         trigger: portrait, start: 'top top', end: '+=140%', pin: true,
         scrub: true, invalidateOnRefresh: true
       } });
       portraitTimeline
-        .fromTo(picture, { clipPath: portraitStart }, { clipPath: portraitEnd, duration: 3, ease: 'none' })
+        .fromTo(picture, { '--tl': () => doorStart().left, '--tr': () => doorStart().right },
+          { '--tl': '0%', '--tr': '0%', duration: 3, ease: 'none' })
         .set(portraitText, { autoAlpha: 1 })
         .fromTo('.fr-portrait__ueberzeile', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .35 })
         .fromTo(portraitWords, { opacity: .15, y: 10 }, { opacity: 1, y: 0, duration: .4, stagger: .07 })
