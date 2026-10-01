@@ -71,6 +71,8 @@
   .fr-preiskarte__knopf--umrandet:hover{background:#f4f5f0}
   .fr-blogkarte__bild{overflow:hidden}
   .fr-blogkarte__bild img{transition:transform .5s ease}
+  .fr-blogkarten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px}
+  @media (max-width:899px){.fr-blogkarten{grid-template-columns:minmax(0,1fr)}}
   @media (prefers-reduced-motion:no-preference){.fr-blogkarte:hover img{transform:scale(1.04)}}
   @media (max-width:699px){.fr-bibliothek,.fr-preise{grid-template-columns:minmax(0,1fr);gap:28px}.fr-bibliothek__zahl{min-width:0}.fr-person{grid-template-columns:minmax(0,1fr)!important;gap:32px!important}}
   .fr-momente{font-family:'Figtree',system-ui,sans-serif;background:#fbf9f5}
@@ -397,9 +399,9 @@
     <div style="max-width:1120px; margin:0 auto;">
       <div class="fr-auftauchen" style="font-size:15px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Aus dem Blog</div>
       <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(26px,3.4vw,38px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240;">Zum Weiterdenken.</h2>
-      <div style="max-width:560px; margin-top:48px;">
-        <a class="fr-auftauchen fr-blogkarte" href="blog/unternehmensnachfolge-stagnation-2030/" style="display:block; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); overflow:hidden; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
-          <div class="fr-blogkarte__bild"><img src="blog/images/blog-2026-05-04-nachfolge-stagnation.jpg" alt="" loading="lazy" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px;"></div>
+      <div class="fr-blogkarten">
+        <a class="fr-auftauchen fr-blogkarte" href="/blog/unternehmensnachfolge-stagnation-2030/" style="display:block; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:var(--radius,14px); overflow:hidden; text-decoration:none; transition:border-color .18s ease;" style-hover="border-color:rgba(28,124,210,.5);">
+          <div class="fr-blogkarte__bild"><img src="/blog/images/blog-2026-05-04-nachfolge-stagnation.jpg" alt="" loading="lazy" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px;"></div>
           <div style="padding:0 30px 34px;">
             <div class="fr-auftauchen" style="margin-top:20px; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:12px; letter-spacing:.02em; color:rgba(26,34,64,.44);">4. Mai 2026</div>
             <h3 class="fr-auftauchen" style="margin-top:14px; font-size:20px; font-weight:500; line-height:1.3; letter-spacing:-.01em; color:#1A2240;">Unternehmensnachfolge: Die Zahl, die niemand hören will</h3>
@@ -407,7 +409,7 @@
           </div>
         </a>
       </div>
-      <a class="fr-auftauchen" href="blog/" style="display:inline-block; margin-top:28px; color:#1c7cd2; font-size:16px; font-weight:500; text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Alle Artikel →</a>
+      <a class="fr-auftauchen" href="/blog/" style="display:inline-block; margin-top:28px; color:#1c7cd2; font-size:16px; font-weight:500; text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Alle Artikel →</a>
     </div>
   </section>
 
