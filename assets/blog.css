@@ -74,3 +74,22 @@ a{color:inherit}
 @media(max-width:899px){.fr-blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:699px){.fr-rechtskopf__inner{padding:12px 16px;gap:8px}.fr-rechtskopf__marke{gap:7px}.fr-rechtskopf__zusatz,.fr-rechtskopf__krake{display:none}.fr-blog-intro,.fr-article-head{padding-top:96px}.fr-blog-section{padding-top:64px;padding-bottom:64px}.fr-blog-grid{grid-template-columns:minmax(0,1fr)}.fr-article-body{padding-bottom:72px}.fr-blog-cta{padding-top:64px;padding-bottom:64px}.fr-blog-cta__buttons a{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fr-blog-card{transition:none}}
+/* Auftrag O: Karten in echtem Querformat, keine feste Höhe */
+.fr-blog-card{height:auto}
+.fr-blog-card__image{height:auto}
+.fr-blog-section--grundlagen .fr-blog-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:960px}
+.fr-blog-section--grundlagen .fr-blog-card{border-left:4px solid var(--fr-orange)}
+.fr-blog-section--grundlagen .fr-blog-card__body{padding:28px 30px}
+.fr-blog-section--grundlagen .fr-blog-card__read{margin-top:20px;padding-top:0}
+.fr-blog-grid--neu>.fr-blog-card:first-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:center}
+.fr-blog-grid--neu>.fr-blog-card:first-child .fr-blog-card__body{padding:40px 44px}
+.fr-blog-grid--neu>.fr-blog-card:first-child .fr-blog-card__title{font-size:clamp(24px,2.4vw,32px);line-height:1.2;letter-spacing:-.015em}
+.fr-blog-grid--neu>.fr-blog-card:first-child .fr-blog-card__teaser{font-size:18px;-webkit-line-clamp:4}
+.fr-blog-grid--neu>.fr-blog-card:first-child .fr-blog-card__date{margin-top:0;padding-top:24px}
+@media(max-width:899px){.fr-blog-grid--neu>.fr-blog-card:first-child{display:flex;flex-direction:column}.fr-blog-grid--neu>.fr-blog-card:first-child .fr-blog-card__body{padding:26px}.fr-blog-section--grundlagen .fr-blog-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Auftrag P: Karte ohne Bild zeigt den Kernsatz auf dunklem Feld */
+.fr-blog-card__typo{display:flex;align-items:flex-end;aspect-ratio:16/9;padding:clamp(22px,3vw,40px);background:#1A2240;color:#fff;font-size:clamp(22px,2.4vw,34px);font-weight:500;line-height:1.18;letter-spacing:-.015em}
+.fr-blog-card__typo span::before{content:"„";color:var(--fr-orange)}
+.fr-blog-card__typo span::after{content:"“";color:var(--fr-orange)}
+.fr-blog-card:not(.fr-blog-grid--neu>.fr-blog-card:first-child) .fr-blog-card__typo{font-size:22px}

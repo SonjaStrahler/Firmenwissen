@@ -1,7 +1,18 @@
 # Blog
-- Jeder Artikel liegt unter blog/<slug>/index.html und folgt der Vorlage aus dem Artikel unternehmensnachfolge-stagnation-2030.
-- Teaserbilder liegen in blog/images/, Videos in /assets/video/.
-- Übersicht blog/index.html: oben die Grundlagen (fest angeheftet), darunter die 10 neuesten Artikel. Der neueste trägt „Neu“.
-- Startseite: höchstens die 2 neuesten Artikel.
-- Entwürfe kommen nach blog/_eingang/<datum>-<slug>/ (artikel.txt, meta-tags.txt, card.txt, teaser.jpg).
-- Keine fremden Server, keine YouTube-Einbettung.
+
+Hier liegt alles, was den Blog ausmacht. Jede Datei hat genau eine Aufgabe.
+
+| Datei | Wofür | Wer ändert sie |
+|---|---|---|
+| `STIMME.md` | Wie geschrieben wird (Teil 1) und Sonjas persönliche Sätze (Teil 2) | Teil 1 nur mit Sonjas Wort, Teil 2 Sonja selbst |
+| `QUELLEN.md` | Wo die Maschine nach Meldungen sucht, und wie sie bewertet | Sonja, jederzeit |
+| `artikel.json` | Liste aller Artikel und Grundlagen, die Wahrheit für Übersicht und Startseite | die Maschine oder Claude |
+| `<slug>/artikel.md` | der Text eines Artikels | die Maschine oder Claude |
+| `bauen.py` | baut aus Liste und Texten die Seiten, die Übersicht und die zwei Karten auf der Startseite | niemand, nur bei Fehlern |
+| `_vorlage.html` | das Aussehen jeder Artikelseite | nur mit Sonjas Wort |
+
+**Einen persönlichen Satz ergänzen:** `STIMME.md` öffnen, ganz unten in Teil 2 eine Zeile mit einem Strich davor anfügen, speichern, wie immer pushen.
+
+**Einen Artikel bauen** (macht die Maschine): Text nach `blog/<slug>/artikel.md`, Eintrag in `artikel.json`, dann im Website-Ordner `python3 blog/bauen.py`.
+
+Keine fremden Server, keine YouTube-Einbettung. Bilder liegen in `blog/images/`, Videos in `assets/video/`.

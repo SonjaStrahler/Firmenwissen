@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | Second – Firmenwissen retten</title>
-<meta name="description" content="Neues aus der Welt der KI und was es für Ihre Firma heißt. Dazu die Grundlagen zu Firmengedächtnis und Datenschutz. Von Sonja Strahler.">
-<link rel="canonical" href="https://firmenwissen-retten.de/blog/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog | Second – Firmenwissen retten">
-<meta property="og:description" content="Neues aus der Welt der KI und was es für Ihre Firma heißt. Dazu die Grundlagen zu Firmengedächtnis und Datenschutz. Von Sonja Strahler.">
-<meta property="og:url" content="https://firmenwissen-retten.de/blog/">
-<meta property="og:locale" content="de_DE">
+<title>{{TITEL_SEITE}}</title>
+<meta name="description" content="{{BESCHREIBUNG}}">
+<link rel="canonical" href="{{URL}}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{TITEL}}">
+<meta property="og:description" content="{{BESCHREIBUNG}}">
+<meta property="og:url" content="{{URL}}">
+{{OG_BILD}}<meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Second – Firmenwissen retten">
+<meta property="article:published_time" content="{{DATUM}}">
+<meta property="article:modified_time" content="{{GEAENDERT}}">
+<script type="application/ld+json">
+{{JSONLD}}
+</script>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/Favicon.png" type="image/png">
 <style>@font-face{font-family:'Figtree';src:url('/assets/fonts/figtree.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}</style>
@@ -32,52 +37,32 @@
   </div>
 </header>
 <main>
-  <div class="fr-blog-page fr-blog-intro">
-    <div class="fr-blog-eyebrow">Der Blog</div>
-    <h1>Was es Neues gibt, und was es für Ihre Firma heißt.</h1>
+  <article>
+    <div class="fr-blog-page">
+      <header class="fr-article-head">
+        <div class="fr-blog-eyebrow">{{KATEGORIE}}</div>
+        <h1>{{TITEL}}</h1>
+        <p class="fr-article-head__subtitle">{{UNTERZEILE}}</p>
+        <p class="fr-article-meta">Sonja Strahler · {{DATUM_LANG}} · {{LESEZEIT}} Min. Lesezeit</p>
+      </header>
+{{BILD}}
+      <div class="fr-article-body">
+{{TEXT}}
+      </div>
+    </div>
+  </article>
+  <section class="fr-blog-cta" aria-label="Second kennenlernen">
+  <h2><span>Second.</span> Der Kopf neben Ihrem.</h2>
+  <p>Niemand muss mehr alles im Kopf haben.</p>
+  <div class="fr-blog-cta__buttons">
+    <a href="/#krake">Die Krake fragen</a>
+    <a class="fr-blog-cta__primary" href="https://konto.einoffenerblick.de/kaufen">Jetzt starten</a>
   </div>
-  <section class="fr-blog-section fr-blog-section--grundlagen" aria-labelledby="grundlagen">
-    <div class="fr-blog-eyebrow" id="grundlagen">Grundlagen</div>
-    <p class="fr-blog-section__intro">Die Fragen, die vor jeder Entscheidung kommen.</p>
-    <div class="fr-blog-grid">
-<!-- GRUNDLAGEN:START -->
-      <a class="fr-blog-card" href="/blog/datenschutz-ohne-kleingedrucktes/">
-        <div class="fr-blog-card__body">
-          <span class="fr-blog-card__category">Grundlage</span>
-          <h2 class="fr-blog-card__title">Wo liegen meine Daten bei Second?</h2>
-          <p class="fr-blog-card__teaser">Datenschutz, ohne Kleingedrucktes: was im Haus bleibt, was hinausgeht und warum.</p>
-          <span class="fr-blog-card__read">Lesen →</span>
-        </div>
-      </a>
-<!-- GRUNDLAGEN:ENDE -->
-    </div>
-  </section>
-  <section class="fr-blog-section" aria-labelledby="neu-im-blog">
-    <h2 id="neu-im-blog">Neu im Blog</h2>
-    <div class="fr-blog-grid fr-blog-grid--neu">
-<!-- NEU:START -->
-      <a class="fr-blog-card" href="/blog/ki-weiss-ich-nicht/">
-        <span class="fr-blog-card__badge">Neu</span>
-        <div class="fr-blog-card__typo"><span>Plausibel ist nicht dasselbe wie richtig.</span></div>
-        <div class="fr-blog-card__body">
-          <span class="fr-blog-card__category">KI im Mittelstand</span>
-          <h3 class="fr-blog-card__title">Warum eine KI so selten „weiß ich nicht“ sagt</h3>
-          <p class="fr-blog-card__teaser">Eine neue Studie zeigt, wie oft KI rät. Und worauf Sie achten, bevor Sie einer KI Ihre Firma anvertrauen.</p>
-          <span class="fr-blog-card__date">5. Oktober 2026</span>
-        </div>
-      </a>
-      <a class="fr-blog-card" href="/blog/unternehmensnachfolge-stagnation-2030/">
-        <img class="fr-blog-card__image" src="/blog/images/blog-2026-05-04-nachfolge-stagnation.jpg" alt="Mann Anfang 60 in Arbeitsjacke steht allein in leerer Werkstatt und blickt aus dem Fenster" loading="lazy" width="1200" height="675">
-        <div class="fr-blog-card__body">
-          <span class="fr-blog-card__category">Unternehmensnachfolge</span>
-          <h3 class="fr-blog-card__title">Unternehmensnachfolge: Die Zahl, die niemand hören will</h3>
-          <p class="fr-blog-card__teaser">Woran liegt es, dass Unternehmen keinen Nachfolger finden - und was können sie tun?</p>
-          <span class="fr-blog-card__date">4. Mai 2026</span>
-        </div>
-      </a>
-<!-- NEU:ENDE -->
-    </div>
-  </section>
+</section>
+  <div class="fr-blog-page fr-article-after">
+    <p>Zuletzt aktualisiert: {{GEAENDERT_LANG}}</p>
+    <a href="/blog/">← Alle Artikel</a>
+  </div>
 </main>
   <footer class="fr-blog-footer" style="background:#1A2240; color:#fff; padding:70px 32px 44px;">
     <div style="max-width:1120px; margin:0 auto;">
