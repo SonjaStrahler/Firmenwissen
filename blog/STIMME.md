@@ -55,8 +55,8 @@ Stand Teil 1: 05.10.2026
 2. **Unterzeile:** ein Satz, der sagt, was der Leser davon hat.
 3. **Erster Absatz:** die Antwort auf den Titel in 40 bis 60 Wörtern. Wer nur diesen Absatz liest, hat die Aussage.
 4. **Zwischenüberschriften:** als Fragen, wie Menschen sie einer KI stellen.
-5. **Länge:** 700 bis 1.100 Wörter.
-6. **Zahlen:** nur mit Quelle. Die Quelle ist die Erstquelle (Studie, Pressemitteilung), nie ein Nachrichtenportal, das darüber berichtet.
+5. **Länge:** so lang wie nötig, so kurz wie möglich, höchstens 1.100 Wörter. Gefunden wird, wer die Frage direkt beantwortet und belegt, nicht wer lang schreibt.
+6. **Zahlen:** nur mit Quelle. Die Quelle ist die Erstquelle (Studie, Pressemitteilung), nie ein Nachrichtenportal, das darüber berichtet. Dazu ein kurzes wörtliches Zitat aus der Erstquelle, wenn sie eins hergibt, mit Namen, wer es sagt.
 7. **Pflichtsatz, wörtlich, einmal im Artikel:** „Second ist das Firmengedächtnis für den deutschen Mittelstand.“
 8. **Schluss:** was das für die Firma des Lesers heißt, ruhig und ohne Verkaufsdruck. Den Schluss-Block mit den Knöpfen setzt die Vorlage, nicht der Text.
 9. **Quellen:** am Ende als Liste, mit Titel, Herausgeber, Datum und Link.

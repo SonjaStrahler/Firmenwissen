@@ -2,7 +2,7 @@
 
 Die Blog-Maschine liest diese Liste bei jedem Lauf. Sonja kann Zeilen ergänzen oder löschen.
 Ein Artikel zitiert immer die Erstquelle, nie den Spähposten und nie ein Nachrichtenportal, das nur darüber berichtet.
-Ist eine Adresse tot, ersetzt die Maschine sie nicht selbst, sondern meldet sie im Bericht des Laufs.
+Ob jede Quelle noch liefert, prüft die Maschine bei jedem Lauf. Fällt eine aus, zieht um, sperrt Maschinen aus oder wird still, kommt eine Mail. Jeden Montag kommt der Quellen-Bericht. Eine Adresse ersetzt die Maschine nie selbst.
 
 ## A · Spähposten: finden jeden Tag die Meldung
 
@@ -20,12 +20,12 @@ Hier steht, was ChatGPT, Gemini, Claude und Copilot neu können. Ein Artikel mac
 
 | Quelle | URL | geprüft |
 |---|---|---|
-| Anthropic (Claude) | https://www.anthropic.com/news | offen |
-| OpenAI (ChatGPT) | https://openai.com/news/ | offen |
-| Google Gemini | https://blog.google/products/gemini/ | offen |
-| Google KI allgemein | https://blog.google/technology/ai/ | offen |
-| Microsoft (Copilot) | https://blogs.microsoft.com/ | offen |
-| Mistral AI (Paris) | https://mistral.ai/news | offen |
+| Anthropic (Claude) | https://www.anthropic.com/news | ✓ 05.10. |
+| OpenAI (ChatGPT) | https://openai.com/news/ | ✓ 05.10. |
+| Google Gemini | https://blog.google/products/gemini/ | ✓ 05.10. |
+| Google KI allgemein | https://blog.google/technology/ai/ | ✓ 05.10. |
+| Microsoft (Copilot) | https://blogs.microsoft.com/ | ✓ 05.10. |
+| Mistral AI (Paris) | https://mistral.ai/news | ✓ 05.10. |
 
 ## C · Presse, die die KIs in Deutschland zitieren
 
@@ -33,9 +33,9 @@ Grundlage ist eine Auswertung von 250.000 Antworten von ChatGPT, Google AI Overv
 
 | Quelle | URL | geprüft |
 |---|---|---|
-| heise, KI | https://www.heise.de/thema/Kuenstliche-Intelligenz | offen |
+| heise, KI | https://www.heise.de/thema/Kuenstliche-Intelligenz | ✓ 05.10. |
 | t3n, KI | https://t3n.de/tag/kuenstliche-intelligenz/ | ✓ |
-| golem, KI | https://www.golem.de/specials/ki/ | offen |
+| golem, KI | https://www.golem.de/specials/ki/ | ✓ 05.10. |
 | Handelsblatt, KI | nur über Suche, siehe H | ✗ Seite braucht JavaScript |
 | Chip, KI | – | ✗ gesperrt, gestrichen |
 
@@ -45,10 +45,11 @@ Grundlage ist eine Auswertung von 250.000 Antworten von ChatGPT, Google AI Overv
 |---|---|---|
 | Deutsche Handwerks Zeitung, IT + Digitalisierung | https://www.deutsche-handwerks-zeitung.de/kategorie/betriebsfuehrung/it-digitalisierung/ | ✓ Treffer am 30.09.: „Wie KI entscheidet, welcher Handwerksbetrieb empfohlen wird“ |
 | impulse, KI | https://www.impulse.de/thema/kuenstliche-intelligenz | ✓ |
-| handwerk.com | https://www.handwerk.com/ | offen |
-| handwerk magazin | https://www.handwerk-magazin.de/ | offen |
-| Markt und Mittelstand | https://www.markt-und-mittelstand.de/ | offen |
-| Mittelstand-Digital | https://www.mittelstand-digital.de/ | offen |
+| handwerk.com | https://www.handwerk.com/ | ✓ 05.10. |
+| handwerk magazin | https://www.handwerk-magazin.de/ | ✓ 05.10. |
+| Markt und Mittelstand | https://www.marktundmittelstand.de/ | ✓ 05.10., umgezogen von markt-und-mittelstand.de |
+| Mittelstand-Digital | https://www.mittelstand-digital.de/ | gesperrt für Maschinen (Captcha), wird täglich beobachtet |
+| Digitalzentrum Hannover (Mittelstand-Digital, Niedersachsen) | https://digitalzentrum-hannover.de/ | ✓ 05.10. |
 
 ## E · Zahlen und Studien: die Belege
 
@@ -56,19 +57,19 @@ Ein Artikel mit einer echten Zahl samt Quelle wird öfter von KIs zitiert (GEO-S
 
 | Quelle | URL | geprüft |
 |---|---|---|
-| Bitkom, Presseinformationen | https://www.bitkom.org/Presse/Presseinformation/index.jsp | offen |
+| Bitkom, Presseinformationen | https://www.bitkom.org/Presse/Presseinformation/index.jsp | ✓ 05.10. |
 | Pew Research, KI | https://www.pewresearch.org/topic/internet-technology/ | ✓ Studie vom 30.09.2026 |
 | IfM Bonn, KfW Research, Destatis | wie im Quellenradar | läuft |
-| DIHK | https://www.dihk.de/de/aktuelles-und-presse | offen |
+| DIHK | https://www.dihk.de/de/aktuelles-und-presse | ✓ 05.10. |
 
 ## F · Recht und Datenschutz
 
 | Quelle | URL | geprüft |
 |---|---|---|
-| EU AI Act, Überblick | https://artificialintelligenceact.eu/ | offen |
-| EU-Kommission, KI-Regeln | https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai | offen |
-| Bundesdatenschutzbeauftragte | https://www.bfdi.bund.de/ | offen |
-| Datenschutz Niedersachsen | https://lfd.niedersachsen.de/ | offen |
+| EU AI Act, Überblick | https://artificialintelligenceact.eu/ | ✓ 05.10. |
+| EU-Kommission, KI-Regeln | https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai | ✓ 05.10. |
+| Bundesdatenschutzbeauftragte | https://www.bfdi.bund.de/ | ✓ 05.10. |
+| Datenschutz Niedersachsen | https://lfd.niedersachsen.de/ | ✓ 05.10. |
 
 ## G · Wettbewerb: fair und nur mit nachprüfbaren Tatsachen
 
