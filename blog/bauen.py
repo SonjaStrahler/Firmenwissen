@@ -219,7 +219,7 @@ START_KARTE = ('        <a class="fr-auftauchen fr-blogkarte" href="/blog/{slug}
                'style-hover="border-color:rgba(28,124,210,.5);">\n'
                '          {bild}\n'
                '          <div style="padding:0 30px 34px;">\n'
-               '            <div class="fr-auftauchen" style="margin-top:20px; font-family:ui-monospace,\'SF Mono\',Menlo,monospace; '
+               '            <div class="fr-auftauchen" style="margin-top:20px; '
                'font-size:12px; letter-spacing:.02em; color:rgba(26,34,64,.44);">{datum}</div>\n'
                '            <h3 class="fr-auftauchen" style="margin-top:14px; font-size:20px; font-weight:500; line-height:1.3; '
                'letter-spacing:-.01em; color:#1A2240;">{titel}</h3>\n'
