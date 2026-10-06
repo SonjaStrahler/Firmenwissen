@@ -41,6 +41,15 @@
   .fr-kopf--dunkel>div>div:first-child>span:first-of-type,.fr-kopf--dunkel a[href="#krake"]{color:#fff!important}
   .fr-kopf--dunkel>div>div:first-child>span:last-child{color:rgba(255,255,255,.5)!important}
   .fr-hero__marke{transform-origin:left center}
+  .fr-video{padding:var(--sp,110px) 32px;background:#fbf9f5}
+  .fr-video__frame{position:relative;max-width:960px;margin:0 auto}
+  .fr-video__player{display:block;width:100%;max-width:960px;aspect-ratio:16/9;margin:0 auto;border-radius:16px;background:#1A2240;object-fit:cover}
+  .fr-video__overlay{position:absolute;inset:0 0 48px;cursor:pointer}
+  .fr-video__play{position:absolute;top:calc(50% + 24px);left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:88px;height:88px;padding:0;border:0;border-radius:50%;background:#1c7cd2;box-shadow:0 4px 16px rgba(26,34,64,.24);cursor:pointer}
+  .fr-video__play::after{content:"";margin-left:6px;border-top:15px solid transparent;border-bottom:15px solid transparent;border-left:24px solid #fff}
+  .fr-video__play:hover{background:#1769b4}
+  .fr-video__play:focus-visible{outline:3px solid #fff;outline-offset:4px}
+  @media (max-width:699px){.fr-video{padding-left:8px;padding-right:8px}.fr-video__play{width:64px;height:64px}.fr-video__play::after{border-top-width:11px;border-bottom-width:11px;border-left-width:18px}}
   .fr-moment{overflow:clip;padding-left:clamp(32px,6vw,80px)!important;padding-right:clamp(32px,6vw,80px)!important}
   .fr-moment .fr-szene{width:120%;margin-left:-10%;zoom:1.2}
   .fr-moment__wort{display:inline-block}
@@ -123,7 +132,7 @@
       </div>
       <div style="display:flex; align-items:center; gap:20px;">
         <a href="#krake" style="color:#1c7cd2; font-weight:500; font-size:15px; text-decoration:none; transition:color .18s ease;" style-hover="color:#1769b4;">Die Krake fragen</a>
-        <a href="https://konto.einoffenerblick.de/kaufen" style="display:inline-flex; align-items:center; gap:8px; background:#1c7cd2; color:#fff; font-weight:500; font-size:15px; padding:11px 20px; border-radius:var(--radius,14px); text-decoration:none; transition:background .18s ease;" style-hover="background:#1769b4;">Jetzt starten</a>
+        <a href="#preis" style="display:inline-flex; align-items:center; gap:8px; background:#1c7cd2; color:#fff; font-weight:500; font-size:15px; padding:11px 20px; border-radius:var(--radius,14px); text-decoration:none; transition:background .18s ease;" style-hover="background:#1769b4;">Jetzt starten</a>
       </div>
     </div>
   </header>
@@ -153,6 +162,15 @@
       <div class="fr-laufband__gruppe" aria-hidden="true"><span>Hört zu</span><span>·</span><span>Behält</span><span>·</span><span>Erinnert</span><span>·</span><span>Denkt mit</span><span>·</span><span>Wacht</span><span>·</span><span>Schreibt</span><span>·</span><span>Zeigt</span><span>·</span></div>
     </div>
   </div>
+
+  <section class="fr-video">
+    <div class="fr-video__frame" data-lenis-prevent>
+      <video class="fr-video__player" src="/assets/video/second-intro.mp4" poster="/assets/video/second-intro-poster.jpg" controls preload="none" playsinline aria-label="Intro-Video: Second, der Kopf neben Ihrem" data-lenis-prevent></video>
+      <div class="fr-video__overlay">
+        <button class="fr-video__play" type="button" aria-label="Video abspielen"></button>
+      </div>
+    </div>
+  </section>
 
   <!-- 4 · DER MOMENT -->
   <section class="fr-moment" style="padding:var(--sp,110px) 32px;">
@@ -263,11 +281,11 @@
       <div class="fr-auftauchen" style="font-size:15px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#fd8c4a;">Ihre Daten</div>
       <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; color:#fff;">Ihr Wissen bleibt Ihres.</h2>
       <div class="fr-vertrauen__liste">
-        <div class="fr-vertrauen__zeile"><h3>Es findet die besten Treffer.</h3><p>Second sucht in Ihrem Wissen genau die Stellen, die zu Ihrer Frage passen. Daraus entsteht die Antwort.</p></div>
-        <div class="fr-vertrauen__zeile"><h3>Es rät nicht.</h3><p>Bei einer Zahl nennt es die geprüfte. Oder es sagt: Die habe ich nicht.</p></div>
-        <div class="fr-vertrauen__zeile"><h3>Jeder Rat zeigt, worauf er steht.</h3><p>Mit Fundstelle, zum Nachprüfen.</p></div>
-        <div class="fr-vertrauen__zeile"><h3>Es bleibt im Haus.</h3><p>Ihre Daten liegen in Deutschland, auf unserem eigenen Rechner. Jede Firma hat ihre eigenen Wände.</p></div>
-        <div class="fr-vertrauen__zeile"><h3>Nichts zu lernen.</h3><p>Reinsprechen, Foto machen, fragen. Fertig.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Second findet die richtigen Stellen.</h3><p>Second sucht in Ihrem Wissen genau die Stellen, die zu Ihrer Frage passen. Daraus entsteht die Antwort.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Second rät nicht.</h3><p>Bei einer Zahl nennt es die geprüfte. Oder es sagt: Die habe ich nicht.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Ihr zweiter Kopf zeigt, woher jede Antwort kommt.</h3><p>Mit Fundstelle, zum Nachprüfen.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Ihre Daten bleiben im Haus.</h3><p>Ihre Daten liegen in Deutschland, auf unserem eigenen Rechner. Jede Firma hat ihre eigenen Wände.</p></div>
+        <div class="fr-vertrauen__zeile"><h3>Keine Schulung nötig.</h3><p>Reinsprechen, Foto machen, fragen. Fertig.</p></div>
       </div>
     </div>
   </section>
@@ -703,6 +721,31 @@ class Component extends DCLogic {
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready, { once: true });
   else ready();
+})();
+</script>
+<script>
+(() => {
+  const mounted = new WeakSet();
+  const mountVideos = () => {
+    document.querySelectorAll('#dc-root .fr-video').forEach(section => {
+      const video = section.querySelector('.fr-video__player');
+      const overlay = section.querySelector('.fr-video__overlay');
+      if (!video || !overlay || mounted.has(video)) return;
+      mounted.add(video);
+      video.controls = true;
+      video.playsInline = true;
+      const sync = () => { overlay.hidden = !video.paused && !video.ended; };
+      overlay.addEventListener('click', () => {
+        video.muted = false;
+        if (video.volume === 0) video.volume = 1;
+        video.play().catch(sync);
+      });
+      ['play', 'pause', 'ended'].forEach(event => video.addEventListener(event, sync));
+      sync();
+    });
+  };
+  new MutationObserver(mountVideos).observe(document.body, { childList: true, subtree: true });
+  mountVideos();
 })();
 </script>
 </body>
