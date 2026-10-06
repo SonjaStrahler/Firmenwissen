@@ -219,9 +219,11 @@
         <div class="fr-auftauchen" style="margin-top:14px; font-size:13.5px; font-weight:300; color:rgba(26,34,64,.44);">Fragen Sie wie einen Kollegen, nicht wie eine Suchmaschine.</div>
 
         <sc-if value="{{zeigeKarte}}" hint-placeholder-val="{{false}}">
-          <div class="fr-auftauchen" style="margin-top:26px; background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:14px; padding:26px 28px; text-align:left; box-shadow:0 10px 30px -22px rgba(26,34,64,.20);">
-            <div style="font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#c46a2c;">{{kartenLabel}}</div>
-            <p class="fr-auftauchen" style="margin-top:12px; font-size:16.5px; font-weight:300; line-height:1.65; color:#1A2240; white-space:pre-line;">{{antwortText}}</p>
+          <div class="fr-krake__antwortbreite" style="position:relative; left:50%; width:min(880px,calc(100vw - 32px)); margin-top:26px; transform:translateX(-50%);">
+            <div class="fr-auftauchen" style="background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:14px; padding:26px 28px; text-align:left; box-shadow:0 10px 30px -22px rgba(26,34,64,.20);">
+              <div style="font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#c46a2c;">{{kartenLabel}}</div>
+              <p class="fr-auftauchen" style="margin-top:12px; font-size:16.5px; font-weight:300; line-height:1.65; color:#1A2240; white-space:pre-line;">{{antwortText}}</p>
+            </div>
           </div>
         </sc-if>
 
