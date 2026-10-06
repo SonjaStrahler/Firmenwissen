@@ -1,0 +1,33 @@
+[
+  {
+    "slug": "datenschutz-ohne-kleingedrucktes",
+    "typ": "grundlage",
+    "quelle": "html",
+    "titel": "Wo liegen meine Daten bei Second?",
+    "teaser": "Datenschutz, ohne Kleingedrucktes: was im Haus bleibt, was hinausgeht und warum.",
+    "kategorie": "Datenschutz & Recht",
+    "datum": "2026-10-01"
+  },
+  {
+    "slug": "unternehmensnachfolge-stagnation-2030",
+    "typ": "artikel",
+    "quelle": "html",
+    "titel": "Unternehmensnachfolge: Die Zahl, die niemand hören will",
+    "teaser": "Woran liegt es, dass Unternehmen keinen Nachfolger finden - und was können sie tun?",
+    "kategorie": "Unternehmensnachfolge",
+    "datum": "2026-05-04",
+    "bild": "/blog/images/blog-2026-05-04-nachfolge-stagnation.jpg",
+    "bild_alt": "Mann Anfang 60 in Arbeitsjacke steht allein in leerer Werkstatt und blickt aus dem Fenster"
+  },
+  {
+    "slug": "ki-weiss-ich-nicht",
+    "typ": "artikel",
+    "quelle": "md",
+    "titel": "Warum eine KI so selten „weiß ich nicht“ sagt",
+    "beschreibung": "Eine Studie von Pew Research zeigt, wie oft KI rät. Was das für Ihre Firma heißt und wie Sie jede KI mit zwei Fragen prüfen.",
+    "teaser": "Eine neue Studie zeigt, wie oft KI rät. Und worauf Sie achten, bevor Sie einer KI Ihre Firma anvertrauen.",
+    "kategorie": "KI im Mittelstand",
+    "datum": "2026-10-05",
+    "kernsatz": "Plausibel ist nicht dasselbe wie richtig."
+  }
+]

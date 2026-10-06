@@ -1,48 +1,18 @@
-# Blog-Artikel vorbereiten
+# Blog
 
-Neue Artikel bitte in `blog/_eingang/` ablegen.
+Hier liegt alles, was den Blog ausmacht. Jede Datei hat genau eine Aufgabe.
 
-Empfohlener Ordnername:
+| Datei | Wofür | Wer ändert sie |
+|---|---|---|
+| `STIMME.md` | Wie geschrieben wird (Teil 1) und Sonjas persönliche Sätze (Teil 2) | Teil 1 nur mit Sonjas Wort, Teil 2 Sonja selbst |
+| `QUELLEN.md` | Wo die Maschine nach Meldungen sucht, und wie sie bewertet | Sonja, jederzeit |
+| `artikel.json` | Liste aller Artikel und Grundlagen, die Wahrheit für Übersicht und Startseite | die Maschine oder Claude |
+| `<slug>/artikel.md` | der Text eines Artikels | die Maschine oder Claude |
+| `bauen.py` | baut aus Liste und Texten die Seiten, die Übersicht und die zwei Karten auf der Startseite | niemand, nur bei Fehlern |
+| `_vorlage.html` | das Aussehen jeder Artikelseite | nur mit Sonjas Wort |
 
-```text
-YYYY-MM-DD-kurzer-artikel-slug
-```
+**Einen persönlichen Satz ergänzen:** `STIMME.md` öffnen, ganz unten in Teil 2 eine Zeile mit einem Strich davor anfügen, speichern, wie immer pushen.
 
-Beispiel:
+**Einen Artikel bauen** (macht die Maschine): Text nach `blog/<slug>/artikel.md`, Eintrag in `artikel.json`, dann im Website-Ordner `python3 blog/bauen.py`.
 
-```text
-2026-05-11-wissensverlust-rente-kmu
-```
-
-Bitte pro Artikel diese Dateien liefern:
-
-```text
-artikel.txt
-meta-tags.txt
-card.txt
-teaser.jpg
-```
-
-Wenn du schon eine komplette HTML-Seite hast, ist das auch okay:
-
-```text
-komplette-seite.txt
-card.txt
-meta-tags.txt
-teaser.jpg
-```
-
-Wichtig fuer eine reibungslose Veroeffentlichung:
-
-- Der neueste Artikel darf gern oben in `blog/_eingang/` liegen.
-- Das Teaserbild bitte immer `teaser.jpg` nennen.
-- Wenn du einen Wunsch fuer die URL hast, schreibe ihn in den Ordnernamen.
-- Wenn kein Wunsch fuer die URL da ist, baue ich sie aus Titel und Datum.
-- Die fertige Uebersichtsseite bleibt `blog/index.html`.
-- Der fertige Artikel bekommt einen eigenen Ordner, zum Beispiel `blog/unternehmensnachfolge-stagnation-2030/index.html`.
-
-Die alten Rohdateien vom ersten Artikel liegen hier:
-
-```text
-blog/_eingang/2026-05-04-unternehmensnachfolge-stagnation/
-```
+Keine fremden Server, keine YouTube-Einbettung. Bilder liegen in `blog/images/`, Videos in `assets/video/`.
