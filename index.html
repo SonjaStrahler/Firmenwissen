@@ -223,6 +223,34 @@
             <div class="fr-auftauchen" style="background:#fff; border:1px solid rgba(26,34,64,.10); border-radius:14px; padding:26px 28px; text-align:left; box-shadow:0 10px 30px -22px rgba(26,34,64,.20);">
               <div style="font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#c46a2c;">{{kartenLabel}}</div>
               <p class="fr-auftauchen" style="margin-top:12px; font-size:16.5px; font-weight:300; line-height:1.65; color:#1A2240; white-space:pre-line;">{{antwortText}}</p>
+
+              <sc-if value="{{zeigeNachbarn}}" hint-placeholder-val="{{false}}">
+                <div style="margin-top:22px;">
+                  <div style="font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:rgba(26,34,64,.44);">Vielleicht meinen Sie auch</div>
+                  <sc-if value="{{hatN1}}" hint-placeholder-val="{{false}}">
+                    <div style="margin-top:6px;">
+                      <button type="button" onClick="{{klappN1}}" style="display:flex; align-items:center; justify-content:space-between; width:100%; padding:12px 0; border:0; border-top:1px solid rgba(26,34,64,.08); background:transparent; color:#1A2240; font-family:'Figtree',system-ui,sans-serif; font-size:15.5px; font-weight:400; text-align:left; cursor:pointer;" style-hover="color:#1c7cd2;"><span>{{n1Frage}}</span><span style="display:flex; align-items:center; justify-content:center; width:30px; height:30px; margin-left:14px; flex:none; border-radius:999px; background:rgba(26,34,64,.05); font-size:16px; font-weight:400; color:rgba(26,34,64,.60);">{{n1Pfeil}}</span></button>
+                      <sc-if value="{{n1Offen}}" hint-placeholder-val="{{false}}"><p style="margin:0 0 14px; padding-right:44px; font-size:15.5px; font-weight:300; line-height:1.62; color:rgba(26,34,64,.78); white-space:pre-line;">{{n1Text}}</p></sc-if>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{hatN2}}" hint-placeholder-val="{{false}}">
+                    <div>
+                      <button type="button" onClick="{{klappN2}}" style="display:flex; align-items:center; justify-content:space-between; width:100%; padding:12px 0; border:0; border-top:1px solid rgba(26,34,64,.08); background:transparent; color:#1A2240; font-family:'Figtree',system-ui,sans-serif; font-size:15.5px; font-weight:400; text-align:left; cursor:pointer;" style-hover="color:#1c7cd2;"><span>{{n2Frage}}</span><span style="display:flex; align-items:center; justify-content:center; width:30px; height:30px; margin-left:14px; flex:none; border-radius:999px; background:rgba(26,34,64,.05); font-size:16px; font-weight:400; color:rgba(26,34,64,.60);">{{n2Pfeil}}</span></button>
+                      <sc-if value="{{n2Offen}}" hint-placeholder-val="{{false}}"><p style="margin:0 0 14px; padding-right:44px; font-size:15.5px; font-weight:300; line-height:1.62; color:rgba(26,34,64,.78); white-space:pre-line;">{{n2Text}}</p></sc-if>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-if>
+              <sc-if value="{{zeigeBewertung}}" hint-placeholder-val="{{false}}">
+                <div style="margin-top:22px; padding-top:14px; border-top:1px solid rgba(26,34,64,.08); display:flex; align-items:center; gap:14px; font-size:13.5px; font-weight:300; color:rgba(26,34,64,.50);">
+                  <span>War das Ihre Frage?</span>
+                  <button type="button" onClick="{{bewertJa}}" style="border:1px solid rgba(26,34,64,.14); border-radius:999px; padding:5px 14px; background:transparent; color:#1A2240; font-family:'Figtree',system-ui,sans-serif; font-size:13.5px; font-weight:400; cursor:pointer;" style-hover="border-color:#1c7cd2; color:#1c7cd2;">Ja</button>
+                  <button type="button" onClick="{{bewertNein}}" style="border:1px solid rgba(26,34,64,.14); border-radius:999px; padding:5px 14px; background:transparent; color:#1A2240; font-family:'Figtree',system-ui,sans-serif; font-size:13.5px; font-weight:400; cursor:pointer;" style-hover="border-color:#1c7cd2; color:#1c7cd2;">Nein</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{zeigeDanke}}" hint-placeholder-val="{{false}}">
+                <div style="margin-top:22px; padding-top:14px; border-top:1px solid rgba(26,34,64,.08); font-size:13.5px; font-weight:300; color:rgba(26,34,64,.50);">{{dankeText}}</div>
+              </sc-if>
             </div>
           </div>
         </sc-if>
@@ -484,7 +512,7 @@
   &quot;sectionPad&quot;: {&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:110,&quot;min&quot;:70,&quot;max&quot;:170,&quot;step&quot;:2,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Theme&quot;}
 }">
 class Component extends DCLogic {
-  state = { frage: '', antwort: null, label: null, laden: false };
+  state = { frage: '', antwort: null, label: null, laden: false, nachbarn: [], offen1: false, offen2: false, bewertet: null };
 
   static ANTWORTEN = {};
 
@@ -506,14 +534,14 @@ class Component extends DCLogic {
       }
       return;
     }
-    this.setState({ frage: f, laden: true, antwort: null, label: 'Einen Moment …' });
+    this.setState({ frage: f, laden: true, antwort: null, label: 'Einen Moment …', nachbarn: [], offen1: false, offen2: false, bewertet: null });
     fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ frage: f })
     })
       .then((r) => r.json())
-      .then((d) => this.setState({ laden: false, antwort: d.antwort, label: 'Antwort der Krake' }))
+      .then((d) => this.setState({ laden: false, antwort: d.antwort, label: 'Antwort der Krake', nachbarn: Array.isArray(d.nachbarn) ? d.nachbarn.slice(0, 2) : [] }))
       .catch(() => this.setState({
         laden: false,
         antwort: 'Das hat gerade nicht geklappt — bitte versuchen Sie es gleich noch einmal.',
@@ -521,8 +549,22 @@ class Component extends DCLogic {
       }));
   }
 
+  bewerten(ja) {
+    const { frage, antwort, bewertet } = this.state;
+    if (bewertet) return;
+    this.setState({ bewertet: ja ? 'ja' : 'nein' });
+    const endpoint = this.props.endpoint ?? '';
+    if (ja || !endpoint) return;
+    fetch(endpoint.replace(/\/frage$/, '/daneben'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ frage, antwort })
+    }).catch(() => {});
+  }
+
   renderVals() {
-    const { frage, antwort, label, laden } = this.state;
+    const { frage, antwort, label, laden, nachbarn, offen1, offen2, bewertet } = this.state;
+    const n1 = nachbarn[0] || null, n2 = nachbarn[1] || null;
     return {
       frage,
       onFrage: (e) => this.setState({ frage: e.target.value }),
@@ -535,6 +577,16 @@ class Component extends DCLogic {
       zeigeKarte: laden || !!antwort,
       kartenLabel: label ?? '',
       antwortText: laden ? 'Einen Moment …' : (antwort ?? ''),
+      zeigeNachbarn: !laden && !!antwort && nachbarn.length > 0,
+      hatN1: !!n1, n1Frage: n1 ? n1.frage : '', n1Text: n1 ? n1.antwort : '', n1Offen: offen1, n1Pfeil: offen1 ? '−' : '+',
+      hatN2: !!n2, n2Frage: n2 ? n2.frage : '', n2Text: n2 ? n2.antwort : '', n2Offen: offen2, n2Pfeil: offen2 ? '−' : '+',
+      klappN1: () => this.setState({ offen1: !offen1 }),
+      klappN2: () => this.setState({ offen2: !offen2 }),
+      zeigeBewertung: !laden && !!antwort && !bewertet,
+      zeigeDanke: !!bewertet,
+      dankeText: bewertet === 'ja' ? 'Schön, dass es geholfen hat.' : 'Danke. Diese Frage landet bei uns auf dem Tisch.',
+      bewertJa: () => this.bewerten(true),
+      bewertNein: () => this.bewerten(false),
       accentColor: this.props.accentColor ?? '#c46a2c',
       radius: this.props.radius ?? 14,
       sectionPad: this.props.sectionPad ?? 110,
