@@ -319,7 +319,7 @@
         <h2 class="fr-momente__schluss"><span class="fr-momente__schlusswort">Second<span class="fr-momente__punkt">.</span></span> <span class="fr-momente__schlusswort">Der</span> <span class="fr-momente__schlusswort">Kopf</span> <span class="fr-momente__schlusswort">neben</span> <span class="fr-momente__schlusswort">Ihrem.</span></h2>
         <p class="fr-momente__zusatz">Niemand muss mehr alles im Kopf haben.</p>
         <div class="fr-momente__aktionen">
-          <a href="https://konto.einoffenerblick.de/kaufen" class="fr-momente__knopf fr-momente__knopf--kaufen">Jetzt starten</a>
+          <a href="#preis" class="fr-momente__knopf fr-momente__knopf--kaufen">Jetzt starten</a>
           <a href="#krake" class="fr-momente__knopf fr-momente__knopf--krake">Die Krake fragen</a>
         </div>
       </div>
@@ -341,7 +341,7 @@
   </section>
 
   <!-- 11 · PREIS -->
-  <section style="padding:var(--sp,110px) 32px;">
+  <section id="preis" style="padding:var(--sp,110px) 32px;">
     <div style="max-width:1120px; margin:0 auto;">
       <div class="fr-auftauchen" style="font-size:15px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,#c46a2c);">Der Preis</div>
       <h2 class="fr-auftauchen" style="margin-top:20px; font-size:clamp(28px,3.6vw,40px); font-weight:500; line-height:1.16; letter-spacing:-.02em; color:#1A2240; max-width:22ch; text-wrap:balance;">Klar im Preis.</h2>
@@ -544,7 +544,7 @@ class Component extends DCLogic {
       const tick = time => lenis.raf(time * 1000);
       gsap.ticker.add(tick);
       const anchors = event => {
-        const link = event.target.closest('a[href="#krake"],a[href="#kontakt"]');
+        const link = event.target.closest('a[href="#krake"],a[href="#kontakt"],a[href="#preis"]');
         if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         const hash = link.getAttribute('href');
         const target = document.querySelector(hash);
