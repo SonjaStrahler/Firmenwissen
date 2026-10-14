@@ -2,7 +2,7 @@
 # Veröffentlicht den geholten Blog-Entwurf: bauen, speichern, hochladen.
 # Aufruf im Website-Ordner:  bash blog/freigeben.sh
 set -e
-ZIEL="Umbau-Test"   # nach dem Live-Gang der Website: Firmenwissen
+ZIEL="Umbau-Test"   # hier wird gebaut; live.sh schiebt danach auf Firmenwissen
 
 cd "$(git rev-parse --show-toplevel)"
 if [ ! -f .git/blog-entwurf ]; then
@@ -21,4 +21,5 @@ git add blog/ index.html
 git commit --quiet -m "Blog: $TITEL"
 git push --quiet origin "$ZIEL"
 rm .git/blog-entwurf
-echo "Veröffentlicht auf $ZIEL: /blog/$SLUG/"
+echo "Gespeichert auf $ZIEL: /blog/$SLUG/"
+bash blog/live.sh

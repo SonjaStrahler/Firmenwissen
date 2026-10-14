@@ -6,6 +6,7 @@
 #   blog weg           Entwurf wegwerfen
 #   blog schreib LINK  aus deiner eigenen Quelle einen Entwurf schreiben lassen
 #   blog stand         zeigt, was gerade wartet
+#   blog live          schiebt Umbau-Test auf die Website (Backup vorher), macht blog frei automatisch
 WEB="$HOME/Documents/Website_Firmenwissen-retten_I"
 cd "$WEB" 2>/dev/null || { echo "Website-Ordner nicht gefunden: $WEB"; exit 1; }
 case "$1" in
@@ -20,6 +21,8 @@ case "$1" in
     bash blog/verwerfen.sh ;;
   schreib)
     bash blog/schreiben.sh "$2" ;;
+  live)
+    bash blog/live.sh ;;
   stand)
     if [ -f .git/blog-entwurf ]; then
       echo "Hier geholt, noch nicht online: blog/$(sed -n 2p .git/blog-entwurf)/artikel.md"
@@ -38,5 +41,6 @@ case "$1" in
     echo "blog holen         Entwurf holen und in VS Code öffnen, danach: blog frei"
     echo "blog weg           Entwurf wegwerfen"
     echo "blog schreib LINK  Entwurf aus deiner eigenen Quelle"
-    echo "blog stand         zeigt, was gerade wartet" ;;
+    echo "blog stand         zeigt, was gerade wartet"
+    echo "blog live          schiebt Umbau-Test auf die Website (mit Backup vorher)" ;;
 esac
