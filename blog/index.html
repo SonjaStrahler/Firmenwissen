@@ -29,6 +29,7 @@
 <link rel="icon" href="../Images/LogoWebsite.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Figtree';src:url('/assets/fonts/figtree.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -389,12 +390,27 @@ footer { background: var(--navy); padding: 36px 32px; }
   <div class="blog-grid-inner">
     <div id="blog-grid">
 
-      <!-- Card 1 - Neu -->
+      <article class="blog-post-card" data-category="Wissenstransfer">
+        <a href="/blog/wissen-sichern-bevor-rente/" class="blog-post-link">
+          <div class="blog-post-image-wrapper">
+            <div class="blog-post-image-placeholder" style="background:#1A2240;color:#fff;font-family:Figtree,sans-serif;font-size:1.25rem;letter-spacing:0;padding:28px;">Wissen bleibt nicht, weil jemand bleibt. Wissen bleibt, weil es jemand aufhebt.</div>
+            <div class="new-post-indicator">Neu</div>
+          </div>
+          <div class="blog-post-content">
+            <span class="blog-post-category">Wissenstransfer</span>
+            <h2 class="blog-post-title">Wie sichern Sie das Wissen Ihres besten Mannes vor der Rente?</h2>
+            <div class="post-meta"><span>19. Oktober 2026</span><span>Sonja Strahler</span></div>
+            <p class="post-excerpt">Was das Statistische Bundesamt für 2040 ausrechnet, und was Sie heute tun können, damit das Wissen bleibt.</p>
+            <span class="read-more">Weiterlesen →</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 1 -->
       <article class="blog-post-card" data-category="Unternehmensnachfolge">
         <a href="/blog/unternehmensnachfolge-stagnation-2030/" class="blog-post-link">
           <div class="blog-post-image-wrapper">
             <img src="images/blog-2026-05-04-nachfolge-stagnation.jpg" alt="Mann Anfang 60 in Arbeitsjacke steht allein in leerer Werkstatt und blickt aus dem Fenster" class="blog-post-image" loading="lazy" width="1200" height="630">
-            <div class="new-post-indicator">Neu</div>
           </div>
           <div class="blog-post-content">
             <span class="blog-post-category">Unternehmensnachfolge</span>
@@ -417,7 +433,6 @@ footer { background: var(--navy); padding: 36px 32px; }
         <a href="/blog/wissensverlust-rente-kmu-kosten/" class="blog-post-link">
           <div class="blog-post-image-wrapper">
             <div class="blog-post-image-placeholder">1200 × 630 px · blog-2026-04-28-wissensverlust.jpg</div>
-            <div class="new-post-indicator">Neu</div>
           </div>
           <div class="blog-post-content">
             <span class="blog-post-category">Wissenstransfer</span>
