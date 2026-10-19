@@ -10,7 +10,7 @@ KASTEN="/mnt/moltdata/quellenradar/blog/briefkasten"
 cd "$(git rev-parse --show-toplevel)"
 if [ -f .git/blog-entwurf ]; then
   echo "Es liegt schon ein geholter Entwurf hier: $(head -1 .git/blog-entwurf)"
-  echo "Erst veröffentlichen (bash blog/freigeben.sh) oder wegwerfen (bash blog/verwerfen.sh)."
+  echo "Erst online stellen (blog frei) oder wegwerfen (blog weg)."
   exit 1
 fi
 if [ "$(git branch --show-current)" != "$ZIEL" ]; then
@@ -59,6 +59,8 @@ printf '%s\n%s\n' "$ID" "$SLUG" > .git/blog-entwurf
 
 echo ""
 echo "Geholt: blog/$SLUG/artikel.md"
-echo "Ansehen: in VS Code unten „Go Live“, dann /blog/$SLUG/"
-echo "Ändern:  blog/$SLUG/artikel.md in VS Code, speichern."
-echo "Fertig?  bash blog/freigeben.sh"
+if [ -z "$BLOG_OHNE_EDITOR" ]; then
+  open -a "Visual Studio Code" "$PWD" "blog/$SLUG/artikel.md" 2>/dev/null \
+    && echo "Der Artikel ist in VS Code offen. Ändern, mit Cmd+S speichern, dann im Terminal: blog frei" \
+    || echo "Öffne in VS Code: blog/$SLUG/artikel.md. Ändern, speichern, dann im Terminal: blog frei"
+fi
