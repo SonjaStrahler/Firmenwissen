@@ -58,7 +58,7 @@ Ein Artikel mit einer echten Zahl samt Quelle wird öfter von KIs zitiert (GEO-S
 | Quelle | URL | geprüft |
 |---|---|---|
 | Bitkom, Presseinformationen | https://www.bitkom.org/Presse/Presseinformation/index.jsp | ✓ 05.10. |
-| Pew Research, KI | https://www.pewresearch.org/topic/internet-technology/ | ✓ Studie vom 30.09.2026 |
+| Pew Research, KI | https://www.pewresearch.org/topic/internet-technology/ | ✗ liefert seit Oktober 2026 fast nur US-Politik, nicht KI (19.10.) |
 | IfM Bonn, KfW Research, Destatis | wie im Quellenradar | läuft |
 | DIHK | https://www.dihk.de/de/aktuelles-und-presse | ✓ 05.10. |
 
@@ -91,13 +91,20 @@ KI Mittelstand · KI Handwerk · ChatGPT Firma Datenschutz · Copilot Mittelstan
 
 ---
 
-## Bewertung je Meldung (0 bis 10, ein Artikel ab 7)
+## So entscheidet die Maschine (Stand 19.10.2026)
 
-Neu ist die letzte Zeile, weil du Sichtbarkeit bei den KIs willst.
+An einem fälligen Tag (alle zwei Tage) geht sie so vor:
 
-| Frage | Punkte |
-|---|---|
-| Betrifft es Chefs im Mittelstand? | 0–3 |
-| Ist es frisch, also höchstens 3 Tage alt? | 0–2 |
-| Füllt Second genau dort eine Lücke? | 0–3 |
-| Fragen Menschen die KIs gerade danach? Ein großer Name (ChatGPT, Gemini, Claude, Copilot) oder ein Suchbegriff aus H | 0–2 |
+1. **Frische Studie?** Jede Meldung der letzten 3 Tage bekommt Punkte für Stichwörter in Titel und Anriss. Ab 5 Punkten wird sie Kandidat, aber nur, wenn es um Wissen geht oder um KI zusammen mit Mittelstand. Ein KI-Name allein reicht nicht. Bezahlte Anzeigen fliegen raus. Geschrieben wird nur, wenn die Maschine die Erstquelle findet.
+2. **Sonst die nächste Kundenfrage** aus blog/FRAGEN.md, mit der Erstquelle, die dort daneben steht.
+3. **Ist der Vorrat leer,** kommt höchstens einmal pro Woche eine Mail. Der Montagsbericht zeigt, wie viele Fragen noch offen sind.
+
+| Gruppe | Punkte | Beispiele |
+|---|---|---|
+| Mittelstand und Chefs | 3 | Mittelstand, Handwerk, Geschäftsführer, Inhaber, KMU, Betrieb |
+| Wissen | 3 | Wissenstransfer, Firmenwissen, Nachfolge, Ruhestand, Rentenalter, Fachkräfte, Einarbeitung |
+| KI | 2 | KI, künstliche Intelligenz, ChatGPT, Gemini, Claude, Copilot, Mistral, KI-Agent |
+| Datenschutz | 2 | Datenschutz, DSGVO, AI Act, souverän |
+| Echte Zahl | 2 | Prozent, Mio., Mrd., Tausenderpunkt |
+
+Abschnitt G liest die Maschine nicht, er ist für dich. Die Stichwörter stehen auf dem Pi in blog_tags.json.
