@@ -51,5 +51,16 @@
     "kategorie": "Wissenstransfer",
     "datum": "2026-10-19",
     "kernsatz": "Wissen bleibt nicht, weil jemand bleibt. Wissen bleibt, weil es jemand aufhebt."
+  },
+  {
+    "slug": "gemini-fuer-kleine-firmen",
+    "typ": "artikel",
+    "quelle": "md",
+    "titel": "Gemini für kleine Firmen: Was es kann und was nicht",
+    "beschreibung": "Google öffnet in Gemini einen Bereich für kleine Firmen. Was er kann, was er nicht kann, und worauf Sie achten.",
+    "teaser": "Google baut in Gemini eine eigene Ecke für kleine Firmen. Was das bringt, und was es nicht ersetzt.",
+    "kategorie": "KI im Mittelstand",
+    "datum": "2026-10-21",
+    "kernsatz": "Eine KI, die alles weiß, aber nichts über Ihre Firma, hilft Ihnen nur halb."
   }
 ]
