@@ -62,5 +62,16 @@
     "kategorie": "KI im Mittelstand",
     "datum": "2026-10-21",
     "kernsatz": "Eine KI, die alles weiß, aber nichts über Ihre Firma, hilft Ihnen nur halb."
+  },
+  {
+    "slug": "schatten-ki-im-betrieb",
+    "typ": "artikel",
+    "quelle": "md",
+    "titel": "Meine Leute nutzen heimlich ChatGPT. Ist das ein Problem?",
+    "beschreibung": "Eine Bitkom-Umfrage zeigt, wie verbreitet private KI-Zugänge im Job sind. Was das für Ihre Firma heißt und was Sie dagegen tun können.",
+    "teaser": "Eine Bitkom-Umfrage zeigt, wie verbreitet private KI im Job ist. Und was Sie tun können, damit Firmenwissen nicht aus dem Haus wandert.",
+    "kategorie": "KI im Mittelstand",
+    "datum": "2026-10-23",
+    "kernsatz": "Verbote halten KI nicht auf. Ein eigener Zugang schon."
   }
 ]
