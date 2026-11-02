@@ -84,5 +84,16 @@
     "kategorie": "Unternehmensnachfolge",
     "datum": "2026-10-28",
     "kernsatz": "Wissen bleibt, wenn es aufgeschrieben ist."
+  },
+  {
+    "slug": "ki-anfangen-wo-beginnen",
+    "typ": "artikel",
+    "quelle": "md",
+    "titel": "Wo fängt man mit KI an?",
+    "beschreibung": "57 Prozent der Unternehmen nutzen KI. Fast alle stehen am Anfang. Was Sie zuerst tun, bevor Sie Geld ausgeben.",
+    "teaser": "Eine neue Bitkom-Studie zeigt, wo die Mehrheit heute steht. Und was der erste Schritt wirklich ist.",
+    "kategorie": "KI im Mittelstand",
+    "datum": "2026-11-02",
+    "kernsatz": "Der erste Schritt ist nicht die Software. Der erste Schritt ist das Wissen."
   }
 ]
