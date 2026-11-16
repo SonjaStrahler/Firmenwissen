@@ -117,5 +117,16 @@
     "kategorie": "Fachkräftemangel",
     "datum": "2026-11-06",
     "kernsatz": "Wer sein Wissen ordnet, braucht weniger Hände für dieselbe Arbeit."
+  },
+  {
+    "slug": "lohnt-sich-ki-fuer-kleine-firmen",
+    "typ": "artikel",
+    "quelle": "md",
+    "titel": "Lohnt sich KI überhaupt für eine kleine Firma?",
+    "beschreibung": "Eine neue Studie der KfW zeigt: Mittelständler mit KI wachsen stärker, verdienen mehr und arbeiten produktiver. Was das für Ihre Firma heißt.",
+    "teaser": "Eine neue Studie der KfW zeigt, was KI im Mittelstand wirklich bringt. Und worauf es dabei ankommt.",
+    "kategorie": "KI im Mittelstand",
+    "datum": "2026-11-11",
+    "kernsatz": "KI-Nutzer im Mittelstand wachsen um 1,1 Prozentpunkte stärker."
   }
 ]
