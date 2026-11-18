@@ -139,5 +139,16 @@
     "kategorie": "Fachkräftemangel",
     "datum": "2026-11-16",
     "kernsatz": "Wer bleibt, trägt das Wissen. Wer zuhört, kann es halten."
+  },
+  {
+    "slug": "warum-chatgpt-nicht-fuers-firmenwissen",
+    "typ": "artikel",
+    "quelle": "md",
+    "titel": "Warum reicht ChatGPT nicht für unser Firmenwissen?",
+    "beschreibung": "57 Prozent der Unternehmen nutzen KI. Doch für das eigene Firmenwissen braucht es mehr als einen Chatbot. Was fehlt und was Sie tun können.",
+    "teaser": "Warum ein allgemeiner Chatbot Ihr Firmenwissen nicht ersetzt und was Ihr Betrieb stattdessen braucht.",
+    "kategorie": "KI im Mittelstand",
+    "datum": "2026-11-18",
+    "kernsatz": "Eine KI formuliert. Sie ist keine Datenbank."
   }
 ]
