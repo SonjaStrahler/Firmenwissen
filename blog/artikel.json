@@ -150,5 +150,16 @@
     "kategorie": "KI im Mittelstand",
     "datum": "2026-11-18",
     "kernsatz": "Eine KI formuliert. Sie ist keine Datenbank."
+  },
+  {
+    "slug": "insolvenzregister-eu-wissen",
+    "typ": "artikel",
+    "quelle": "md",
+    "titel": "Was das EU-Insolvenzregister über Firmenwissen verrät",
+    "beschreibung": "Das europäische Insolvenzregister zeigt öffentlich, was aus Firmen wird. Was es nicht zeigt: das Wissen, das sie einmal hatten.",
+    "teaser": "Ein öffentliches Register sagt, welche Firma insolvent ist. Es sagt nicht, was sie wusste.",
+    "kategorie": "Wissenstransfer",
+    "datum": "2026-11-22",
+    "kernsatz": "Ein Register hält fest, was eine Firma war. Nicht, was sie wusste."
   }
 ]
