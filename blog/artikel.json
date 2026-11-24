@@ -161,5 +161,16 @@
     "kategorie": "Wissenstransfer",
     "datum": "2026-11-22",
     "kernsatz": "Ein Register hält fest, was eine Firma war. Nicht, was sie wusste."
+  },
+  {
+    "slug": "workday-ki-kontext-regeln",
+    "typ": "artikel",
+    "quelle": "md",
+    "titel": "Eine KI, die nach Ihren Regeln arbeitet: Was heißt das?",
+    "beschreibung": "Workday wirbt mit Kontext und Regeln. Was das für eine KI im Mittelstand bedeutet und worauf Sie achten.",
+    "teaser": "Workday wirbt damit, dass seine KI nach den Regeln des Unternehmens arbeitet. Was das wirklich bedeutet.",
+    "kategorie": "KI im Mittelstand",
+    "datum": "2026-11-22",
+    "kernsatz": "Eine KI ist nur so gut wie das, woraus sie antwortet."
   }
 ]
